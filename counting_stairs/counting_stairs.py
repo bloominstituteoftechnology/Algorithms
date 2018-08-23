@@ -2,30 +2,34 @@
 
 import sys
 
-def counting_stairs(n):
-  if n < 0:
-    return 0
-  elif n == 0:
-    return 1
-  else:
-    return counting_stairs(n-1) + counting_stairs(n-2) + counting_stairs(n-3)
-
-
-# def counting_stairs(n, cache=None):
+# def counting_stairs(n):
 #   if n < 0:
 #     return 0
 #   elif n == 0:
 #     return 1
-#   elif cache[n] > 1:
-#     return cache[n]
 #   else:
-#     cache[n] = counting_stairs(n-1, cache) + counting_stairs(n-2, cache) + counting_stairs(n-3, cache)
-#     return cache[n]
+#     return counting_stairs(n-1) + counting_stairs(n-2) + counting_stairs(n-3)
+
+
+def counting_stairs(n, cache=None):
+  if n < 0:
+    return 0
+  elif n == 0:
+    return 1
+  elif cache and cache[n] > 1:
+    return cache[n]
+  else:
+    if cache:
+      cache[n] = counting_stairs(n-1, cache) + counting_stairs(n-2, cache) + counting_stairs(n-3, cache)
+      return cache[n]
+    else:
+      return counting_stairs(n-1) + counting_stairs(n-2) + counting_stairs(n-3) 
 
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
     num_stairs = int(sys.argv[1])
-    print(counting_stairs(num_stairs))
+    cache = [0 for i in range(num_stairs + 1)]
+    print(counting_stairs(num_stairs, cache))
   else:
     print('Usage: counting_stairs.py [num_stairs]')
