@@ -29,7 +29,6 @@ def counting_stairs(n, cache=None):
 if __name__ == "__main__":
   if len(sys.argv) > 1:
     num_stairs = int(sys.argv[1])
-    cache = [0 for i in range(num_stairs + 1)]
-    print(counting_stairs(num_stairs, cache))
+    print(counting_stairs(num_stairs))
   else:
     print('Usage: counting_stairs.py [num_stairs]')
