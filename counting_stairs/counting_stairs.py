@@ -29,6 +29,6 @@ def counting_stairs(n, cache=None):
 if __name__ == "__main__":
   if len(sys.argv) > 1:
     num_stairs = int(sys.argv[1])
-    print(counting_stairs(num_stairs))
+    print("There are {ways} ways for a child to jump {n} stairs.".format(ways=counting_stairs(num_stairs), n=num_stairs))
   else:
     print('Usage: counting_stairs.py [num_stairs]')
