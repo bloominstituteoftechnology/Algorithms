@@ -31,4 +31,4 @@ if __name__ == "__main__":
     amount = int(sys.argv[1])
     print("There are {ways} ways to make {amount} cents.".format(ways=coin_denominations(amount, denominations), amount=amount))
   else:
-    print("Usage: coins.py [amount]")
+    print("Usage: making_change.py [amount]")
