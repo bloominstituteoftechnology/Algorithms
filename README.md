@@ -41,3 +41,4 @@ There isn't an official prescribed order for tackling the problems, though a sub
  4. `rock_paper_scissors`
  5. `making_change`
 
+For each problem, `cd` into the directory, read the instructions for the problem, implement your solution in the skeleton file, then test it using the provided test file. 
