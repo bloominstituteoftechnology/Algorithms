@@ -19,6 +19,8 @@ You'll find that without implementing performance optimizations into your soluti
 
 To run the tests separately, run `python test_climbing_stairs.py -k small` in order to run jsut the small input test. Run `python test_climbing_stairs.py -k large` to execute just the large input test. If you want to run both tests, just run `python test_climbing_stairs.py`.
 
+You can also test your implementation manually by executing `python climbing_stairs.py [n]`.
+
 ## Hints
 
  * Since this question is asking you to generate a bunch of possible permutations, you'll probably want to use recursion for this.

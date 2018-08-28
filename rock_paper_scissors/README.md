@@ -14,6 +14,8 @@ Your output should be a list of lists containing strings. Each inner list should
 
 Run the test file by executing `python test_rps.py`.
 
+You can also test your implementation manually by executing `python rps.py [n]`.
+
 ## Hints
 
  * You'll want to define a list with all of the possible Rock Paper Scissors plays.

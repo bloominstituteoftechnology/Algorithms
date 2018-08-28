@@ -29,6 +29,8 @@ recipe_batches(
 
 Run the test file by executing `python test_recipe_batches.py`.
 
+You can also test your implementation manually by executing `python recipe_batches.py`.
+
 ## Hints
 
  * If there's a dictionary operation you aren't sure of how to perform in Python, look it up!

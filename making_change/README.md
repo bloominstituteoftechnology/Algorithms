@@ -21,6 +21,8 @@ You'll find that without implementing performance optimizations into your soluti
 
 To run the tests separately, run `python test_making_change.py -k small` in order to run jsut the small input test. Run `python test_making_change.py -k large` to execute just the large input test. If you want to run both tests, just run `python test_making_change.py`.
 
+You can also test your implementation manually by executing `python making_change.py [amount]`
+
 ## Hints
 
  * This problem can be thought of as a more difficult version of the climbing stairs problem. 
