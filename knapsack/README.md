@@ -33,20 +33,17 @@ This is *not* a solution, just an example:
 Items to select: 2, 8, 10
 Total cost: 98
 Total value: 117
-```
+``
 
 ## Testing
+For this problem, there are tests that test your implementation with small (10 items to consider), medium (200 items to consider), and large inputs (1000 items to consider).
 
+You can run all of the tests with `python test_knapsack.py`, or run the tests individually with `python test_knapsack.py -k small`, `python test_knapsack.py -k medium`, or `python test_knapsack.py -k large`.
 
-
-### Task 1: Implement a Brute Force Naive Solution
-
-For first steps, just think a bit about how you might naively solve this with brute force. The above data is small enough that such a solution should work, so give it a go. More to come soon - larger problems that will require more sophisticated approaches.
-
-### Task 2: Implement a Better Solution
-
-More specifically, try to use one (or more) of the algorithmic paradigms that were discussed in lecture, namely, memoization or bottom-up iterative, in order to come up with a better solution that can handle larger inputs than what your brute force solution can handle.
-
-Another line of thinking you may wish to try is to come up with a heuristic, or a mental shortcut, that can be used to solve this particular problem. For example, what if we tried to rank each possible item by their value/weight ratio? :wink:
-
-The `answers.txt` file includes the expected answers for each of the data files. Note that all the runs use a capacity of 100. 
+## Hints
+1. Base cases you might want to consider for a naive recursive implementation of this problem are:
+   * What if there are no items left to consider?
+   * What if the item I'm considering is too large to fit in my bag's remaining capacity?
+2. In order to move towards one of our base cases, we'll pick up an item from the pile to consider, and add it to a copy of our bag. Now we have two versions of our bag, one with the item we're considering, and one without. All we have to do now is pick the bag that yields us a higher value. 
+3. As far as caching for this problem is concerned, a simple hash table or array is not going to suffice, because each solution now depends upon two parameters: the number of items in our pile to consider, as well as the capacity of our bag. So we'll need a 2x2 matrix in order to cache our answers adequately. 
+4. Here's another way we might consider tackling this problem: what if we iterated through every single element in our pile and assign each one a value given by its value/weight ratio. Then we can sort all of the items based on this assigned value such that those items with a higher value/weight ratio are at the top of our sorted list of items. From there, we can just grab off the items at the top of our list until our bag is full. What would be the runtime complexity of this scheme? Would it work in every single scenario for any pile of items?
