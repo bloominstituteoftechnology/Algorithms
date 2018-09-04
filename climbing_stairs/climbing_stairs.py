@@ -16,14 +16,13 @@ def climbing_stairs(n, cache=None):
     return 0
   elif n == 0:
     return 1
-  elif cache and cache[n] > 1:
+  elif cache and cache[n] > 0:
     return cache[n]
   else:
-    if cache:
-      cache[n] = climbing_stairs(n-1, cache) + climbing_stairs(n-2, cache) + climbing_stairs(n-3, cache)
-      return cache[n]
-    else:
-      return climbing_stairs(n-1) + climbing_stairs(n-2) + climbing_stairs(n-3) 
+    if not cache:
+      cache = {i: 0 for i in range(n+1)}
+    cache[n] = climbing_stairs(n-1, cache) + climbing_stairs(n-2, cache) + climbing_stairs(n-3, cache)
+    return cache[n]
 
 
 if __name__ == "__main__":
