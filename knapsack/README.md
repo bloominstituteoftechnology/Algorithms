@@ -33,7 +33,7 @@ This is *not* a solution, just an example:
 Items to select: 2, 8, 10
 Total cost: 98
 Total value: 117
-``
+```
 
 ## Testing
 For this problem, there are tests that test your implementation with small (10 items to consider), medium (200 items to consider), and large inputs (1000 items to consider).
