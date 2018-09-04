@@ -40,6 +40,7 @@ There isn't an official prescribed order for tackling the problems, though a sub
  3. `counting_stairs`
  4. `rock_paper_scissors`
  5. `making_change`
+ 6. [Stretch Problem] `knapsack`
 
 For each problem, `cd` into the directory, read the instructions for the problem, implement your solution in the skeleton file, then test it using the provided test file. 
 

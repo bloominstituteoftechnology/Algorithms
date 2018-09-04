@@ -1,7 +1,4 @@
 .vscode/
 *.pyc
-<<<<<<< HEAD
 __pycache__/
-=======
-__pycache__
->>>>>>> ea1d16ee60f40709cfe2886567faa3f2bc247595
+.DS_Store

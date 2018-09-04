@@ -3,16 +3,7 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  min_ratio = math.inf
-
-  for ingredient, amount in recipe.items():
-    if ingredient not in ingredients:
-      return 0
-    ratio = math.floor(ingredients[ingredient] / amount)
-    if ratio < min_ratio:
-      min_ratio = ratio
-    
-  return min_ratio
+  pass
 
 
 if __name__ == '__main__':
