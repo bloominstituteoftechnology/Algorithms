@@ -15,13 +15,13 @@ The keys will be the ingredient names, with their associated values being the am
 
 Your function should output the maximum number of whole batches that can be made for the supplied recipe using the ingredients available to you, as indicated by the second dictionary. 
 
-For example:
+For example
 
 ```python
 # should return 0 since we don't have enough butter!
 recipe_batches(
   { 'milk': 100, 'butter': 50, 'flour': 5 },
-  { 'milk': 132, 'butter': 48, 'flour': 51 }
+  { 'milk': 138, 'butter': 48, 'flour': 51 }
 )
 ```
 
