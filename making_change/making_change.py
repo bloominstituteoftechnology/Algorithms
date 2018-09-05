@@ -16,16 +16,15 @@ import sys
 
 
 def making_change(amount, denominations):
-  # initialize a cache
   cache = [0 for _ in range(amount + 1)]
   cache[0] = 1
 
-  # loop through our denominations list
   for coin in denominations:
     for higher_amount in range(coin, amount + 1):
       remainder = higher_amount - coin
       cache[higher_amount] += cache[remainder]
 
+  return cache[amount]
   return cache[amount]
 
 
