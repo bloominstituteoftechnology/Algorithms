@@ -5,16 +5,11 @@
 import argparse
 
 def find_max_profit(prices):
-   # DIRECTIONS:
+   # BATTLE PLAN:
    # keep track of the min price we've seen (this has to come before the max in our list of prices)
    # keep track of the max profit we've seen so far
    # iterate through our prices list and update these two variables
    # return our max profit we've seen so far
-
-   # BATTLE PLAN:
-   # find the difference between the largest price and the smallest smalles price
-   # loop through and find the overall max price and overall min price
-   # return difference
    min_price = prices[0]
    max_profit = prices[1] - min_price
 
