@@ -21,14 +21,23 @@ def find_max_profit(prices):
   prices_and_indexs = [[price, prices.index(price)] for price in prices]
   for price_and_index in prices_and_indexs:
     for price in prices:
-      if max_price == price and price_and_index[1] < prices.index(price):
-        #print(price_and_index[1], prices.index(price))
-        return price - lowest_price
-    else:
-      prices.remove(max_price)
-      new_max_price = max(prices)
-      return new_max_price - max_price
+      if prices.index(lowest_price) < prices.index(max_price):
+        #print(prices.index(lowest_price), prices.index(price))
+        return max_price - lowest_price
+      elif prices.index(max_price) != 0:
+        prices.remove(max_price)
+        new_max_price = max(prices)
+        return new_max_price - max_price
+      elif prices.index(lowest_price) > prices.index(max_price):
+        new_list = prices[:prices.index(max_price) + 1]
+        lowest_price = min(new_list)
+        return max_price - lowest_price
+        
+        
+        
 
+        
+        
 
 if __name__ == '__main__':
   # This is just some code to input accepting inputs from the command line
