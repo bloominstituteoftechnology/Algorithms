@@ -1,7 +1,16 @@
 #!/usr/bin/python
 
 import argparse
+def find_max_profit(prices):
+    maxProfit = []
 
+    for first in range(len(prices)):
+        for second in range(first + 1, len(prices)):
+            profit = prices[second] - prices[first]
+            maxProfit.append(profit)
+    return max(maxProfit)
+
+'''
 def find_max_profit(prices):
    # keep track of the min price we've seen (this has to come before the max in our list of prices)
    # keep track of the max profit we've seen so far
@@ -16,7 +25,7 @@ def find_max_profit(prices):
      min_price = min(price, min_price)
   
    return max_profit
-
+'''
 
 if __name__ == '__main__':
   # This is just some code to input accepting inputs from the command line

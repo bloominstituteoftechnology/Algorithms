@@ -3,6 +3,18 @@
 import math
 
 def recipe_batches(recipe, ingredients):
+# make a test recipe dictionary(object)
+#find a way to check strict equality in two objects the ingredients and the recipe
+#divide all the values in ingredients by recipe and then find lowest key value
+    total = dict((k, ingredients[k] // recipe[k]) for k in ingredients) #O(n)
+
+    if recipe.keys() != ingredients.keys(): # O(1)
+        return 0
+    
+    return min(total.values()) #check later
+
+'''
+def recipe_batches(recipe, ingredients):
   # 1. If we don't have an ingredient that is called for by the recipe, just return 0
   # 2. If any ingredient doesn't meet the amount called for by the recipe, return 0
   # 3. Figure out the minimum ratio (round this down to an integer) of each ingredient amount / recipe amount
@@ -23,7 +35,7 @@ def recipe_batches(recipe, ingredients):
       min_ratio = ratio
 
   return min_ratio
-
+'''
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
