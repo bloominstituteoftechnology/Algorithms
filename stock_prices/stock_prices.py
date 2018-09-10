@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# Exercise I 
+
 import argparse
 
 def find_max_profit(prices):
