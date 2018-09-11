@@ -26,14 +26,27 @@ def find_max_profit(prices):
     new_lowest_price = min(new_list)
     return max_price - new_lowest_price
   
-  while prices.index(max_price) == 0:
-    prices.pop(0)
-    max_price = max(prices)
-    min_price = min(prices)
-    if len(prices) == 2:
-      return min_price - max_price
+  # while prices.index(max_price) == 0:
+  #   prices.pop(0)
+  #   max_price = max(prices)
+  #   min_price = min(prices)
+  #   if len(prices) == 2:
+  #     return min_price - max_price
+
+  # return max_price - min_price
+  # def rec(index):
+  #   if (prices.index(max_price) == 0):
+  #     prices.pop(index)
+  #     max_price = max(prices)
+  #     min_price = min(prices)
+  #     print('asdf')
+  #     if len(prices) == 2:
+  #       return min_price - max_price
+  #   return rec(0)
 
   return max_price - min_price
+
+      
       
 
 if __name__ == '__main__':
