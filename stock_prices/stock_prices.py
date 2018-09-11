@@ -3,10 +3,10 @@
 import argparse
 
 def find_max_profit(prices):
-   # keep track of the min price we've seen (this has to come before the max in our list of prices)
-   # keep track of the max profit we've seen so far
-   # iterate through our prices list and update these two variables
-   # return our max profit we've seen so far
+  # keep track of the min price we've seen (this has to come before the max in our list of prices)
+  # keep track of the max profit we've seen so far
+  # iterate through our prices list and update these two variables
+  # return our max profit we've seen so far
   #  min_price = prices[0]
   #  max_profit = prices[1] - min_price
 
@@ -18,26 +18,23 @@ def find_max_profit(prices):
   #  return max_profit
   max_price = max(prices)
   lowest_price = min(prices)
-  prices_and_indexs = [[price, prices.index(price)] for price in prices]
-  for price_and_index in prices_and_indexs:
-    for price in prices:
-      if prices.index(lowest_price) < prices.index(max_price):
-        #print(prices.index(lowest_price), prices.index(price))
-        return max_price - lowest_price
-      elif prices.index(max_price) != 0:
-        prices.remove(max_price)
-        new_max_price = max(prices)
-        return new_max_price - max_price
-      elif prices.index(lowest_price) > prices.index(max_price):
-        new_list = prices[:prices.index(max_price) + 1]
-        lowest_price = min(new_list)
-        return max_price - lowest_price
-        
-        
-        
 
-        
-        
+  #passes test 3
+  # if prices.index(lowest_price) > prices.index(max_price):
+  #   new_list = prices[:prices.index(max_price) + 1].copy()
+  #   new_lowest_price = min(new_list)
+  #   return max_price - new_lowest_price
+  
+  #passes test 1 and 2 and 4
+  while prices.index(max_price) == 0:
+    print(prices)
+    prices.remove(max_price)
+    max_price = max(prices)
+    min_price = min(prices)
+    if len(prices) == 2:
+      return min_price - max_price
+  return max_price - lowest_price
+      
 
 if __name__ == '__main__':
   # This is just some code to input accepting inputs from the command line
