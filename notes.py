@@ -29,3 +29,14 @@ def fib(n, cache):
 n = 35
 cache = {i: 0 for i in range(n + 1)}
 print(fib(n, cache))
+
+# *** v3 *** w/iteration
+def iter_fib(n):
+    answer = 0
+    prev = 1
+    prevPrev = 0
+    for i in range(n-1):
+        answer = prev + prevPrev
+        prev = answer
+        prevPrev = prev
+    return answer

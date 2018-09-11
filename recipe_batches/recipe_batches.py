@@ -10,6 +10,7 @@ def recipe_batches(recipe, ingredients):
   # loop through our recipe dictionary, we care about both the ingredient name as well as the necessary amount
   for ingredient, amount in recipe.items():
     # check to see if the current ingredient exists in our ingredients dict
+    
     if ingredient not in ingredients:
       return 0
     # the ingredient exists in our ingredients list; figure out the ratio 
@@ -31,3 +32,8 @@ if __name__ == '__main__':
   recipe = { 'milk': 100, 'butter': 50, 'flour': 5 }
   ingredients = { 'milk': 132, 'butter': 48, 'flour': 51 }
   print("{batches} batches can be made from the available ingredients: {ingredients}.".format(batches=recipe_batches(recipe, ingredients), ingredients=ingredients))
+ 
+#   *** --- notes --- ***
+    #d = {"first_name": "Alfred", "last_name":"Hitchcock"}
+    # for key,val in d.items():
+    #     print("{} = {}".format(key, val))
