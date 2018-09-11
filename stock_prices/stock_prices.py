@@ -17,6 +17,20 @@ def find_max_profit(prices):
   
    return max_profit
 
+max_price = max(prices)
+  lowest_price = min(prices)
+  prices_and_indexs = [[price, prices.index(price)] for price in prices]
+  for price_and_index in prices_and_indexs:
+    for price in prices:
+      if max_price == price and price_and_index[1] < prices.index(price):
+        #print(price_and_index[1], prices.index(price))
+        return price - lowest_price
+
+        else:
+      prices.remove(max_price)
+      new_max_price = max(prices)
+      return new_max_price - max_price
+
 
 if __name__ == '__main__':
   # This is just some code to input accepting inputs from the command line
