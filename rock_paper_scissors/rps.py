@@ -2,9 +2,19 @@
 
 import argparse
 
-def find_max_profit(prices):
-  pass
+def rock_paper_scissors(n):
+  outcomes = []
+  plays = ['rock', 'paper', 'scissors']
 
+  def generate_plays(rounds_left, result=[]):
+    if rounds_left == 0:
+      outcomes.append(result)
+      return
+    for play in plays:
+      generate_plays(rounds_left - 1, result + [play])
+
+  generate_plays(n, [])
+  return outcomes
 
 if __name__ == '__main__':
   # This is just some code to input accepting inputs from the command line
