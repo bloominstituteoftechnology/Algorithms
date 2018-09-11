@@ -17,23 +17,23 @@ def find_max_profit(prices):
   
   #  return max_profit
   max_price = max(prices)
-  lowest_price = min(prices)
+  min_price = min(prices)
+  max_price_index = prices.index(max_price)
+  min_price_index = prices.index(min_price)
 
-  #passes test 3
-  # if prices.index(lowest_price) > prices.index(max_price):
-  #   new_list = prices[:prices.index(max_price) + 1].copy()
-  #   new_lowest_price = min(new_list)
-  #   return max_price - new_lowest_price
+  if min_price_index > max_price_index and prices.index(max_price) != 0:
+    new_list = list(prices[:prices.index(max_price)])
+    new_lowest_price = min(new_list)
+    return max_price - new_lowest_price
   
-  #passes test 1 and 2 and 4
   while prices.index(max_price) == 0:
-    print(prices)
-    prices.remove(max_price)
+    prices.pop(0)
     max_price = max(prices)
     min_price = min(prices)
     if len(prices) == 2:
       return min_price - max_price
-  return max_price - lowest_price
+
+  return max_price - min_price
       
 
 if __name__ == '__main__':
