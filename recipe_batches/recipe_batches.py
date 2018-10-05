@@ -6,15 +6,12 @@ def recipe_batches(recipe, ingredients):
   batches=None
   ingredient_keys=ingredients.keys()
   for ingredient in ingredient_keys:
-    enough_ingredient=0
-    while ingredients[ingredient]-recipe[ingredient]>=0:
-      enough_ingredient+=1
-      ingredients[ingredient]-=recipe[ingredient]
+    enough_ingredient=ingredients[ingredient]/recipe[ingredient]
     if batches==None:
       batches=enough_ingredient
     elif enough_ingredient<batches:
       batches=enough_ingredient
-  return batches
+  return int(batches)
 
 
 
