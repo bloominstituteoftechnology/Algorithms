@@ -13,7 +13,7 @@ def climbing_stairs(n, cache=None):
     while counter is not n:       
       num_list.append(num_list[-1]+num_list[-2]+num_list[-3])       
       counter+=1     
-      return num_list[-1]   
+  return num_list[-1]   
 
 
 if __name__ == "__main__":
