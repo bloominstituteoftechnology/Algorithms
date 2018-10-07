@@ -2,7 +2,6 @@
 
 import argparse
 
-
 def find_max_profit(prices):
   min_price = min(prices)
   min_i = prices.index(min_price)
