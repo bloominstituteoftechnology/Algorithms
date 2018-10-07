@@ -3,7 +3,19 @@
 import sys
 
 def climbing_stairs(n, cache=None):
-  pass 
+  cache = {0: 1, 1: 1, 2: 2}
+  current = 3
+  
+  while current <= n:
+        cache[current] = cache[current-1] + cache[current-2] + cache[current-3]
+        current += 1
+  return cache[n]
+
+  # i have peer programmed this solution and still don't know what is going on here :(
+
+
+
+
 
 
 if __name__ == "__main__":
