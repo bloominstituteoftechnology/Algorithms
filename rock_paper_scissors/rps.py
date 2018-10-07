@@ -3,7 +3,18 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass
+  list = ['rock', 'paper', 'scissors']
+  outcome = []
+
+  def helper(storage, plays):
+    if plays == 0:
+      outcome.append(storage)
+      return
+    for l in list:
+      helper(storage + [l], plays - 1)
+
+  helper([], n)
+  return outcome
 
 
 if __name__ == "__main__":
