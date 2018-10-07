@@ -2,8 +2,16 @@
 
 import argparse
 
+
 def find_max_profit(prices):
-  pass
+    while True and len(prices) > 1:
+        max1 = max(prices)
+        min1 = min(prices)
+        if prices.index(min1) < prices.index(max1):
+            return max1-min1
+        else:
+            prices.remove(min1)
+    return 0 
 
 
 if __name__ == '__main__':
