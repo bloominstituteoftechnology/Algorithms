@@ -3,7 +3,7 @@
 Now that we've talked about some strategies for solving algorithmic problems and walked through some examples, it's time to practice applying those strategies!
 
 To quickly recap, when you're confronted with a problem you haven't encountered before, the general strategy is as follows:
-
+- FOR PR
 1. Understand the question you're being asked. The way everyone will go about doing this may be slightly different, but in general, a couple of good ways to do this are:
    * Ask clarifying questions to understand the ins and outs of the problem.
    * Based on the problem description, think about some edge cases that may be relevant to the problem. If it isn't clear how those edges cases should be handled by your implementation, ask what the expectations are for that particular edge case.
