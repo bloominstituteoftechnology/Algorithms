@@ -3,7 +3,14 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  storage = []
+
+  for key in recipe:
+    if ingredients.get(key) is not None:
+      storage.append(ingredients[key]//recipe[key])
+    else:
+      storage.append(0)
+  return min(storage)
 
 
 if __name__ == '__main__':
