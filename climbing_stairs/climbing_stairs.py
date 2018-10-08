@@ -11,7 +11,12 @@ def climbing_stairs(n, cache=None):
   options = dict((k, int(n/k)) for k, v in options.items())
   count = 0
 
-  print(options[1])
+  if options[3] > 0:
+    options = {3: options[3] - 1, 2: options[2], 1: options[1]}
+  elif options [2] > 0:
+    options = {3: options[3], 2: options[2] - 1, 1: options[1]}  
+  elif options [1] > 0: 
+    options = {3: options[3], 2: options[2], 1: options[1] - 1}
 
   print(options)
 
