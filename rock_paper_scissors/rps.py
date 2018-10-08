@@ -3,7 +3,20 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+  def recursiveAdd(recursion,handslist=[[]]):
+    if recursion == n:
+      return handslist
+    results = []    
+    for singleResult in handslist.copy():
+      rockList = singleResult.copy()+ ["rock"]
+      paperList = singleResult.copy()+ ["paper"]
+      sissorsList = singleResult.copy()+["scissors"]
+      results.append(rockList)
+      results.append(paperList)
+      results.append(sissorsList)
+    return recursiveAdd(recursion+1,results)
+
+  return  recursiveAdd(0)
 
 
 if __name__ == "__main__":
