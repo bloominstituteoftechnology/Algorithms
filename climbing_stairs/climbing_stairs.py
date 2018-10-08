@@ -7,17 +7,31 @@ import sys
 #if options[3] > 0, then n - (3 * permutation(options[3])) and then recurse this until n = 0 for each option[x] reduction 
 #keep dict of permutations and check to see if it's been called already via memoizer
 
-def climbing_stairs(n, cache=None):
+def climbing_stairs(options, n):
   options = dict((k, int(n/k)) for k, v in options.items())
   count = 0
+  
+  print('options before checker', options)
+
+  if options[3] = 0 and options[2] = 0 and options[1] = 0:
+    count += 1
+    stepClimber(options, n = 3)
 
   if options[3] > 0:
     options = {3: options[3] - 1, 2: options[2], 1: options[1]}
+    n = n - 3
+    stepClimber(options, n)  
   elif options [2] > 0:
     options = {3: options[3], 2: options[2] - 1, 1: options[1]}  
+    n = n - 2
+    stepClimber(options, n)
   elif options [1] > 0: 
-    options = {3: options[3], 2: options[2], 1: options[1] - 1}
-
+    options = {3: options[3], 2: options[2], 1: options[1] - 1}  
+    n = n - 1
+    stepClimber(options, n)
+  else:
+    return
+  
   print(options)
 
 
