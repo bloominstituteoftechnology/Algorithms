@@ -2,8 +2,17 @@
 
 import math
 
+#How many times does the each available value divide into recipe value for all key:values. 
 def recipe_batches(recipe, ingredients):
-  pass 
+  r = []
+  for k, v in ingredients.items(): 
+    for j, t in recipe.items():
+      if j not in ingredients:
+        return 0
+      else:  
+        r.append(v/recipe[k])
+
+  return int(min(r))
 
 
 if __name__ == '__main__':
