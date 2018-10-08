@@ -7,6 +7,8 @@ class Test(unittest.TestCase):
     self.assertEqual(climbing_stairs(0), 1)
     self.assertEqual(climbing_stairs(1), 1)
     self.assertEqual(climbing_stairs(2), 2)
+    self.assertEqual(climbing_stairs(3), 4)
+    self.assertEqual(climbing_stairs(4), 7)
     self.assertEqual(climbing_stairs(5), 13)
     self.assertEqual(climbing_stairs(10), 274)
 
