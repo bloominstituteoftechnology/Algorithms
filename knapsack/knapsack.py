@@ -6,8 +6,25 @@ from collections import namedtuple
 Item = namedtuple('Item', ['index', 'size', 'value'])
 
 def knapsack_solver(items, capacity):
-  pass
+  return greedy(items,capacity)
   
+  
+def greedy(items,capacity):
+  itemsSelected =[]
+  totalValue = 0
+  capcityIntial = capacity
+  sortedItemsValue = sorted(items, key=lambda k: k['value'],reverse=True)
+
+  for item in sortedItemsValue:
+    itemsSelected.append(item['name'])
+    capacity -= item["weight"]
+    totalValue += item["value"]
+    if capacity < 0:
+      capacity += item["weight"]
+      totalValue -= item["value"]
+      itemsSelected.remove(item['name'])
+  return {'Value':totalValue,"Size":capcityIntial-capacity,"Chosen":itemsSelected}
+
 
 if __name__ == '__main__':
   if len(sys.argv) > 1:

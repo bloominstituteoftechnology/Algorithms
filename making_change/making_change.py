@@ -14,7 +14,6 @@ def making_change(amount, denominations):
         for j in range(coin, amount + 1):
           #for each number between the coin and the end of the ways array, this adds the number from the coins number back (IE if you're on nickles it starts at ways[5], and adds ways[0] to it). Pennies adds one to every item in the array. Nickles adds 1 for 6-10. Then 2 for 11-15, then 3 for 16-20. Dimes does the same thing except it takes it's values from ten back (where the nickles made it two already)
             ways[j] += ways[j - coin]
-            print(j-coin)
   return ways[amount]
 
 
