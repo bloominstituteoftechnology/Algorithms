@@ -13,12 +13,11 @@ def making_change(amount, denominations):
     for i in range(m):
         for j in range(denominations[i], amount + 1):
             print('what is j', j)
+            print('what denominations[i]', denominations[i])
             print('value added to j', table[j - denominations[i]])
-            print(table)
             table[j] += table[j - denominations[i]]
-            print(table)
+            print(table, '\n')
 
-    print(table)
     return table[amount]
 
 
