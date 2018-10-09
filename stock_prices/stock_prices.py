@@ -2,8 +2,19 @@
 
 import argparse
 
-def find_max_profit(prices):
-  pass
+def find_max_profit(arr):
+  if arr.index(max(arr)) > arr.index(min(arr)):
+    return max(arr) - min(arr)
+  else:
+    if(arr[0] and arr[1]):
+      min_value = arr[0]
+      max_profit = arr[1] - arr[0]
+      for price in range(1,len(arr)):
+        if arr[price] < min_value:
+          min_value = arr[price]
+        elif arr[price] - min_value > max_profit:
+          max_profit = arr[price] - min_value
+      return max_profit
 
 
 if __name__ == '__main__':
