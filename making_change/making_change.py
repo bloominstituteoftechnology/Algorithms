@@ -9,7 +9,7 @@ def making_change(amount, denominations):
         try:
           changeOptions[higher_amount]+=changeOptions[higher_amount-denomination]
         except:
-          changeOptions[higher_amount]=changeOptions[higher_amount-denomination]
+          changeOptions[higher_amount]=1
   return changeOptions[amount]
 
 
