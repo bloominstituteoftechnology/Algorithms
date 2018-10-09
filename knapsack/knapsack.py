@@ -7,23 +7,45 @@ Item = namedtuple('Item', ['index', 'size', 'value'])
 
 
 def knapsack_solver(items, capacity):
+    # dp solution with memoization, bottom up solution
+    cache = [[{} for _ in range(capacity+1)] for _ in range(len(items) + 1)]
 
-    def helper(n, c, current_list, value):
-        if n == 0 or c == 0:
-            return {'Value': value, 'Chosen': current_list}
-        elif items[n-1].size > c:
-            ret = helper(n-1, c, current_list, value)
-            return {'Value': ret['Value'], 'Chosen': ret['Chosen']}
-        else:
-            test1 = helper(n-1, c, current_list, value)
-            test2 = helper(n-1, c - items[n-1].size, current_list + [items[n-1].index], value + items[n-1].value)
-            if test1['Value'] > test2['Value']:
-                return {'Value': test1['Value'], 'Chosen': test1['Chosen']}
-            else:
-                return {'Value': test2['Value'], 'Chosen': test2['Chosen']}
+    def helper(n, c):
+        for i in range(n+1):
+            for s in range(c+1):
+                if i == 0 or s == 0:
+                    cache[i][s] = {'Value': 0, 'Chosen': []}
+                elif items[i-1].size > s:
+                    cache[i][s] = cache[i-1][s]
+                else:
+                    test1 = cache[i-1][s]
+                    test2 = {'Value': cache[i-1][s-items[i-1].size]['Value'] + items[i-1].value,
+                             'Chosen': cache[i-1][s-items[i-1].size]['Chosen'] + [items[i-1].index]}
+                    if test1['Value'] > test2['Value']:
+                        cache[i][s] = test1
+                    else:
+                        cache[i][s] = test2
+        return cache[n][c]
 
-    res = helper(len(items), capacity, [], 0)
-    return {'Value': res['Value'], 'Chosen': sorted(res['Chosen'])}
+    return helper(len(items), capacity)
+
+    # naive solution, top down, passes small tests, runtime on medium is too long so I stopped it
+    # def helper(n, c, current_list, value):
+    #     if n == 0 or c == 0:
+    #         return {'Value': value, 'Chosen': current_list}
+    #     elif items[n-1].size > c:
+    #         ret = helper(n-1, c, current_list, value)
+    #         return {'Value': ret['Value'], 'Chosen': ret['Chosen']}
+    #     else:
+    #         test1 = helper(n-1, c, current_list, value)
+    #         test2 = helper(n-1, c - items[n-1].size, current_list + [items[n-1].index], value + items[n-1].value)
+    #         if test1['Value'] > test2['Value']:
+    #             return {'Value': test1['Value'], 'Chosen': test1['Chosen']}
+    #         else:
+    #             return {'Value': test2['Value'], 'Chosen': test2['Chosen']}
+    #
+    # res = helper(len(items), capacity, [], 0)
+    # return {'Value': res['Value'], 'Chosen': sorted(res['Chosen'])}
 
 
 """
