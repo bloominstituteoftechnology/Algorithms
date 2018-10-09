@@ -3,7 +3,17 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  required = recipe.keys()
+  holder = []
+  for item in required:
+    if item not in ingredients:
+      return 0
+    elif recipe[item] > ingredients[item]:
+      return 0
+    else:
+      holder.append(int(ingredients[item]/recipe[item]))
+  return min(holder)
+    
 
 
 if __name__ == '__main__':
