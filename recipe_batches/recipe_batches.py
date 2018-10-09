@@ -3,7 +3,24 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+    min_batches = float('inf') # sets to infinity so that any number that comes up is less than it. 
+    something_missing = False 
+    for item in recipe:
+        if something_missing:# edge case as soon as its discovered something is missing no need to check other values. 
+            break
+        try:# if the item is missing it will throw an error
+            if recipe[item] <= ingredients[item]:
+                if int(ingredients[item] / recipe[item]) < min_batches:
+                    min_batches = int(ingredients[item] / recipe[item])
+                    # the item with the least amount is the number we can do. 
+        except:
+            something_missing = True 
+        
+    if something_missing:
+        return 0
+    else:
+        return min_batches 
+# The time complexity of this solution is O(n) space complexity is O(1)
 
 
 if __name__ == '__main__':
