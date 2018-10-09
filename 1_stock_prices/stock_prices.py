@@ -9,6 +9,7 @@ import argparse
 
 # How can I turn a list into an object?
 # How can I iterate over an object?
+# If stock increases, subtract the lower, earlier occuring value from the increased value
 
 # def find_max_profit(prices):
 #   max = 0
