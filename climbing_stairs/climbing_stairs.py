@@ -36,7 +36,7 @@ def climbing_stairs(n, cache=None):
     stair_count={0:1,1:1,2:2}    
     counter=3  
     while counter <= n                                                                                                                                                                 :     
-      stair_count[counter]=stair_count[counter-1]+stair_count[counter-2]+stair_count[counter-3]
+      stair_count[counter] = (stair_count[counter-1] + stair_count[counter-2] + stair_count[counter-3])
       counter+=1
     return stair_count[n] 
 

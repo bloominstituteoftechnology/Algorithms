@@ -2,26 +2,29 @@
 
 import math
 
-def recipe_batches(recipe, ingredients):
-  recipeValue = list(recipe.values())
-  recipeKeys = set(recipe.keys())
-  ingredientValue = list(ingredients.values())
-  ingredientKeys = set(recipe.keys())
-  count = 0
+def recipe_batches(recipe, ingredients): 
+  for key in recipe: # milk flour sugar butter
+    if key in ingredients:
+      ingredientValue[count] // recipeValue[count]
+      # do your logic thang
+    else:
+      # the key doesn't exist in ingredients
+      # therefore, return 0
   
-  if recipeKeys == ingredientKeys :
-    while True:
-      print(recipeKeys, ingredientKeys)
-      count+=1
-      print (ingredientValue[count] // recipeValue[count])
-      if ingredientValue[count] // recipeValue[count] <= 0:
-        print("Not Enough")
-        return 0
-      elif count >= len(ingredientValue):
-        print("exited")
-        return ingredientValue[count] // recipeValue[count]
-  else:
-    return 0 
+  # `milk` `flour` `butter`
+  # if recipeKeys == ingredientKeys :
+  #   while True:
+  #     print(recipeKeys, ingredientKeys)
+  #     count+=1
+  #     print (ingredientValue[count] // recipeValue[count])
+  #     if ingredientValue[count] // recipeValue[count] <= 0:
+  #       print("Not Enough")
+  #       return 0
+  #     elif count >= len(ingredientValue):
+  #       print("exited")
+  #       return ingredientValue[count] // recipeValue[count]
+  # else:
+  #   return 0 
 
 
 if __name__ == '__main__':
