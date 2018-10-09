@@ -15,9 +15,6 @@ from itertools import combinations_with_replacement
 #       for i in range(times):
 #         yield object
 
-
-repeat('scissors', 4)
-
 # def product(*args, **kwds):
 #     # product('ABCD', 'xy') --> Ax Ay Bx By Cx Cy Dx Dy
 #     # product(range(2), repeat=3) --> 000 001 010 011 100 101 110 111
@@ -36,7 +33,8 @@ repeat('scissors', 4)
 #     if sorted(indices) == list(indices):
 #       return tuple(pool[i] for i in indices)
 
-combinations_with_replacement('ABCD', 4)
+for c in combinations_with_replacement(['rock', 'paper', 'scissors'],4):
+  print(c)
 
 
 def rock_paper_scissors(n):
