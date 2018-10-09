@@ -4,6 +4,10 @@ import argparse
 
 def find_max_profit(prices):
   pass
+  
+#find lowest price
+#then find highest price that's at any higher index
+#calculate difference
 
 
 if __name__ == '__main__':

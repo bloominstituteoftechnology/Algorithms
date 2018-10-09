@@ -5,6 +5,9 @@ import math
 def recipe_batches(recipe, ingredients):
   pass 
 
+#if recipe.whatever > ingredients return 0
+#else calculate how many ingredients.whatever goes into recipes.whatever
+
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
