@@ -33,15 +33,14 @@ from itertools import combinations_with_replacement
 #     if sorted(indices) == list(indices):
 #       return tuple(pool[i] for i in indices)
 
-for c in combinations_with_replacement(['rock', 'paper', 'scissors'],4):
-  print(c)
-
+# for c in combinations_with_replacement(['rock', 'paper', 'scissors'],4):
+#   print(c)
 
 def rock_paper_scissors(n):
   storage = []
-  items = ['rock', 'paper', 'scissors']
-  return repeat(items[0],n)
-
+  for c in combinations_with_replacement(['rock', 'paper', 'scissors'],4):
+    storage.append(c)
+  return storage
 
 print(rock_paper_scissors(4))
 
