@@ -3,15 +3,23 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  recipeValue = recipe.values()
-  ingredientValue = ingredients.values()
-
-  if recipe.keys() == ingredients.keys():
-    for value1 in ingredientValue:
-      for value2 in recipeValue:
-
-        return math.floor((value1 / value2))
-    # return ingredients.values() / recipe.values() 
+  recipeValue = list(recipe.values())
+  recipeKeys = set(recipe.keys())
+  ingredientValue = list(ingredients.values())
+  ingredientKeys = set(recipe.keys())
+  count = 0
+  
+  if recipeKeys == ingredientKeys :
+    while True:
+      print(recipeKeys, ingredientKeys)
+      count+=1
+      print (ingredientValue[count] // recipeValue[count])
+      if ingredientValue[count] // recipeValue[count] <= 0:
+        print("Not Enough")
+        return 0
+      elif count >= len(ingredientValue):
+        print("exited")
+        return ingredientValue[count] // recipeValue[count]
   else:
     return 0 
 
