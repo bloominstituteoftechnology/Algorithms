@@ -3,7 +3,19 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  print (ingredients.values())
+  print (recipe.values())
+
+  batches = 0
+
+  ing = [item for item in ingredients.values()]
+  recipes = [item for item in recipe.values()]
+
+  print (ing)
+  print (recipes)
+
+  
+
 
 
 if __name__ == '__main__':
