@@ -3,7 +3,15 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
+  cache = {x:0 for x in range(amount + 1)}
+  cache[0] = 1
+
+  for coin in denominations:
+    for higher_amount in range(coin, amount + 1):
+      difference = higher_amount - coin
+      cache[higher_amount] += cache[difference]
+
+  return cache[amount]
 
 
 if __name__ == "__main__":
