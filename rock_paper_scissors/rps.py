@@ -3,7 +3,11 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+  import itertools
+  result = []
+  for combos in itertools.product(["rock", "paper", "scissors"], repeat=n):
+    result.append(list(combos))
+  return result
 
 
 if __name__ == "__main__":

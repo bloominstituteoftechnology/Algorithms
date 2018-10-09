@@ -3,7 +3,14 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
+  table = [0 for k in range(amount+1)]
+  # base case
+  table[0] = 1
+
+  for i in range(0, len(denominations)):
+    for j in range(denominations[i], amount+1):
+      table[j] += table[j-denominations[i]]
+  return table[amount]
 
 
 if __name__ == "__main__":
