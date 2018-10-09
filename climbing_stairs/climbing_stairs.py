@@ -8,12 +8,13 @@ def climbing_stairs(n, cache={}):
   elif n == 2:
     return 2
   elif n in cache:
+    print(cache[n])
     return cache[n]
   else:
     cache[n] = climbing_stairs(n-3) + climbing_stairs(n-2) + climbing_stairs(n-1)
     return cache[n]
 
-print(climbing_stairs(50, [0 for i in range(51)]))
+print(climbing_stairs(5))
 
 
 if __name__ == "__main__":
