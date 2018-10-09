@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import sys
+n = 9
 
 def climbing_stairs(n, cache=None):
   if n < 0 
