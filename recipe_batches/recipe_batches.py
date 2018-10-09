@@ -7,6 +7,8 @@ def recipe_batches(recipe, ingredients):
   for key, value in recipe.items():
     for key, value in ingredients.items():
       batches.append(math.floor(ingredients[key]/recipe[key]))
+      if len(recipe) != len(ingredients):
+        batches.append(0)
   return min(batches)
 
 

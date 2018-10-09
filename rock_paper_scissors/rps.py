@@ -2,8 +2,21 @@
 
 import sys
 
+
 def rock_paper_scissors(n):
-  pass 
+  rps = ['rock', 'paper', 'scissors']
+  result = []
+
+  def recurse(playSet, roundsLeft):
+    if roundsLeft == 0:
+      result.append(playSet)
+      return
+    
+    for play in rps:
+      recurse([*playSet, play], roundsLeft - 1)
+
+  recurse([], n)
+  return result
 
 
 if __name__ == "__main__":
