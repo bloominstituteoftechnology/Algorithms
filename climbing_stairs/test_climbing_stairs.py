@@ -1,8 +1,6 @@
 import unittest
 from climbing_stairs import climbing_stairs
-
 class Test(unittest.TestCase):
-
   def test_climbing_stairs_small_n(self):
     self.assertEqual(climbing_stairs(0), 1)
     self.assertEqual(climbing_stairs(1), 1)
