@@ -3,6 +3,24 @@
 import math
 
 def recipe_batches(recipe, ingredients):
+  total = math.inf
+  
+  if(len(recipe) != len(ingredients)):
+    return 0
+  else: 
+    for r_key, r_value in recipe.items():
+      for i_key, i_value in ingredients.items():
+        if i_key == r_key:
+          dishes = i_value // r_value
+          print(dishes, "dishes")
+          if dishes <= 0: 
+            total = 0
+          elif dishes < total: 
+            print(total, "total")
+            total = dishes
+      
+  return total      
+     
   pass 
 
 
