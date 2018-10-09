@@ -5,9 +5,14 @@ import math
 def recipe_batches(recipe, ingredients):
     batches = []
     for ingredient in recipe:
-        if ingredient in ingredients:
-            batches.append(ingredients.value()/ingredient.value())
-    
+        if ingredient not in ingredients:
+            batches.append(0)
+        elif recipe[ingredient] > ingredients[ingredient]:
+            batches.append(0)
+        else:
+            batches.append(math.floor(ingredients[ingredient]/recipe[ingredient]))
+    batchesFinal = min(batches)
+    return batchesFinal or 0
 
 #check if ingredients match needed ingredients for the recipe.
 #if they do remove the amount needed for the 
