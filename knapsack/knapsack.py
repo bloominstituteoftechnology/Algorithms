@@ -15,7 +15,7 @@ def knapsack_solver(items, capacity):
         for item in items]
     chart = sorted(chart, key=lambda x: x[-1], reverse=True)
     for k in chart:
-        if knapsack_size + k[1] < capacity:
+        if knapsack_size + k[1] <= capacity:
             knapsack.append(k[0])
             knapsack_size += k[1]
             knapsack_value += k[2]
