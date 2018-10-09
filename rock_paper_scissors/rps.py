@@ -3,16 +3,11 @@
 import sys
 
 def rock_paper_scissors(n):
-  outcomes = []
-  plays = ["rock", "paper", "scissors"]
-  def findOutCome(roundsLeft, result):
-    if roundsLeft == 0:
-      outcomes.append(result)
-      return
-    for play in plays:
-      findOutCome(roundsLeft - 1, result.append(play))
-  findOutCome(n, [])
-  return outcomes
+  import itertools
+  result = []
+  for combos in itertools.product(["rock", "paper", "scissors"], repeat=n):
+    result.append(list(combos))
+  return result
 
 
 if __name__ == "__main__":
