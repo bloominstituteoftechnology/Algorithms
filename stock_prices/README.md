@@ -15,3 +15,6 @@ You can also test your implementation manually by executing `python stock_prices
 ## Hints
 
  * For this problem, we essentially want to find the difference between the smallest and largest prices in the list of prices.
+
+ ##Solution
+ My solution here works, but the test keeps returning None for profit. It seems to want to use find_max_profit(args.integers) to store the solution, but I couldn't find a way to do so.  In terms of runtime complexity, it scales linearly; each input has it run another two checks.

@@ -3,7 +3,7 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  return recipeCount 
 
 
 if __name__ == '__main__':
@@ -11,4 +11,9 @@ if __name__ == '__main__':
   # your implementation with different inputs
   recipe = { 'milk': 100, 'butter': 50, 'flour': 5 }
   ingredients = { 'milk': 132, 'butter': 48, 'flour': 51 }
+  batches = 0
+  for ingredient,count in recipe:
+    recipeCount = recipe[count]
+
+
   print("{batches} batches can be made from the available ingredients: {ingredients}.".format(batches=recipe_batches(recipe, ingredients), ingredients=ingredients))
