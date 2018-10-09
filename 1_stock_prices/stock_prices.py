@@ -10,15 +10,35 @@ import argparse
 # How can I turn a list into an object?
 # How can I iterate over an object?
 
-def find_max_profit(prices):
-  max = 0
-  prices = [int(x) for x in prices]
-  for price in prices:
-    if price > max:
-      max = price
-  return max
+# def find_max_profit(prices):
+#   max = 0
+#   min = math.inf
+#   prices = [int(x) for x in prices]
+#   for price in prices:
+#     if price > max:
+#       max = price
+#   for price in prices:
+#     if price < max:
+#       min = price
+#   return max-min
 
-# recursive version
+
+def find_max_profit(prices):
+  return max(prices) - min(prices)
+
+
+print(find_max_profit([10, 7, 5, 8, 11, 9]))
+
+
+# def find_max_profit(prices):
+#     max = 0
+#     for x in prices:
+#         if x > max:
+#             max = x
+#     return max
+
+
+# recursive function to find maximum
 
 # def find_max_profit(prices):
 #   if len(prices) == 1:
