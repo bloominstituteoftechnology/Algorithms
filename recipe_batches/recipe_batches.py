@@ -3,18 +3,17 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  batches=None
-  recipe_keys=recipe.keys()
-  for ingredient in recipe_keys:
-    try:
-      min_ingredient=int(ingredients[ingredient]/recipe[ingredient])
-      if batches==None:
-        batches=min_ingredient
-      elif min_ingredient<batches:
-        batches=min_ingredient
-    except:
-      return 0
-  return batches
+  cache = []
+  if set(recipe.keys()) == set(ingredients.keys()):
+    for item_re, amount_re in recipe.items():
+      total_ing = ingredients.get(item_re)
+      if total_ing >= amount_re:
+        cache.append(math.floor(total_ing / amount_re))
+      else:
+        return 0
+    return min(cache)
+  else:
+    return 0
 
 
 if __name__ == '__main__':
