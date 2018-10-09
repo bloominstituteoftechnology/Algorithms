@@ -3,14 +3,14 @@
 import argparse
 
 def find_max_profit(prices):
-  minprice=prices[0]
-  profit=prices[1]-prices[0]
-  for i in range(1,len(prices)):
-    if prices[i]<minprice:
-      minprice=prices[i]
-    elif prices[i]-minprice>profit:
-      profit=prices[i]-minprice
-  return profit
+  cache = []
+  for index, price in enumerate(prices):
+    current_list = prices[index:]
+    if len(current_list) > 1:
+      subtrahend = current_list[0]
+      for minuend in current_list[1:]:
+        cache.append(minuend - subtrahend)
+  return max(cache)
 
 
 if __name__ == '__main__':
