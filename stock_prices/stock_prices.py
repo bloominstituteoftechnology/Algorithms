@@ -1,19 +1,18 @@
 #!/usr/bin/python
-
+import math
 import argparse
 
 def find_max_profit(prices):
   resultsList = []
-  result = -9999999999999999999999999999999
+  result = -math.inf
   count = 0
   for i in prices:
     count += 1
     for j in prices[count:]:
       resultsList.append(j - i)
-      
+
   for profit in resultsList:
     if profit > result:
-      # print(resultsList)
       result = profit
   return result
 
