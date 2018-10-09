@@ -2,18 +2,14 @@
 
 import sys
 
-def climbing_stairs(n, cache=None):
-  if n==0 or n==1:    
-     return 1   
-  elif n==2:     
-    return 2   
-  else:     
-    num_list=[1,1,2]    
-    counter=2     
-    while counter is not n:       
-      num_list.append(num_list[-1]+num_list[-2]+num_list[-3])       
-      counter+=1     
-  return num_list[-1]   
+def climbing_stairs(n, cache=None):  
+    stair_count={0:1,1:1,2:2}    
+    counter=3  
+    while counter<=n:     
+      stair_count[counter]=stair_count[counter-1]+stair_count[counter-2]+stair_count[counter-3]
+      counter+=1
+    return stair_count[n]   
+ 
 
 
 if __name__ == "__main__":
