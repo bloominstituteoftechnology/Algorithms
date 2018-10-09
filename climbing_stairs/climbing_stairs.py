@@ -12,7 +12,7 @@ def climbing_stairs(n, cache=None):
     return 2
   elif n == 3:
     return 4
-  elif cache[n] > 0:
+  elif cache and cache[n] > 0:
     return cache[n]
   else:
     if not cache:
