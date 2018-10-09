@@ -2,8 +2,18 @@
 
 import sys
 
+#permutations usually mean that it will be solved recursively
+
 def climbing_stairs(n, cache=None):
-  pass 
+  if n < 0:
+    return 0
+  if n == 0 or n == 1:
+    return 1
+  elif n == 2:
+    return 2
+  elif n == 3: 
+    return 4
+  return climbing_stairs(n-1) + climbing_stairs(n-2) + climbing_stairs(n-3)
 
 
 if __name__ == "__main__":
