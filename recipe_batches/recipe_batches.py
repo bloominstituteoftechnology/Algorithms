@@ -3,7 +3,20 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  batches = []
+  for ingredient in recipe:
+    # print(ingredient) # `milk` `butter` `flour` `sugar`
+    if ingredient not in ingredients:
+      return 0
+    else:
+      # divide # of ingredient from ingredients by # of ingredient from recipe
+      whole = math.floor(ingredients[ingredient] / recipe[ingredient])
+      if whole >= 1:
+        batches.append(whole)
+      else:
+        return 0
+  print('batches:', batches)
+  return min(batches)
 
 
 if __name__ == '__main__':
