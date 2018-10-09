@@ -12,7 +12,9 @@ def recipe_batches(recipe, ingredients):
             if recipe[item] <= ingredients[item]:
                 if int(ingredients[item] / recipe[item]) < min_batches:
                     min_batches = int(ingredients[item] / recipe[item])
-                    # the item with the least amount is the number we can do. 
+                    # the item with the least amount is the number we can do.
+            else:
+                something_missing = True # needed for when the recipe has a size greater than the available.
         except:
             something_missing = True 
         
