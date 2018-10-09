@@ -3,7 +3,11 @@
 import sys
 
 def climbing_stairs(n, cache=None):
-  pass 
+  pass
+  if n <= 0:
+    return 0
+  elif n = 1:
+    return 1 
 
 
 if __name__ == "__main__":
