@@ -10,9 +10,10 @@ def making_change(amount, denominations= [1, 5, 10, 25, 50]):
   for coin in denominations:
     for j in range(coin, amount + 1):
         count[j] += count[j - coin]
+        print(count)
   return(count[amount])
 
-print(making_change(5))
+print(making_change(10))
 
 if __name__ == "__main__":
   # Test our your implementation from the command line
