@@ -3,8 +3,14 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+    batches = []
+    for ingredient in recipe:
+        if ingredient in ingredients:
+            batches.append(ingredients.value()/ingredient.value())
+    
 
+#check if ingredients match needed ingredients for the recipe.
+#if they do remove the amount needed for the 
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
