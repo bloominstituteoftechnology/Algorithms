@@ -3,20 +3,15 @@
 import sys
 
 def rock_paper_scissors(n):
-  if n==0:
-    return [[]]
-  else:
-    counter=1
-    choices_dict={0:[[]]}
-    while counter<=n:
-      last_entry=choices_dict[list(choices_dict.keys())[-1]]
-      choices_dict[counter]=[]
-      for i in range(len(last_entry)):
-        last_entry_item=last_entry[i]
-        choices_dict[counter].append(last_entry_item+['rock'])
-        choices_dict[counter].append(last_entry_item+['paper'])
-        choices_dict[counter].append(last_entry_item+['scissors'])
-      counter+=1
+  counter=1
+  choices_dict={0:[[]]}
+  while counter<=n:
+    last_entry=choices_dict[counter-1]
+    choices_dict[counter]=[]
+    for i in range(len(last_entry)):
+      last_entry_item=last_entry[i]
+      choices_dict[counter].extend([last_entry_item+['rock'],last_entry_item+['paper'],last_entry_item+['scissors']])
+    counter+=1
   return choices_dict[n]
 
 
