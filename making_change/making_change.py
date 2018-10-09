@@ -2,9 +2,18 @@
 
 import sys
 
-def making_change(amount, denominations):
-  pass 
+def making_change(amount, denominations= [1, 5, 10, 25, 50]):
+  if amount == 0 or amount == 1:
+    return 1
+  count = [0] * (amount + 1)
+  count[0] = 1
+  for coin in denominations:
+    for j in range(coin, amount + 1):
+        count[j] += count[j - coin]
+        print(count)
+  return(count[amount])
 
+print(making_change(10))
 
 if __name__ == "__main__":
   # Test our your implementation from the command line

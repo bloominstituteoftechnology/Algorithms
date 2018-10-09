@@ -1,10 +1,42 @@
 #!/usr/bin/python
 
 import argparse
+import math
 
 def find_max_profit(prices):
-  pass
-
+  # temp = math.inf*-1
+  # for x in range(0, len(prices)):
+  #   for y in range(x+1, len(prices)):
+  #     difference = prices[y] - prices[x]
+  #     if difference > temp:
+  #       temp = difference
+  # return temp
+  min_price = min(prices)
+  min_i = prices.index(min_price)
+  max_price = max(prices)
+  max_i = prices.index(max_price)
+  sorted_price = sorted(prices)
+  t_f = []
+  check = prices[1:]
+  if max_i == 0:
+    max_price = sorted_price[-2]
+  profit = max_price - min_price
+  if min_i == len(prices)-1:
+    check.remove(min_price)
+    previous = prices[0]
+    for price in check:
+      if previous > price:
+        t_f.append(True)
+        previous = price
+      else:
+        t_f.append(False)
+        previous = price
+    if t_f.count(False) == 0:
+      return(sorted_price[-2]-sorted_price[-1])
+    else:
+      return(max_price-sorted(check)[0])
+  else:
+    return(profit)
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
