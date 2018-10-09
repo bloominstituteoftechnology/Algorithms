@@ -3,7 +3,14 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+  cache = []
+  for index, price in enumerate(prices):
+    current_list = prices[index:]
+    if len(current_list) > 1:
+      subtrahend = current_list[0]
+      for minuend in current_list[1:]:
+        cache.append(minuend - subtrahend)
+  return max(cache)
 
 
 if __name__ == '__main__':
