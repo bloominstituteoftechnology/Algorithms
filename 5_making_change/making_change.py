@@ -31,32 +31,30 @@ print(list(flatten(result)))
 
 
 def Coins(amt, cache):
-
-    arr = [50, 25, 10, 5, 1] #quarter, dime, nickel, penny
-    result = 0
-
-    if amt < 0:
-        return 0 #base case
-
-    if cache[amt] != 0:
-        return cache[amt]
-    if amt == 0:
-        return 1 #base case
-
-    for i in arr:
-        result += Coins(amt - i, cache)
-
-    cache[amt] = result
-
-    return result
-
+  arr = [50, 25, 10, 5, 1] #quarter, dime, nickel, penny
+  result = 0
+  if amt < 0:
+      return 0 #base case
+  if cache[amt] != 0:
+      return cache[amt]
+  if amt == 0:
+      return 1 #base case
+  for i in arr:
+      result += Coins(amt - i, cache)
+  cache[amt] = result
+  return result
 
 def making_change(amount, denominations):
+  count = 0
+  if amount < 0:
+    return 0
+  if amount != 0:
 
   pass
 
-  
-
+# if amount/denomination < 1, then no making change
+# if amount/denomination is an integer multiple of denomination, can make change with that denomination
+# try amount/50, 25, 10, 5, 1
 
 if __name__ == "__main__":
   # Test our your implementation from the command line
