@@ -10,24 +10,22 @@ def knapsack_solver(items, capacity):
     # dp solution with memoization, bottom up solution
     cache = [[{} for _ in range(capacity+1)] for _ in range(len(items) + 1)]
 
-    def helper(n, c):
-        for i in range(n+1):
-            for s in range(c+1):
-                if i == 0 or s == 0:
-                    cache[i][s] = {'Value': 0, 'Chosen': []}
-                elif items[i-1].size > s:
-                    cache[i][s] = cache[i-1][s]
+    for i in range(len(items)+1):
+        for s in range(capacity+1):
+            if i == 0 or s == 0:
+                cache[i][s] = {'Value': 0, 'Chosen': []}
+            elif items[i-1].size > s:
+                cache[i][s] = cache[i-1][s]
+            else:
+                test1 = cache[i-1][s]
+                test2 = {'Value': cache[i-1][s-items[i-1].size]['Value'] + items[i-1].value,
+                         'Chosen': cache[i-1][s-items[i-1].size]['Chosen'] + [items[i-1].index]}
+                if test1['Value'] > test2['Value']:
+                    cache[i][s] = test1
                 else:
-                    test1 = cache[i-1][s]
-                    test2 = {'Value': cache[i-1][s-items[i-1].size]['Value'] + items[i-1].value,
-                             'Chosen': cache[i-1][s-items[i-1].size]['Chosen'] + [items[i-1].index]}
-                    if test1['Value'] > test2['Value']:
-                        cache[i][s] = test1
-                    else:
-                        cache[i][s] = test2
-        return cache[n][c]
+                    cache[i][s] = test2
 
-    return helper(len(items), capacity)
+    return cache[len(items)][capacity]
 
     # naive solution, top down, passes small tests, runtime on medium is too long so I stopped it
     # def helper(n, c, current_list, value):
