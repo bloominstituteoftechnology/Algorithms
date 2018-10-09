@@ -16,13 +16,11 @@ def greedy(items,capacity):
   sortedItemsValue = sorted(items, key=lambda k: k['value'],reverse=True)
 
   for item in sortedItemsValue:
+    if capacity-item["weight"] < 0:
+      continue
     itemsSelected.append(item['name'])
     capacity -= item["weight"]
     totalValue += item["value"]
-    if capacity < 0:
-      capacity += item["weight"]
-      totalValue -= item["value"]
-      itemsSelected.remove(item['name'])
   return {'Value':totalValue,"Size":capcityIntial-capacity,"Chosen":itemsSelected}
 
 
