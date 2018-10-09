@@ -3,7 +3,15 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+  rps = ['rock', 'paper', 'scissors']
+  possibleOutcomes = []
+
+  # if n == 1:
+  #   print(rps)
+  # if n >= 2: 
+  #   for i in rps:
+  #     possibleOutcome.append(rps[i] )
+        
 
 
 if __name__ == "__main__":
