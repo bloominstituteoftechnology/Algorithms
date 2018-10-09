@@ -4,10 +4,6 @@ import argparse
 import math
 
 def find_max_profit(prices):
-  maxVal = prices[0]
-  minVal = prices[0]
-
-  for i in range(0, len(prices), 1)
     maxVal = prices[0]
     minVal = prices[0]
     profit = None
