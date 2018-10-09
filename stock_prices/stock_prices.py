@@ -1,9 +1,13 @@
 #!/usr/bin/python
 
 import argparse
+import math
 
 def find_max_profit(prices):
-  pass
+  minimum = min(prices)
+  maximum = max(prices)
+  profit = maximum - minimum
+  return profit
 
 
 if __name__ == '__main__':
