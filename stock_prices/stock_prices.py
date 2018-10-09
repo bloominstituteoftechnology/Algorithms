@@ -7,9 +7,9 @@ import math
 def find_max_profit(prices):
     temp = math.inf * -1
     for x in range(0, len(prices)):
-        for y in range(x, len(prices)):
+        for y in range(x + 1, len(prices)):
             difference = prices[y] - prices[x]
-            if difference > 0 and difference > temp:
+            if difference > math.inf * -1 and difference > temp:
                 temp = difference
     return temp
 
