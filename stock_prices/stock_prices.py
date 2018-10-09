@@ -3,7 +3,12 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+  x = sorted(prices)
+  print (x)
+  profit = x[-1] - x[0]
+  print (profit)
+  return profit
+
 
 
 if __name__ == '__main__':
