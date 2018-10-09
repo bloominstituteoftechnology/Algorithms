@@ -7,16 +7,23 @@ Item = namedtuple('Item', ['index', 'size', 'value'])
 
 
 def knapsack_solver(items, capacity):
-    items_length = len(items)
 
-    def helper(n, c):
+    def helper(n, c, current_list, value):
         if n == 0 or c == 0:
-            return 0
+            return {'Value': value, 'Chosen': current_list}
         elif items[n-1].size > c:
-            return helper(n-1, c)
+            ret = helper(n-1, c, current_list, value)
+            return {'Value': ret['Value'], 'Chosen': ret['Chosen']}
         else:
-            return max(helper(n-1, c), items[n-1].value + helper(n-1, c - items[n-1].value))
-    return helper(items_length, capacity)
+            test1 = helper(n-1, c, current_list, value)
+            test2 = helper(n-1, c - items[n-1].size, current_list + [items[n-1].index], value + items[n-1].value)
+            if test1['Value'] > test2['Value']:
+                return {'Value': test1['Value'], 'Chosen': test1['Chosen']}
+            else:
+                return {'Value': test2['Value'], 'Chosen': test2['Chosen']}
+
+    res = helper(len(items), capacity, [], 0)
+    return {'Value': res['Value'], 'Chosen': sorted(res['Chosen'])}
 
 
 """
