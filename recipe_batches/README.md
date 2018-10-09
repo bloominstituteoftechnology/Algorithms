@@ -11,9 +11,9 @@ Write a function that receives a recipe in the form of a dictionary, as well as 
 }
 ```
 
-The keys will be the ingredient names, with their associated values being the amounts. In the case of the recipe dictionary, these amounts will represent the amount of each ingredient needed for the recipe, while in the case of the ingredients dictionary, the amounts represent the amounts available to you. 
+The keys will be the ingredient names, with their associated values being the amounts. In the case of the recipe dictionary, these amounts will represent the amount of each ingredient needed for the recipe, while in the case of the ingredients dictionary, the amounts represent the amounts available to you.
 
-Your function should output the maximum number of whole batches that can be made for the supplied recipe using the ingredients available to you, as indicated by the second dictionary. 
+Your function should output the maximum number of whole batches that can be made for the supplied recipe using the ingredients available to you, as indicated by the second dictionary.
 
 For example
 
@@ -25,7 +25,7 @@ recipe_batches(
 )
 ```
 
-## Testing 
+## Testing
 
 Run the test file by executing `python test_recipe_batches.py`.
 
@@ -33,5 +33,13 @@ You can also test your implementation manually by executing `python recipe_batch
 
 ## Hints
 
- * If there's a dictionary operation you aren't sure of how to perform in Python, look it up!
- * What's the _minimum_ number of loops we need to perform in order to write a working implementation?
+- If there's a dictionary operation you aren't sure of how to perform in Python, look it up!
+- What's the _minimum_ number of loops we need to perform in order to write a working implementation?
+
+# check to see if ingredients is in list and its associated value
+
+# if ingredient is not in the list then return 0 if value is less than list value then return 0
+
+#if true then divide ingredient 2/list ingredient with math.floor
+
+# take the smallest number as the number of batches
