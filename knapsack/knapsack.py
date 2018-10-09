@@ -14,12 +14,10 @@ def knapsack_solver(items, capacity):
       knapsack.append(item)
   knapsack_info={
     'Value':0,
-    'Size':0,
     'Chosen':[]
   }
   for item in knapsack:
     knapsack_info['Value']+=item.value
-    knapsack_info['Size']+=item.size
     knapsack_info['Chosen'].append(item.index)
   knapsack_info['Chosen'].sort()
   return knapsack_info
