@@ -12,7 +12,7 @@ class Test(unittest.TestCase):
     
     for line in file_contents.readlines():
       data = line.rstrip().split()
-      self.small_1_items.append(int(data[0], int(data[1]), int(data[2])))
+      self.small_1_items.append(Item(int(data[0]), int(data[1]), int(data[2])))
 
     file_contents.close()
 
@@ -21,7 +21,7 @@ class Test(unittest.TestCase):
     
     for line in file_contents.readlines():
       data = line.rstrip().split()
-      self.small_2_items.append(int(data[0], int(data[1]), int(data[2])))
+      self.small_2_items.append(Item(int(data[0]), int(data[1]), int(data[2])))
 
     file_contents.close()
 
@@ -30,7 +30,7 @@ class Test(unittest.TestCase):
     
     for line in file_contents.readlines():
       data = line.rstrip().split()
-      self.small_3_items.append(int(data[0], int(data[1]), int(data[2])))
+      self.small_3_items.append(Item(int(data[0]), int(data[1]), int(data[2])))
 
     file_contents.close()
 
@@ -45,7 +45,7 @@ class Test(unittest.TestCase):
     
     for line in file_contents.readlines():
       data = line.rstrip().split()
-      self.medium_1_items.append(int(data[0], int(data[1]), int(data[2])))
+      self.medium_1_items.append(Item(int(data[0]), int(data[1]), int(data[2])))
 
     file_contents.close()
 
@@ -54,7 +54,7 @@ class Test(unittest.TestCase):
     
     for line in file_contents.readlines():
       data = line.rstrip().split()
-      self.medium_2_items.append(int(data[0], int(data[1]), int(data[2])))
+      self.medium_2_items.append(Item(int(data[0]), int(data[1]), int(data[2])))
 
     file_contents.close()
 
@@ -63,7 +63,7 @@ class Test(unittest.TestCase):
     
     for line in file_contents.readlines():
       data = line.rstrip().split()
-      self.medium_3_items.append(int(data[0], int(data[1]), int(data[2])))
+      self.medium_3_items.append(Item(int(data[0]), int(data[1]), int(data[2])))
 
     file_contents.close()
 
@@ -78,7 +78,7 @@ class Test(unittest.TestCase):
     
     for line in file_contents.readlines():
       data = line.rstrip().split()
-      self.large_1_items.append(int(data[0], int(data[1]), int(data[2])))
+      self.large_1_items.append(Item(int(data[0]), int(data[1]), int(data[2])))
 
     file_contents.close()
 
