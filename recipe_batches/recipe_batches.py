@@ -3,7 +3,7 @@
 import math
 
 #How many times does the each available value divide into recipe value for all key:values. 
-def recipe_batches(recipe, ingredients):
+def recipe_batches(recipe, ingredients):#this function is O(n^2) and memory is O(n), because var r grows with input growth. 
   r = []
   for k, v in ingredients.items(): 
     for j, t in recipe.items():
