@@ -17,6 +17,8 @@ def climbing_stairs(n, cache=None):
     else:
         if n == 0:
             return 1
+        elif n < 0:
+            return 0
         elif n < 3:
             return n
         elif n == 3:
