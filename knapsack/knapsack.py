@@ -5,8 +5,25 @@ from collections import namedtuple
 
 Item = namedtuple('Item', ['index', 'size', 'value'])
 
+
 def knapsack_solver(items, capacity):
-  pass
+    items_length = len(items)
+
+    def helper(n, c):
+        if n == 0 or c == 0:
+            return 0
+        elif items[n-1].size > c:
+            return helper(n-1, c)
+        else:
+            return max(helper(n-1, c), items[n-1].value + helper(n-1, c - items[n-1].value))
+    return helper(items_length, capacity)
+
+
+"""
+The value/weight ratio implementation is a greedy algorithm, which would work for some cases,
+but won't fulfill many edge cases. In this case, a dynamic programming approach with memoization
+would be superior to the greedy approach.
+"""
   
 
 if __name__ == '__main__':
