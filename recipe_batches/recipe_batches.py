@@ -3,6 +3,8 @@
 import math
 
 def recipe_batches(recipe, ingredients):
+  dict3 = recipe/ingredients
+  return dict3
   pass 
 
 
