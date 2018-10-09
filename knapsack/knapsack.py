@@ -6,7 +6,15 @@ from collections import namedtuple
 Item = namedtuple('Item', ['index', 'size', 'value'])
 
 def knapsack_solver(items, capacity):
-  pass
+  if Item == 0 or index == 0 :
+    return 0
+
+  if (size[index-1] > Item ):
+    return knapsack_solver('Item', ['index', 'size', 'value'])
+
+  else:
+    return max(value[index-1] + knapsack_solver(Item-size[index-1], size, value, index-1),
+      knapsack_solver('Item', ['index', 'size', 'value']))
   
 
 if __name__ == '__main__':
