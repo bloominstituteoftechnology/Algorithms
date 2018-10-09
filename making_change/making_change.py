@@ -3,7 +3,19 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
+  ways = [0] * (amount + 1)
+  ways[0] = 1
+  # if amount <= 0:
+  #   return 0
+  # elif 1 <= amount <= 4:
+  #   return 1
+  # elif 5 <= amount <= 9:
+  #   return 2
+  # else:
+  for i in denominations:
+    for j in range(i , amount + 1):
+      ways[j] += ways[j - i]
+  return ways[amount]
 
 
 if __name__ == "__main__":
