@@ -3,8 +3,16 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  dict3 = recipe/ingredients
-  return dict3
+  added_recipes = []
+  min_value = 0
+  for k, k2 in zip(recipe, ingredients):
+    if set(recipe.keys()) != set(ingredients.keys()):
+      added_recipes = 0
+    else:
+      batches = ingredients[k2] // recipe[k]
+      added_recipes.append(batches)
+      min_value = min(added_recipes)
+  return min_value
   pass 
 
 
