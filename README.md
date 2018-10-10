@@ -45,4 +45,3 @@ There isn't an official prescribed order for tackling the problems, though a sub
 For each problem, `cd` into the directory, read the instructions for the problem, implement your solution in the skeleton file, then test it using the provided test file. 
 
 The later problems definitely get progressively more difficult, especially when it comes to deriving a more performant solution. Don't feel bad if you aren't able to figure them out within the timeframe of the sprint. Again, always remember that so long as you put in an earnest effort into attempting to solve these problems, you're learning and getting better. Getting the 'right answer' is just the proverbial cherry on top of the sundae. 
-start
