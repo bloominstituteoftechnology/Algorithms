@@ -1,10 +1,16 @@
 #!/usr/bin/python
 
 import argparse
+import math
 
 def find_max_profit(prices):
-  pass
-
+  maxProf = math.inf * -1
+  for x in range(0, len(prices)):
+      for y in range(x+1, len(prices)):
+          difference = prices[y] - prices[x]
+          if difference > maxProf:
+              maxProf = difference
+  return maxProf
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
