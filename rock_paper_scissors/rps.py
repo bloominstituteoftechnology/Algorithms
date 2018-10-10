@@ -2,8 +2,24 @@
 
 import sys
 
-def rock_paper_scissors(n):
-  pass 
+
+
+def rock_paper_scissors(n, outcomes):
+  plays = ['rock', 'paper', 'scissors']
+  outcomes = []
+
+  def find_outcome(n, result=[]):
+    #base case
+    if n == 0:
+      outcomes.append(result)
+      return
+    #move towards the base case
+    for play in plays:
+      find_outcomes(n-1, result + [play])
+  
+  #call the find_outcome helper function
+  find_outcome(n, [])
+  return outcomes
 
 
 if __name__ == "__main__":
