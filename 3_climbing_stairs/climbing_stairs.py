@@ -9,11 +9,10 @@ def climbing_stairs(n):
     return 1
   return climbing_stairs(n-1) + climbing_stairs(n-2) + climbing_stairs(n-3)
 
-
 print(climbing_stairs(10))
 
 # def climbing_stairs(n, cache=None):
-#   pass 
+# pass 
 
 
 if __name__ == "__main__":

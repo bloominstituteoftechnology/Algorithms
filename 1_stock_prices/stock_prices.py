@@ -23,12 +23,23 @@ import argparse
 #       min = price
 #   return max-min
 
+# learned list.index(item)
+
+# want to locate the most recent, largest price
 
 def find_max_profit(prices):
+  results = []
+  max = max(prices)
+  if max != prices[-1]
+    prices.pop(prices[-1])
   return max(prices) - min(prices)
 
+testArr = [10, 7, 5, 8, 11, 9]
+testArr[-1]
 
-print(find_max_profit([10, 7, 5, 8, 11, 9]))
+
+print(find_max_profit(testArr))
+
 
 
 # def find_max_profit(prices):
