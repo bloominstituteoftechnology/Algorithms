@@ -2,8 +2,8 @@
 
 import sys
 
-n = 50
-cache = {i: 0 for i in range(n + 1)}
+# n = 50
+# cache = {i: 0 for i in range(n + 1)}
 
 def climbing_stairs(n, cache=None):
   if n < 0:
@@ -14,7 +14,7 @@ def climbing_stairs(n, cache=None):
     return 2
   elif n == 3:
     return 4
-  elif cache and cache[n]:
+  elif cache and cache[n] > 0:
     return cache[n]
   else:
     if not cache:
