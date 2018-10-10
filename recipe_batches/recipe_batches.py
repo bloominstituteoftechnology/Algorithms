@@ -13,7 +13,24 @@ def recipe_batches(recipe, ingredients):
       added_recipes.append(batches)
       min_value = min(added_recipes)
   return min_value
-  pass 
+  pass
+
+# def recipe_batches(recipe, ingredients):
+#   # check if we have enough for one batch
+#   # if not, just return 0
+#   # take the ratio of each ingredient
+#   # return the smallest ratio of all the ratios
+#   min_ratio = math.inf
+
+#   for ingredient, amount in recipe.items():
+#     if ingredient not in ingredients:
+#       return 0
+#     ratio = ingredients[ingredient] // amount
+#     if ratio < min_ratio:
+#       min_ratio = ratio
+#   return min_ratio
+
+#   pass 
 
 
 if __name__ == '__main__':
