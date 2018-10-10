@@ -3,7 +3,12 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+  if n == 0:
+    return [[]]
+  elif n == 1:
+    return [['rock'], ['paper'], ['scissors']]
+  elif n > 1:
+    
 
 
 if __name__ == "__main__":
