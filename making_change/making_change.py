@@ -3,7 +3,15 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
+  #base cases
+  if amount == 0:
+    return 1
+  if amount < 0:
+    return 0
+  if len(denominations) == 0 and amount > 0:
+    return 0
+  else:
+    return making_change(amount - denominations[-1], denominations)  + making_change(amount, denominations[:-1])
 
 
 if __name__ == "__main__":
