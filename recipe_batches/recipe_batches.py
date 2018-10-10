@@ -1,8 +1,9 @@
 #!/usr/bin/python
 
-import math
-
 def recipe_batches(recipe, ingredients):
+
+    min_ratio = 20000
+
     for ingredient, amount in recipe.items():
         if ingredient not in ingredients:
             return 0

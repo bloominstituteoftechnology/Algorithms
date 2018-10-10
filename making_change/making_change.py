@@ -30,6 +30,7 @@ def making_change(amount, denominations):
 
     return cache[amount]
 
+#this runs pretty fast
 
 if __name__ == "__main__":
   # Test our your implementation from the command line
