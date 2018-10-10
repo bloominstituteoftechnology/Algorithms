@@ -3,7 +3,34 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  added_recipes = []
+  min_value = 0
+  for k, k2 in zip(recipe, ingredients):
+    if set(recipe.keys()) != set(ingredients.keys()):
+      added_recipes = 0
+    else:
+      batches = ingredients[k2] // recipe[k]
+      added_recipes.append(batches)
+      min_value = min(added_recipes)
+  return min_value
+  pass
+
+# def recipe_batches(recipe, ingredients):
+#   # check if we have enough for one batch
+#   # if not, just return 0
+#   # take the ratio of each ingredient
+#   # return the smallest ratio of all the ratios
+#   min_ratio = math.inf
+
+#   for ingredient, amount in recipe.items():
+#     if ingredient not in ingredients:
+#       return 0
+#     ratio = ingredients[ingredient] // amount
+#     if ratio < min_ratio:
+#       min_ratio = ratio
+#   return min_ratio
+
+#   pass 
 
 
 if __name__ == '__main__':
