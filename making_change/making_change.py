@@ -2,42 +2,58 @@
 
 import sys
 
-denominations = {
-  'penny': 1,
-  'nickel': 5,
-  'dime': 10,
-  'quarter': 25,
-  'half_dollar': 50
-}
-
 def making_change(amount, denominations):
-  amount_as_string = str(amount)
-  ones_place = int(amount_as_string[1])
-  tens_place = int(amount_as_string[0])
-  ways = 0
-  if amount <= 0:
-    return 0
-  elif amount in range(1,5):
-    ways += 1
-    return ways
-  elif amount == 5:
-    ways += 2
-    return ways
-  elif len(str(amount)) == 1:
-    return
-  elif len(str(amount)) == 2:
-    if ones_place == 0:
-      ways += 0
-      if tens_place == 1:
-        ways += 4
-        return ways
-    elif ones_place == 2:
-      ways += 8
-      if ones_place == 0:
-        return ways
-      elif ones_place in range(1,5):
-        ways += 4
-        return ways
+  cache = [0 for i in range(amount + 1)]
+  cache[0] = 1
+
+  #loop over the denominations list
+  for coin in denominations:
+    for higher_amount in range(coin, amount + 1):
+      remainder = higher_amount - coin
+      cache[higher_amount] += cache[remainder]
+
+  return cache[amount]
+
+  print(making_change(20, denominations)) 
+
+
+
+# denominations = {
+#   'penny': 1,
+#   'nickel': 5,
+#   'dime': 10,
+#   'quarter': 25,
+#   'half_dollar': 50
+# }
+
+# def making_change(amount, denominations):
+#   amount_as_string = str(amount)
+#   ones_place = int(amount_as_string[1])
+#   tens_place = int(amount_as_string[0])
+#   ways = 0
+#   if amount <= 0:
+#     return 0
+#   elif amount in range(1,5):
+#     ways += 1
+#     return ways
+#   elif amount == 5:
+#     ways += 2
+#     return ways
+#   elif len(str(amount)) == 1:
+#     return
+#   elif len(str(amount)) == 2:
+#     if ones_place == 0:
+#       ways += 0
+#       if tens_place == 1:
+#         ways += 4
+#         return ways
+#     elif ones_place == 2:
+#       ways += 8
+#       if ones_place == 0:
+#         return ways
+#       elif ones_place in range(1,5):
+#         ways += 4
+#         return ways
       
 
       # ways += 1
@@ -47,7 +63,7 @@ def making_change(amount, denominations):
       #   ways += 8
       #   return ways
     
-print(making_change(20, denominations))  
+ 
     
     # else:
     # ways += 8

@@ -2,25 +2,43 @@
 
 import math
 
+# def recipe_batches(recipe, ingredients):
+#   current_item = ""
+#   sequence = []
+#   batches = 0
+#   # for each item in recipe[0,1,2]
+#   for item in ingredients:
+#   # find it in ingredient, if equal to or higher, subtract from itself
+#     if item in recipe and values(recipe[item]) >= values(ingredients[item]):
+#       sequence.append(values(recipe[item]) - values(ingredients[item])
+
+#       return sequence
+#     else:
+#       break
+#   # otherwise break
+#   # if all of keys in recipe are true
+
+#   if lens(batch) == lens(recipe)
+#   batches + 1
+#   # add 1 to batch
+
 def recipe_batches(recipe, ingredients):
-  current_item = ""
-  sequence = []
-  batches = 0
-  # for each item in recipe[0,1,2]
-  for item in ingredients:
-  # find it in ingredient, if equal to or higher, subtract from itself
-    if item in recipe and values(recipe[item]) >= values(ingredients[item]):
-      sequence.append(values(recipe[item]) - values(ingredients[item])
+  min_ratio = float("inf")
 
-      return sequence
-    else:
-      break
-  # otherwise break
-  # if all of keys in recipe are true
+  for ingredient, amount in recipe.items():
+    if ingredient not in ingredients:
+      return 0
+    ratio = ingredients[ingredient] // amount
+    if ratio < min_ratio:
+      min_ratio = ratio
 
-  if lens(batch) == lens(recipe)
-  batches + 1
-  # add 1 to batch
+  return min_ratio
+
+
+
+
+
+
 
 
 if __name__ == '__main__':
