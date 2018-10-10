@@ -6,7 +6,7 @@ import sys
 def climbing_stairs(n, cache=None):
     # this is a working solution
     if cache is None:
-        cache = [0 for i in range(20)]
+        cache = [0 for i in range(n + 3)]
     cache[0] = 1
     cache[1] = 1
     cache[2] = 2
@@ -14,6 +14,7 @@ def climbing_stairs(n, cache=None):
         cache[i] = cache[i - 3] + cache[i - 2] + cache[i - 1]
 
     return cache[n]
+
 
     # #####  Using recur
     # if n == 0:

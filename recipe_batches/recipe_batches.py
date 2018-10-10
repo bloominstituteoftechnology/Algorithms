@@ -1,15 +1,28 @@
 #!/usr/bin/python
+import sys
 
 
 def recipe_batches(recipe, ingredients):
-    batches = []
+    batches = sys.maxsize
 
     for key in recipe:
         if key in ingredients:
-            batches.append(ingredients[key] // recipe[key])
+            if batches > ingredients[key] // recipe[key]:
+                batches = ingredients[key] // recipe[key]
         else:
             return 0
-    return min(batches)
+    return batches
+
+
+# def recipe_batches(recipe, ingredients):
+#     batches = []
+
+#     for key in recipe:
+#         if key in ingredients:
+#             batches.append(ingredients[key] // recipe[key])
+#         else:
+#             return 0
+#     return min(batches)
 
 
 if __name__ == '__main__':
