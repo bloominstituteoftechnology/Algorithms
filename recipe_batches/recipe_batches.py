@@ -2,9 +2,19 @@
 
 import math
 
+# def recipe_batches(recipe, ingredients):
+#   pass
 def recipe_batches(recipe, ingredients):
-  pass 
-
+  batches = []
+  for x in recipe:
+    if x not in ingredients:
+        batches.append(0)
+    elif recipe[x] > ingredients[x]:
+        batches.append(0)
+    else:
+        batches.append(math.floor(ingredients[x]/recipe[x]))
+    endBatches = min(batches)
+  return endBatches or 0
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
