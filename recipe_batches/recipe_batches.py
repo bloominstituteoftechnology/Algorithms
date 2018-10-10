@@ -3,10 +3,22 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+#check if we have enough for one batch
+#if not, just return 0
+# take the ratio of each ingredient
+# return the samllest ratio of all the ratios
+  min_ratio = math.inf
 
-#if recipe.whatever > ingredients return 0
-#else calculate how many ingredients.whatever goes into recipes.whatever
+  for ingredient, amount in recipe.items():
+    if ingredient not in ingredients:
+      return 0
+    reatio = ingredients[ingredient] // amount
+    if ratio < min_ratio:
+      min_ratio = ratio
+
+  return min_ratio
+
+
 
 
 if __name__ == '__main__':
