@@ -2,17 +2,20 @@
 
 import sys
 
-def climbing_stairs(n):
+def climbing_stairs(n, cache=None):
   #base case
   if n < 0:
     return 0
-  elif n == 0 or n == 1:
+  elif n == 0:
     return 1
-  elif n == 2:
-    return 2
-  elif n == 3:
-    return 4
-  return climbing_stairs(n-1) + climbing_stairs(n-2) + climbing_stairs(n-3)
+  elif cache and cache[n] > 0:
+    return cache[n]
+  else:
+    if not cache:
+      cache = [0 for i in range(n+1)]
+
+    cache[n] = climbing_stairs(n-1, cache) + climbing_stairs(n-2, cache) + climbing_stairs(n-3, cache)
+    return cache[n]
 
 print(climbing_stairs(10))
 
