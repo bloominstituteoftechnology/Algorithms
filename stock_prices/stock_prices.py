@@ -1,9 +1,16 @@
 #!/usr/bin/python
 
 import argparse
+import math
 
 def find_max_profit(prices):
-  pass
+  result = math.inf * -1
+  for buy in range(0, len(prices)):
+    for sell in range(buy + 1, len(prices)):
+      difference = prices[sell] - prices[buy]
+      if difference > result:
+        result = difference
+  return result
 
 
 if __name__ == '__main__':
