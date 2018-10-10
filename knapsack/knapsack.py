@@ -6,8 +6,9 @@ from collections import namedtuple
 Item = namedtuple('Item', ['index', 'size', 'value'])
 
 def knapsack_solver(items, capacity):
-  pass
-  
+  if len(items) == 0 and capacity == 0:
+
+
 
 if __name__ == '__main__':
   if len(sys.argv) > 1:
@@ -19,7 +20,7 @@ if __name__ == '__main__':
     for line in file_contents.readlines():
       data = line.rstrip().split()
       items.append(Item(int(data[0]), int(data[1]), int(data[2])))
-    
+
     file_contents.close()
     print(knapsack_solver(items, capacity))
   else:
