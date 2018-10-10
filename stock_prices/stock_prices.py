@@ -13,6 +13,17 @@ def find_max_profit(prices):
                 temp = difference
     return temp
 
+# def find_max_profit(prices):
+#   min_price = prices[0]
+#   max_profit = prices[1] - prices[0]
+
+#   for price in prices:
+#     max_profit = max(price - min_price, max_profit)
+#     min_price = min(price, min_price)
+
+#   return max_profit
+
+
 
 if __name__ == '__main__':
     # This is just some code to accept inputs from the command line
