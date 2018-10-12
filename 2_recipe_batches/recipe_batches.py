@@ -20,25 +20,42 @@ print(ingredients['flour']/recipe['flour'])
 #   return ratios
 #   pass 
 
-def recipe_batches(recipe, ingredients):
-  a = []
-  b = []
-  ratios = []
-  min_ratio = 0
-  limit = 0
-  for i in ingredients:
-    a.append(ingredients[i])
-  for i in recipe:
-    b.append(recipe[i])
-  ratios = [x/y for x, y in zip(a,b)]
-  min_ratio = min(ratios)
-  if min_ratio > 1:
-    limit = math.floor(min_ratio)
-  else:
-    print("Cannot make any batches")
-  return limit
+# def recipe_batches(recipe, ingredients):
+#   a = []
+#   b = []
+#   ratios = []
+#   min_ratio = 0
+#   limit = 0
+#   for i in ingredients:
+#     a.append(ingredients[i])
+#   for i in recipe:
+#     b.append(recipe[i])
+#   ratios = [x/y for x, y in zip(a,b)]
+#   min_ratio = min(ratios)
+#   if min_ratio > 1:
+#     limit = math.floor(min_ratio)
+#   else:
+#     print("Cannot make any batches")
+#   return limit
 
-recipe_batches(recipe,ingredients)
+# recipe_batches(recipe,ingredients)
+
+def recipe_batches(recipe, ingredients):
+  # check if there are enough ingredients for one batch
+  # if not, return 0
+  # find ratios of ingredients to recipes
+  # return smallest ratio
+
+  min_ratio = math.inf # initiate the minimum ratio to a large number
+
+  for ingredient, amount in recipe.items():
+    if ingredient not in ingredients:
+      return 0
+    ratio = ingredients[ingredient] // amount
+    if ratio < min_ratio:
+      min_ratio = ratio # replace the minimum ratio with the new one if it is smaller than the old one
+  
+  return min_ratio
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
