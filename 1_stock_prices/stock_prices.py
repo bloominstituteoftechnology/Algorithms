@@ -28,19 +28,19 @@ import argparse
 # want to locate the most recent, largest price
 
 def find_max_profit(prices):
-  results = []
-  max = max(prices)
-  if max != prices[-1]
-    prices.pop(prices[-1])
-  return max(prices) - min(prices)
+  min_price = prices[0] # initiate the minimum as the first item in the list
+  max_profit = prices[1] - prices[0] # initiate the maximum profit as the difference between the first two list items
+  
+  for i in range(1, len(prices)):  # iterate prices by index
+    price = prices[i] # define the price as each value in prices
+    max_profit = max(price - min_price, max_profit) # check which is greater, the previos profit or the newly calculated one
+    min_price = min(price, min_price) # check each price in the loop to see if it is smaller than the previously identified minimum
+  return max_profit
 
 testArr = [10, 7, 5, 8, 11, 9]
 testArr[-1]
 
-
 print(find_max_profit(testArr))
-
-
 
 # def find_max_profit(prices):
 #     max = 0
