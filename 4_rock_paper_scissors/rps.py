@@ -36,13 +36,30 @@ from itertools import combinations_with_replacement
 # for c in combinations_with_replacement(['rock', 'paper', 'scissors'],4):
 #   print(c)
 
-def rock_paper_scissors(n):
-  storage = []
-  for c in combinations_with_replacement(['rock', 'paper', 'scissors'],4):
-    storage.append(c)
-  return storage
+# def rock_paper_scissors(n):
+#   storage = []
+#   for c in combinations_with_replacement(['rock', 'paper', 'scissors'],4):
+#     storage.append(c)
+#   return storage
 
-print(rock_paper_scissors(4))
+# print(rock_paper_scissors(4))
+
+def rock_paper_scissors(n):
+  plays = ['rock', 'paper', 'scissors']
+  outcomes = []
+
+  def find_outcome(n, result = []):
+    # base case
+    if n == 0:
+      outcomes.append(result)
+      return
+    # move towards the base case
+    for play in plays:
+      find_outcome(n - 1, result + [play])
+
+  # have to call the function to initiate
+  find_outcome(n, [])
+  return outcomes
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
