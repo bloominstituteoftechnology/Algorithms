@@ -2,8 +2,17 @@
 
 import sys
 
+count = 0
 def climbing_stairs(n, cache=None):
-  pass 
+  
+  if n <= 0:
+    return 1
+  elif n <= 2 and n > 0:
+    return count + n
+  elif n == 3:
+    return count + 4
+  else:
+    return count + climbing_stairs(n-1) + climbing_stairs(n-2) + climbing_stairs(n-3)
 
 
 if __name__ == "__main__":
