@@ -3,7 +3,14 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  totals = []
+  for ingredient in recipe:
+    if ingredient in ingredients:
+      total = math.floor(ingredients[ingredient]/recipe[ingredient])
+      totals.append(total)
+    else:
+      totals.append(0)
+  return min(totals)
 
 
 if __name__ == '__main__':
