@@ -3,7 +3,11 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+  plays = ['rock', 'paper', 'scissors']
+  possible_plays = []
+
+  return possible_plays
+
 
 
 if __name__ == "__main__":
