@@ -1,14 +1,24 @@
 #!/usr/bin/python
 
 import math
+import sys
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  num_batches = sys.maxsize
+  
+  for ingredient, amount in ingredients.items():
+    recipe_amount = recipe[ingredient]
+    multiplier = amount/recipe_amount
+    if multiplier < num_batches:
+    	num_batches = multiplier
+  
+  return int(num_batches)
+
 
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
   # your implementation with different inputs
   recipe = { 'milk': 100, 'butter': 50, 'flour': 5 }
-  ingredients = { 'milk': 132, 'butter': 48, 'flour': 51 }
+  ingredients = { 'milk': 132, 'butter': 50, 'flour': 51 }
   print("{batches} batches can be made from the available ingredients: {ingredients}.".format(batches=recipe_batches(recipe, ingredients), ingredients=ingredients))
