@@ -11,6 +11,7 @@ def recipe_batches(recipe, ingredients):
         else:
             enough_materials.append(0)
     if min(enough_materials) >= 1:
+        # return the rounded down, integer version of the number, not the floating point version.
         return int(min(enough_materials))
     else:
         return 0
