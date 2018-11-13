@@ -10,9 +10,11 @@ def rock_paper_scissors(n):
   conditions = ["r", "p", "s"]
 
   # set the iteration count to the product of the conditions repeated (n) times
-  iteration_count = itertools.product(conditions, repeat=n)
+  # broken or rather solution that needed work iteration_count = itertools.product(conditions, repeat=n)
 
-  return iteration_count # FIXME: look in to lists either a cast / instantiation or list comprehension
+  # return iteration_count # FIXME: look in to lists either a cast / instantiation or list comprehension
+
+  # FIXME: another faliure trying to use some offset version of list inside but i think a quick way will be just to instantiate it as a list return [itertools.product(conditions, repeat=n)]
 
 
 if __name__ == "__main__":
