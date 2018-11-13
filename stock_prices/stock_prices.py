@@ -1,15 +1,16 @@
 #!/usr/bin/python
 
 import argparse
-import math
 
+#  0 - 100 + 90 = p
 def find_max_profit(prices):
-  max_px = 0
-  min_px = prices[0]
-  for px in prices[1:]:
-    min_px = min(min_px, px)
-    max_px = max(px - min_px, max_px)
-  return max_px
+  pass
+
+  # I honestly don't know what to do
+  # Not sure how to approach or even
+  # solve the problem to begin with so transcribing
+  # the problem into code, I just don't understand
+
 
 
 
