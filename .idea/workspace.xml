@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c8d8760-136d-46a8-b29c-08fea4ab7890" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/recipe_batches/recipe_batches.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_batches/recipe_batches.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/climbing_stairs/climbing_stairs.py" beforeDir="false" afterPath="$PROJECT_DIR$/climbing_stairs/climbing_stairs.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,24 +22,24 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="md" value="3" />
-          <entry key="py" value="5" />
+          <entry key="md" value="4" />
+          <entry key="py" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Markdown" value="3" />
-          <entry key="Python" value="5" />
+          <entry key="Markdown" value="4" />
+          <entry key="Python" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="5287" />
+          <entry key="py" value="5951" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="5287" />
+          <entry key="Python" value="5951" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -48,10 +48,20 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/recipe_batches/recipe_batches.py">
+        <entry file="file://$PROJECT_DIR$/climbing_stairs/climbing_stairs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="13" column="97" selection-start-line="13" selection-start-column="97" selection-end-line="13" selection-end-column="97" />
+            <state relative-caret-position="528">
+              <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/climbing_stairs/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -75,9 +85,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/recipe_batches/test_recipe_batches.py" />
-        <option value="$PROJECT_DIR$/climbing_stairs/climbing_stairs.py" />
         <option value="$PROJECT_DIR$/stock_prices/stock_prices.py" />
         <option value="$PROJECT_DIR$/recipe_batches/recipe_batches.py" />
+        <option value="$PROJECT_DIR$/climbing_stairs/climbing_stairs.py" />
       </list>
     </option>
   </component>
@@ -101,7 +111,7 @@
             <path>
               <item name="Algorithms" type="b2602c69:ProjectViewProjectNode" />
               <item name="Algorithms" type="462c0819:PsiDirectoryNode" />
-              <item name="recipe_batches" type="462c0819:PsiDirectoryNode" />
+              <item name="climbing_stairs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -125,7 +135,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in test_recipe_batches.py">
+  <component name="RunManager" selected="Python.climbing_stairs">
+    <configuration name="climbing_stairs" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Algorithms" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/climbing_stairs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/climbing_stairs/climbing_stairs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="recipe_batches" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Algorithms" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -147,25 +178,18 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="stock_prices" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Unittests in test_climbing_stairs.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="Algorithms" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/stock_prices" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/climbing_stairs" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stock_prices/stock_prices.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/climbing_stairs/test_climbing_stairs.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Unittests in test_recipe_batches.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
@@ -197,17 +221,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.stock_prices" />
       <item itemvalue="Python tests.Unittests in test_recipe_batches.py" />
       <item itemvalue="Python.recipe_batches" />
       <item itemvalue="Python tests.Unittests in test_stock_prices.py" />
+      <item itemvalue="Python.climbing_stairs" />
+      <item itemvalue="Python tests.Unittests in test_climbing_stairs.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.climbing_stairs" />
+        <item itemvalue="Python tests.Unittests in test_climbing_stairs.py" />
         <item itemvalue="Python tests.Unittests in test_recipe_batches.py" />
         <item itemvalue="Python.recipe_batches" />
         <item itemvalue="Python tests.Unittests in test_stock_prices.py" />
-        <item itemvalue="Python.stock_prices" />
       </list>
     </recent_temporary>
   </component>
@@ -225,35 +251,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_stock_prices_py - 2018.11.13 at 15h 50m 55s.xml">
-      <configuration name="Unittests in test_stock_prices.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_climbing_stairs_py - 2018.11.13 at 17h 21m 09s.xml">
+      <configuration name="Unittests in test_climbing_stairs.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_stock_prices_py - 2018.11.13 at 15h 54m 03s.xml">
-      <configuration name="Unittests in test_stock_prices.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_climbing_stairs_py - 2018.11.13 at 17h 21m 18s.xml">
+      <configuration name="Unittests in test_climbing_stairs.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_stock_prices_py - 2018.11.13 at 15h 56m 34s.xml">
-      <configuration name="Unittests in test_stock_prices.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_climbing_stairs_py - 2018.11.13 at 17h 21m 31s.xml">
+      <configuration name="Unittests in test_climbing_stairs.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_stock_prices_py - 2018.11.13 at 15h 56m 41s.xml">
-      <configuration name="Unittests in test_stock_prices.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_climbing_stairs_py - 2018.11.13 at 17h 21m 38s.xml">
+      <configuration name="Unittests in test_climbing_stairs.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_stock_prices_py - 2018.11.13 at 15h 57m 00s.xml">
-      <configuration name="Unittests in test_stock_prices.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_climbing_stairs_py - 2018.11.13 at 17h 21m 42s.xml">
+      <configuration name="Unittests in test_climbing_stairs.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_stock_prices_py - 2018.11.13 at 15h 57m 35s.xml">
-      <configuration name="Unittests in test_stock_prices.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_climbing_stairs_py - 2018.11.13 at 17h 21m 43s.xml">
+      <configuration name="Unittests in test_climbing_stairs.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_recipe_batches_py - 2018.11.13 at 15h 57m 50s.xml">
-      <configuration name="Unittests in test_recipe_batches.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_climbing_stairs_py - 2018.11.13 at 17h 21m 45s.xml">
+      <configuration name="Unittests in test_climbing_stairs.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_recipe_batches_py - 2018.11.13 at 15h 59m 05s.xml">
-      <configuration name="Unittests in test_recipe_batches.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_climbing_stairs_py - 2018.11.13 at 17h 21m 48s.xml">
+      <configuration name="Unittests in test_climbing_stairs.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_recipe_batches_py - 2018.11.13 at 16h 00m 42s.xml">
-      <configuration name="Unittests in test_recipe_batches.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_climbing_stairs_py - 2018.11.13 at 17h 22m 01s.xml">
+      <configuration name="Unittests in test_climbing_stairs.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_recipe_batches_py - 2018.11.13 at 16h 01m 15s.xml">
-      <configuration name="Unittests in test_recipe_batches.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_climbing_stairs_py - 2018.11.13 at 17h 22m 25s.xml">
+      <configuration name="Unittests in test_climbing_stairs.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -265,15 +291,15 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960285" weight="0.46350366" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960285" visible="true" weight="0.46350366" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49960285" visible="true" weight="0.329927" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.329927" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49960285" weight="0.329927" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50039715" side_tool="true" weight="0.329927" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.329927" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -306,24 +332,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/climbing_stairs/climbing_stairs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
-          <folding>
-            <marker date="1542140446779" expanded="true" signature="83:310" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/climbing_stairs/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -336,6 +344,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="13" column="97" selection-start-line="13" selection-start-column="97" selection-end-line="13" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/climbing_stairs/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/climbing_stairs/climbing_stairs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
         </state>
       </provider>
     </entry>
