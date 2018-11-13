@@ -8,7 +8,7 @@ def climbing_stairs(n, cache=None):
   elif n == 0:
     return 1
 
-
+ # this is a super simplistic and very inefficient solution
   return climbing_stairs(n - 1) + climbing_stairs(n - 2) + climbing_stairs(n - 3)
 
 if __name__ == "__main__":

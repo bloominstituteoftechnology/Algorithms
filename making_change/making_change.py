@@ -3,6 +3,14 @@
 import sys
 
 def making_change(amount, denominations):
+  # we can initialize a cache as a list (a dictionary would work fine as well) of 0s 
+  # with a length equal to the amount we're looking to make change for.
+  cache = [0] * amount
+
+  # each val in cache is # of ways to make i cents
+  # change for 0 is only one way
+  cache[0] = 1
+
   pass 
 
 
