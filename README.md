@@ -35,9 +35,9 @@ Each directory contains a separate problem that you'll be tasked with solving. I
 
 There isn't an official prescribed order for tackling the problems, though a subjective ranking of the given problems from easiest to hardest might go something like this:
 
- [] 1. `stock_prices`
- [] 2. `recipe_batches`
- [] 3. `counting_stairs`
+ [x] 1. `stock_prices`
+ [x] 2. `recipe_batches`
+ [x] 3. `counting_stairs`
  [] 4. `rock_paper_scissors`
  [] 5. `making_change`
  [] 6. [Stretch Problem] `knapsack`
