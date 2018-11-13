@@ -2,18 +2,18 @@
 
 import sys
 
-def climbing_stairs(n, cache=None):
-    if n == 0:
+def climbing_stairs(num_stairs, cache=None):
+    if num_stairs == 0:
         return 0
-    if n == 1:
+    if num_stairs == 1:
         return 1
 
-    if n not in cache:
-        cache[n] = climbing_stairs(n-1) + climbing_stairs(n-2)
-    return cache[n]
+    if num_stairs not in cache:
+        cache[nnum_stairs] = climbing_stairs(nnum_stairs-1) + climbing_stairs(nnum_stairs-2)
+    return cache[nnum_stairs]
 
-for i in range(10):
-    print(f'{i}: {climbing_stairs(i)}')
+    if num_stairs <= 10:
+        
 
 
 if __name__ == "__main__":
