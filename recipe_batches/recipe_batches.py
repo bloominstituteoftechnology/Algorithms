@@ -3,7 +3,13 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  make = []
+  for i in list(recipe.keys()):
+        if i in ingredients and recipe[i] < ingredients[i]:
+            make.append(math.floor(ingredients[i] / recipe[i]))
+        elif i not in ingredients:
+            return 0
+  return min(make) 
 
 
 if __name__ == '__main__':
