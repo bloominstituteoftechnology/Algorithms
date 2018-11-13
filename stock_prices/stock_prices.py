@@ -19,10 +19,11 @@ import argparse
 
 # 2nd attempt: same as first but with different loop syntax
 # ----- Best solution so far -----
+#  I think this is O(n) linear
 def find_max_profit(prices):
   possible_spreads = []
   for i in range(0, (len(prices) - 1)):
-    for j in range((i +1), (len(prices) - 1)):
+    for j in range((i + 1), (len(prices) - 1)):
       possible_spreads.append(prices[j] - prices[i])
   print('******************')
   print('possible spreads:', possible_spreads)
