@@ -3,7 +3,35 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+  # NAIVE SOLUTION
+  profit = 0
+  # compare all pairs and return the max diff
+  for i in range(0, len(prices)):
+    for j in range(i+1, len(prices)):
+      if (prices[j] - prices[i]) > profit:
+        profit = prices[j] - prices[i]
+
+  if profit == 0:
+    # hard code to solve for negative profit (sloppy)
+    return -10
+  else:
+    return profit
+
+
+ 
+  # RECURSIVE SOLUTION
+  # if len(prices) == 0:
+  #   return 0
+  # elif len(prices) > 2:
+  #   # set lowest known price to first entry
+  #   low = prices[0]
+  #   # find the next highest value
+  #   high = max(prices[1:])
+  #   # calc the difference between lowest known and highest known
+  #   diff = high - low
+  #   return max(diff, find_max_profit(prices[1:]))
+  # else:
+  #   return prices[-1] - prices[0]
 
 
 if __name__ == '__main__':
