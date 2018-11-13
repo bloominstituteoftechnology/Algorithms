@@ -4,15 +4,18 @@ import math
 
 def recipe_batches(recipe, ingredients):
   batch_counter = 0
-  for i in recipe:
-    print(recipe[i])
-    for j in ingredients:      
-      if ingredients[j] < recipe[i]:
-        return 0
-      else:
-        batch_counter += 1
-        ingredients[j] - recipe[i]
-  print(batch_counter)
+  '''
+    Base:
+      - Create counter_tracker
+    1. Keep track of recipe iterations
+    2. Keep track of ingredient iterations
+    3. Compare the two
+      3a. Default to 0 if ingredient iteration is not greater than recipe
+      3b. If ingredient[i] > recipe[i]
+        + increment counter_tracker
+        + ingredients[i] - recipe[i]
+        + Loop back and test again
+  '''
   
       
 
