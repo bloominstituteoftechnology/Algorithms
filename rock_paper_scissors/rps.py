@@ -21,7 +21,8 @@ from itertools import product
 
 def rock_paper_scissors(n):
 
-  conditions = ['r', 'p', 's'] # FIXME: change my abreviations to actual rock paper scissors, missread the specs
+  # (fixed) : conditions = ["r", "p", "s"] # FIXME: change my abreviations to actual rock paper scissors, missread the specs
+  conditions = ["rock", "paper", "scissors"] # now passing test in 0.001s
   game_list = []
 
   # lets try to implement a produc() function of my own
