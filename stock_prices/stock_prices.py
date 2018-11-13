@@ -3,7 +3,25 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+  buy = 0
+  buy_index = 0
+  sell = 0
+  profit = 0
+  
+  for i in prices:
+    if buy==0 or i<buy and i!= prices[-1]:
+      buy = i 
+      buy_index = prices.index(i) 
+      print('buy is {buy}'.format(buy=buy))
+    if i==0 or i>sell and prices.index(i) > buy_index or sell==0 and i==prices[-1]:
+      sell = i
+      print('sell is {sell}'.format(sell=sell))
+      profit = sell -buy
+   
+    
+  print('The stock was bought at ${buy} and sold at ${sell} for a profit of ${profit}'.format(buy=buy, sell=sell, profit=profit))
+  return(profit)
+    
 
 
 if __name__ == '__main__':
