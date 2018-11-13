@@ -7,7 +7,7 @@ Item = namedtuple('Item', ['index', 'size', 'value'])
 
 class Test(unittest.TestCase):
   def setUp_small(self):
-    file_contents = open('data/small1.txt', 'r')
+    file_contents = open('C:/Users/Anyuszi/Documents/Algorithms/knapsack/data/small1.txt', 'r')
     self.small_1_items = []
     
     for line in file_contents.readlines():
@@ -16,7 +16,8 @@ class Test(unittest.TestCase):
 
     file_contents.close()
 
-    file_contents = open('data/small2.txt', 'r')
+    file_contents = open(
+        'C:/Users/Anyuszi/Documents/Algorithms/knapsack/data/small2.txt', 'r')
     self.small_2_items = []
     
     for line in file_contents.readlines():
@@ -25,7 +26,8 @@ class Test(unittest.TestCase):
 
     file_contents.close()
 
-    file_contents = open('data/small3.txt', 'r')
+    file_contents = open(
+        'C:/Users/Anyuszi/Documents/Algorithms/knapsack/data/small3.txt', 'r')
     self.small_3_items = []
     
     for line in file_contents.readlines():
@@ -40,7 +42,7 @@ class Test(unittest.TestCase):
     del self.small_3_items
 
   def setUp_medium(self):
-    file_contents = open('data/medium1.txt', 'r')
+    file_contents = open('C:/Users/Anyuszi/Documents/Algorithms/knapsack/data/medium1.txt', 'r')
     self.medium_1_items = []
     
     for line in file_contents.readlines():
@@ -49,7 +51,8 @@ class Test(unittest.TestCase):
 
     file_contents.close()
 
-    file_contents = open('data/medium2.txt', 'r')
+    file_contents = open(
+        'C:/Users/Anyuszi/Documents/Algorithms/knapsack/data/medium2.txt', 'r')
     self.medium_2_items = []
     
     for line in file_contents.readlines():
@@ -58,7 +61,8 @@ class Test(unittest.TestCase):
 
     file_contents.close()
 
-    file_contents = open('data/medium3.txt', 'r')
+    file_contents = open(
+        'C:/Users/Anyuszi/Documents/Algorithms/knapsack/data/medium3.txt', 'r')
     self.medium_3_items = []
     
     for line in file_contents.readlines():
@@ -73,7 +77,8 @@ class Test(unittest.TestCase):
     del self.medium_3_items
 
   def setUp_large(self):
-    file_contents = open('data/large1.txt', 'r')
+    file_contents = open(
+        'C:/Users/Anyuszi/Documents/Algorithms/knapsack/data/large1.txt', 'r')
     self.large_1_items = []
     
     for line in file_contents.readlines():
