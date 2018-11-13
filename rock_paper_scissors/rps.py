@@ -18,15 +18,15 @@ def rock_paper_scissors(n):
      return list_of_ways
       
   if n>1:
-     y = n*2
-     stack.remove(stack[0])
-     for i in range(y):
+    y=0
+    stack.remove(stack[0])
+    while y<n:
+     for i in range(n):
        player_one = random.choice(list_of_ways)
-       stack.append(player_one)
-       
        player_two = random.choice(list_of_ways)
-       stack.append(player_two)
-       
+       result= [player_one[0],player_two[0]]
+       stack.append(result)
+       y+=1
   return stack
 
 
