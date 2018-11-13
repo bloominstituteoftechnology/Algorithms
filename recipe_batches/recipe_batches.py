@@ -3,7 +3,20 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  # each ingredient value is = or > recipe value
+  batches = 0
+  recipe_keys = list(recipe.keys())
+  ingredients_keys = list(ingredients.keys())
+  recipe_vals = list(i[1] for i in recipe.items())
+  ingredients_vals = list(i[1] for i in ingredients.items())
+  # recipe_val = recipe.values()
+  # ingredients_val = ingredients.values()
+  # first check if you have all ingredients
+  if(recipe_keys == ingredients_keys):
+  # then check if you have enough ingredients
+  # while loop to subtract and keep count
+      
+
 
 
 if __name__ == '__main__':
