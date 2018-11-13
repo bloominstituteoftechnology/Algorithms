@@ -24,6 +24,7 @@ def recipe_batches(recipe, ingredients):
         return min(enough_materials)
     else:
         return 0
+# time complexity: O(3n) or O(n)
 
 
 print(recipe_batches(recipe_requirements, ingredient_requirements))
