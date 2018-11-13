@@ -2,7 +2,7 @@
 
 import sys
 
-from itertools import product
+## no need for the import as i am writing my own product function ## from itertools import product
 
 # in the python ittertools we have some interesting builtins product() : https://docs.python.org/3/library/itertools.html
 #def rock_paper_scissors(n):
