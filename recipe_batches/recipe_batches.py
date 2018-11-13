@@ -3,7 +3,7 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  pass
 
 
 if __name__ == '__main__':
