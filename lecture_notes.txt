@@ -1,0 +1,249 @@
+Fibonacci Sequence Notes
+
+fib(0) = 0
+fib(1) = 1
+fib(n) = fib(n-1) + fib(n-2)
+
+0(2^n), "naive" (most basic way to get the sequence to run).......................
+def fib(n):
+    if n == 0
+        return 0
+    if n == 1
+        return 1
+    return fib(n-1) + fib(n-2)
+
+for i in range(1000):
+    print(f`{i}: {fib(i)}`)
+
+#But this is suuuuuuuppper slow, there must be a better way_____________________
+
+    Memoization (top down).......................
+    
+__Using memoization__
+#make a dictionary
+cache = {}
+def fib_memoization(n):
+    if n == 0
+        return 0
+    if n == 1
+        return 1
+    if n not in cache:
+        cache[n] = fib_memoization(n-1) + fib_memoization(n-2)
+    return cache[n]
+
+cache[0] = 0
+cache[1] = 1
+
+for i in range(1000):
+    print(f`{i}: {fib_memoization(i)}`)
+
+##This is WAAAYY Faster, will compute before the sun swallows the earth...
+a joke Beej Jorgensen makes..alot...
+
+________The idea is if you work super hard on a problem, you will learn vastly more than just
+looking up the answer. The point is to suffer. No looking up answers this week kid, the answer
+is not the point...fully, it is your understanding, your journey through the fire, not the other
+side.__________________
+
+Another way, Iterative.................
+
+def fib_bottomup(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+
+    p0 = 0
+    p1 = 1
+
+    for i in range(n-1):
+        next = p0 + p1
+
+        p0 = p1
+        p1 = next
+
+    return next
+
+for i in range(10):
+    print(f`{i}: {fib_bottomup(i)}`)
+____________________________________________________________________
+
+What was this all about? Scalability, the "naive" way, although it solves the problem, is
+way too slow when going up to something as small as a range of 1000. We must think about this,
+as a developer we must think about how our code scales. Literally millions of people could possibly
+be using your work, it can not be slow, it can not crash, it must be able to perform for 100,000,000
+as it does for 10.
+This shit is hard: "If you're being challenged, you're winning" -Beej
+
+
+So, What Is BIG O ?
+Scalability = Time : Thing Processing
+Deals with the WORST CASE SCENARIO....or just the average case...
+Order N = O(n), linear time, if you have 10x the number of things to process, it takes 10x the amount
+of time to process.
+
+Which means that there is a very defined time, that it takes to do certain things.
+1 things = 1 sec, for example. So it you have 10 things = 10 sec.
+We need to learn the TIME of THINGS. So we can find the shortest times to process things.
+
+So you test small, to begin, but then you must scale to a million
+
+BIG-O Complexity Chart, on bigocheatsheet.com
+
+O(log n), or O(1)  BEST 
+O(n)  GOOD
+O(n log n)  BAD 
+O(n^2) HORRIBLE 
+O(2^n) WHY ARE YOU DOING THIS!!! 
+O(n!) R.I.P 
+
+Random Code example
+*finding a name in a phone book
+
+name_in_phonebook(to_find):
+    for name in phonebook:
+        if name == to_find:
+            return True
+        return False
+
+print(name_in_phonebook("Beej")) 
+
+How to make this better...just writing it out__________________
+
+|--------------------------------------------------|
+        ^       ^         ^
+        Beej    Chris     Mike
+        
+We start with Mike, then cut the serach field in half and find Chris,
+we do the same thing again, cut the search field in half, find Beej
+Faster to cut the Thing being Processed in ahlf each time. 
+
+OR
+
+Index the phonebook?
+A B C D E f GH I J K L M N O P Q R S T U V  W X Y Z
+|-------------------------------------------------|
+   ^Beej
+Loop through index letters until we find the Start letter
+but how long does it take to loop through the start letters? = O(n), so not bad
+BUT, then we would need another loop, once we've found "B" to find "Beej", which is BADDD.
+..no go
+
+*(what is ths the (n)? = just number. You won't know what 'n' is, which is the whole point of this
+we have to plan for the big numbers)*
+
+Rules
+1. constants in front of n = throw away, no GOOD
+2. O(n) + O(log n) , the O(n) will dominate the log. Dominate is which ever scales up the most the fastest
+So ^^ will jsut be O(n), b/c log becomes negligable, insignificant in it's contribution due to ^^
+
+______How to figure out Time Complexity___________
+Figuring out the Big O 
+
+you could....
+Time Analysis - running a bunch of tests on programs, need at least 3 points to compare,
+    can not be a straight line by default, need to see if the line curves ... curves are bad m'kay
+
+
+---------More Random Code--------------
+def foo(n):
+    sq_root = int(math.sqrt(n))
+
+    for i in range(0, sq_root):
+        print(i)
+
+for a given number n, what's the max number of times the loop runs?
+for a given number n, how many time units is it going to take to process?
+
+O(???) 
+n  sqrt(n)
+1  1
+2  1
+3  1
+4  2
+5  2
+6  2
+7  2
+8  2
+9  3
+10 3
+
+Answer...
+== O(sqrt(n))
+n  sqrt(n)
+1  1
+2  1
+3  1
+4  2
+5  2
+6  2
+7  2
+8  2
+9  3
+10 3
++++++++++++++++++++++++++++++++++++++++++++++++
+def bar(n):
+    s = 0
+
+    for i in range(n):
+        dor j in range(n):
+            s += i * j 
+    return s
+    
+# n * n times, n^2 times
+
+for a given number n, what's the max number of times the loop runs?:
+n^2 O(n^2)
+++++++++++++++++++++++++++++++++++++++++++++++++
+def bar(n):
+    s = 0
+
+    for i in range(n):
+        dor j in range(int(sqrt(n))):
+            s += i * j 
+    return s
+
+for a given number n, what's the max number of times the loop runs?
+n * sqrt(n)
+ =
+ O(n sqrt n)
+
+***Inner loops time is not absobed by the outter loop, ex:
+it took me 4 minutes to buy eggs, but also 5 minutes to get flour.
+Dominate is not for precious time, it jsut means one number is going to grow
+significantly larger than it's counterpart.***
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+def frotz(n):
+    s = 0 
+    for i in range(n):            n
+        for j in range(2 * n):    2n 
+            s += i + j            <-- n + * 2n == 2 * n^2
+    return s 
+for a given number n, what's the max number of times the loop runs? :
+2 * n^2 O(2 n^2) ==> or ==> O(n^2)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+def bar(x):
+    sum = 0
+    for i in range(0, 1463):               O(2)
+    i += sum                               
+    for j in range(0, x):                   O(x)
+        for k in range(x, x + 15):         O(15) == O(1) 
+                    sum += 1               O(1) * O(x) *o(1 * x * 1) == O(x)
+
+*Nested loops multiply BIG Os
+If the loops are merely sequential, add them together***
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+def baz(array):
+    print(array[1])                     O(1)
+    midpoint = len(array) / 2           O(1)
+
+    for i in range(0, midpoint):         O(n)
+        print(array[i])                 O(1)
+  
+                                        #O(n) * O(1) == O(1*n) == O(n)#
+    for _ in range(1000):                O(1)            
+        print('hi')                      O(1)
+
+                                            #O(1) + O(1) + O(n) + O(1) == O(n)#
+
+figuring out the time complexity line by line
