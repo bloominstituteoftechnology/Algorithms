@@ -12,7 +12,10 @@ def recipe_batches(recipe, ingredients):
   
   # initial thoughts were to use a min on the ingredients against an element vs 0 and use a single for loop to make sure i am only looping on a low factor
   # but it seems that using a division i may need to fix up the return maybe floor or int()
-  return min(ingredients.get(elem, 0) / num for elem, num in recipe.items()) # FIXME: possibly cast to int?
+  # return min(ingredients.get(elem, 0) / num for elem, num in recipe.items()) # FIXME: possibly cast to int?
+  
+  # testing with int variation casting the division in to an int for the return as it seems that we get a 2.5 at times which was failing
+  return min(int(ingredients.get(elem, 0) / num) for elem, num in recipe.items()) # fixed passing!
 
 
 if __name__ == '__main__':
