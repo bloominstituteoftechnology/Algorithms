@@ -3,7 +3,10 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+  pieces = [ 'rock', 'paper', 'scissors']
+  game_results = []
+  
+
 
 
 if __name__ == "__main__":
@@ -12,3 +15,5 @@ if __name__ == "__main__":
     print(rock_paper_scissors(num_plays))
   else:
     print('Usage: rps.py [num_plays]')
+
+
