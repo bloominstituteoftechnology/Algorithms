@@ -3,7 +3,18 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+  if len(prices) == 0:
+    return 0
+  elif len(prices) > 2:
+    # set lowest known price to first entry
+    low = prices[0]
+    # find the next highest value
+    high = max(prices[1:])
+    # calc the difference between lowest known and highest known
+    diff = high - low
+    return max(diff, find_max_profit(prices[1:]))
+  else:
+    return prices[-1] - prices[0]
 
 
 if __name__ == '__main__':
