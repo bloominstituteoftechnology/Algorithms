@@ -3,7 +3,21 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass
+  # set a new list of ingredients
+  ingred = []
+
+  # loop through the recipe list with the key
+  for key in recipe:
+
+      # if the ingredients key is not none, append the ingredient
+      # key // recipe key, else, append a 0
+      if ingredients.get(key) is not None:
+          ingred.append(ingredients[key]//recipe[key])
+      else:
+          ingred.append(0)
+
+  # return the min amount of ingredients
+  return min(ingred)
 
 
 if __name__ == '__main__':
