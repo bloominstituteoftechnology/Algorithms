@@ -9,7 +9,16 @@ def climbing_stairs(n, cache=None):
   if n < 0:
     return 0
 
-  return climbing_stairs(n - 1) + climbing_stairs(n - 2) + climbing_stairs(n - 3)
+  if cache == None:
+    cache = {}
+
+  if n not in cache:
+    cache[n] = climbing_stairs(n - 1, cache) + \
+               climbing_stairs(n - 2, cache) + \
+               climbing_stairs(n - 3, cache)
+
+  return cache[n]
+
 
 
 if __name__ == "__main__":
