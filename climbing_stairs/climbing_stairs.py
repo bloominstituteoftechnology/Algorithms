@@ -16,7 +16,6 @@ def climbing_stairs(n, cache=None):
     return cache[n]
 
 
-
 if __name__ == "__main__":
   if len(sys.argv) > 1:
     num_stairs = int(sys.argv[1])
