@@ -5,7 +5,7 @@ import argparse
 
 def find_max_profit(prices):
     price_difference = None
-    for i in prices:
+    for i in range(0, len(prices)):
         for j in range(i + 1, len(prices)):
             if price_difference == None:
                 price_difference = prices[j] - prices[i]
