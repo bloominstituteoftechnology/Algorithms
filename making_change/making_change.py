@@ -2,8 +2,8 @@
 
 import sys
 
-def making_change(amount, denominations):
-  pass 
+def making_change(amount, denominations = [1, 5, 10, 25, 50]):
+  return 'amigo'
 
 
 if __name__ == "__main__":
