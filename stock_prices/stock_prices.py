@@ -5,13 +5,13 @@ import argparse
 
 def find_max_profit(prices):
     max_profit = 0
-    print(prices)
+    
 
     for index, first_num in enumerate(prices):
         for second_num in prices[index + 1:]:
             profit = second_num - first_num
-        if max_profit == 0 or profit > max_profit:
-            max_profit = profit
+            if max_profit == 0 or profit > max_profit:
+                max_profit = profit
     return max_profit
 
 
