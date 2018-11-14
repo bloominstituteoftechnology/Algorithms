@@ -2,16 +2,22 @@
 
 import argparse
 
-#  0 - 100 + 90 = p
 def find_max_profit(prices):
-  pass
+  # set price to the first elem in list
+  price = prices[0]
 
-  # I honestly don't know what to do
-  # Not sure how to approach or even
-  # solve the problem to begin with so transcribing
-  # the problem into code, I just don't understand
+  # define the max profit with index b - index a
+  max_profit = prices[1] - prices[0]
 
-
+  # loop in range of 1 (skipping the first elem(price) and loop through the entire list)
+  for i in range(1, len(prices)):
+      # if less than price, set the price = to the elem
+      # else, set max_profit equal to prices[index] - price
+      if prices[i] < price:
+          price = prices[i]
+      elif prices[i] - price > max_profit:
+          max_profit = prices[i] - price
+  return max_profit
 
 
 
