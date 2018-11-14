@@ -3,7 +3,22 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+  left = 9999999999
+  right = 0
+  max = []
+  for price in prices:
+    if price > right:
+      right = price
+    else:
+      max.append(right - left)
+      right = price
+      left = price
+  true_max = 0
+  for price in max:
+    if price > true_max:
+      true_max = price
+  return true_max
+    
 
 
 if __name__ == '__main__':
