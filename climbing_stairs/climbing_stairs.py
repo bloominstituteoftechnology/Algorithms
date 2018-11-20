@@ -3,7 +3,31 @@
 import sys
 
 def climbing_stairs(n, cache=None):
-  pass 
+  if n < 0:
+    return 0
+  elif n == 0 or n == 1:
+    return 1
+  elif cache and cache[n] > 0:
+    return cache[n]
+  else:
+    if not cache:
+      cache = [0 for i in range(n + 1)]
+    cache[n] = climbing_stairs(n - 1, cache) + climbing_stairs(n - 2, cache) + climbing_stairs(n - 3, cache)
+    return cache[n]
+
+
+# def climbing_stairs(n, cache=None):             # Beej's approach
+#   if n == 0:
+#     return 1
+#   if n < 0:
+#     return 0
+#   if not cache:
+#     cache = {}
+#   if n non in cache:
+#     cache[n] = climbing_stairs(n - 1, cache) + \
+#                climbing_stairs(n - 2, cache) + \
+#                climbing_stairs(n - 3, cache)
+#   return cache[n]
 
 
 if __name__ == "__main__":
