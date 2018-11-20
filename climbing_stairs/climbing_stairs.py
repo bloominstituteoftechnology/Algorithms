@@ -16,7 +16,7 @@ def climbing_stairs(n, cache=None):
     return cache[n]
 
 
-# def climbing_stairs(n, cache=None):             # another approach
+# def climbing_stairs(n, cache=None):             # Beej's approach
 #   if n == 0:
 #     return 1
 #   if n < 0:
