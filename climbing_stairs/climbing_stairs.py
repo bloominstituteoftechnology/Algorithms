@@ -16,6 +16,20 @@ def climbing_stairs(n, cache=None):
     return cache[n]
 
 
+# def climbing_stairs(n, cache=None):             # another approach
+#   if n == 0:
+#     return 1
+#   if n < 0:
+#     return 0
+#   if not cache:
+#     cache = {}
+#   if n non in cache:
+#     cache[n] = climbing_stairs(n - 1, cache) + \
+#                climbing_stairs(n - 2, cache) + \
+#                climbing_stairs(n - 3, cache)
+#   return cache[n]
+
+
 if __name__ == "__main__":
   if len(sys.argv) > 1:
     num_stairs = int(sys.argv[1])
