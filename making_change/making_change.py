@@ -3,7 +3,28 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
+  # if amount == 0:
+  #   return 1 
+  
+  # if amount < 0:
+  #   return 0
+
+  # if len(denominations) == 0:
+  #   return 0
+  
+  # return making_change(amount - denominations[-1], denominations) + making_change(amount, denominations[-1])
+  
+  ways = [0] * (amount + 1)
+  
+  ways[0] = 1
+
+  for coin in denominations:
+    for higher_amount in range(coin, amount + 1):
+      remainder = higher_amount - coin
+      ways[higher_amount] += ways[remainder]
+      # print(f'{coin} {ways}')
+    
+  return ways[amount]
 
 
 if __name__ == "__main__":
