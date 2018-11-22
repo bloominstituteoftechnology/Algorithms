@@ -22,7 +22,7 @@ def climbing_stairs(n, cache=None):
   if cache == None:                        # if cache is empty or nonexistent
     cache = {}                         # make cash an empty dictionary object
 
-  if n not in cache:                   # if cache exists but does not contains n
+  if n not in cache:                   # if cache exists but does not contain n
     cache[n] = climbing_stairs(n - 1, cache) + climbing_stairs(n - 2, cache) + climbing_stairs(n - 3, cache) # return cache value at index n
     
   return cache[n]
