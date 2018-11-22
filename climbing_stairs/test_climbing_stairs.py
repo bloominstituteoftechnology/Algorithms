@@ -2,12 +2,17 @@ import unittest
 from climbing_stairs import climbing_stairs
 
 class Test(unittest.TestCase):
-
+  print('--- NEW TEST SUITE ---')
   def test_climbing_stairs_small_n(self):
+    print('--- TEST 1: ---')
     self.assertEqual(climbing_stairs(0), 1)
+    print('--- TEST 2: ---')
     self.assertEqual(climbing_stairs(1), 1)
+    print('--- TEST 3: ---')
     self.assertEqual(climbing_stairs(2), 2)
+    print('--- TEST 4: ---')
     self.assertEqual(climbing_stairs(5), 13)
+    print('--- TEST 5: ---')
     self.assertEqual(climbing_stairs(10), 274)
 
   def test_climbing_stairs_large_n(self):
