@@ -2,8 +2,10 @@
 
 import sys
 
+moves = ['rock', 'paper', 'scissors']
+
 def rock_paper_scissors(n):
-  pass 
+   
 
 
 if __name__ == "__main__":
