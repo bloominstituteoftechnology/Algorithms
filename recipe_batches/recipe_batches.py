@@ -27,6 +27,23 @@ import math
 
 
 # O(n) possibly O(n^2)
+# def recipe_batches(recipe, ingredients):
+#     countList = []
+
+#     if len(recipe) != len(ingredients):
+#         return 0
+
+#     for rec in recipe:  # O(n)
+#         if rec in ingredients:
+#             if recipe[rec] <= ingredients[rec]:
+#                 countList.append(int(ingredients[rec]/recipe[rec]))
+#             else:
+#                 return 0
+#         else:
+#             return 0
+#     return min(countList)
+
+# O(n)
 def recipe_batches(recipe, ingredients):
     countList = []
 
@@ -34,13 +51,13 @@ def recipe_batches(recipe, ingredients):
         return 0
 
     for rec in recipe:  # O(n)
-        if rec in ingredients:
-            if recipe[rec] <= ingredients[rec]:
-                countList.append(int(ingredients[rec]/recipe[rec]))
-            else:
-                return 0
+        if recipe[rec] != ingredients[rec]:
+            return 0
+        if recipe[rec] <= ingredients[rec]:
+            countList.append(int(ingredients[rec]/recipe[rec]))
         else:
             return 0
+
     return min(countList)
 
 
