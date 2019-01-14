@@ -4,7 +4,29 @@ import argparse
 
 
 def find_max_profit(prices):
-    pass
+    # first pass solution
+    # We have to init buy first price
+    # if there is a lower price we can only buy that one
+    # if there is a bigger sell point after
+
+    buy = prices[0]
+    sell = prices[1]
+
+    for price in prices:
+        if price > buy:
+            sell = price
+
+    for price in prices:
+        if price == sell:
+            break
+        if price < buy:
+            buy = price
+
+    print(f"sell: {sell}, buy: {buy}")
+
+    max_profit = sell - buy
+
+    return max_profit
 
 
 if __name__ == '__main__':
