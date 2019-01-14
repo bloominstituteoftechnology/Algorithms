@@ -3,7 +3,20 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  count = 0
+  can_make_batches = True
+  while can_make_batches:
+	  for ingredient, amount in recipe.items():
+		  try:
+			  ingredients[ingredient] -= amount
+			  if ingredients[ingredient] < 0:
+				  can_make_batches = False
+				  break
+		  except KeyError:
+			  return 0
+	  if can_make_batches:
+		  count += 1
+  return count
 
 
 if __name__ == '__main__':
