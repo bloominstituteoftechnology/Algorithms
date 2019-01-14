@@ -2,7 +2,13 @@
 
 import sys
 
-def climbing_stairs(n, cache=None):
+def climbing_stairs(n, cache = None):
+  """
+  RECURSION
+  1.  Base case if n <= 0 return 0
+  2.  
+  
+  """
   pass 
 
 

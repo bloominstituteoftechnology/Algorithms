@@ -18,7 +18,23 @@ def recipe_batches(recipe, ingredients):
                   --  Insufficient ingredients available
 
   """
-  pass 
+  batches = []
+  if recipe.keys() == ingredients.keys():
+    for key in recipe:
+        #print(key)
+        #print(ingredients[key])
+        #print(recipe[key])
+        enough_ingredient = int(ingredients[key] / recipe[key])
+        #print("for key {} :  {}".format(key , enough_ingredient))
+        batches.append(enough_ingredient)
+            
+        if 0 in batches:
+            return 0 
+        else:
+            return min(batches)
+            
+  else:
+      return 0 
 
 
 if __name__ == '__main__':
