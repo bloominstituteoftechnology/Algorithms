@@ -2,6 +2,14 @@
 
 import math
 
+"""
+Thoughts on solving this problem:
+
+- Seems like a minimum of two loops will be required: one to check for ingredients available, one to check for ingredients required. Maybe a one-loop way later, not concerned about this for now.
+- At its base level, this should be a straightforward problem -- simply check numbers against one another to see if enough ingredients are available to complete given recipe(s).
+
+
+"""
 def recipe_batches(recipe, ingredients):
   pass 
 
