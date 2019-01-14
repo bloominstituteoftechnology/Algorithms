@@ -9,16 +9,10 @@ def recipe_batches(recipe, ingredients):
     if len(recipe) != len(ingredients):
         return 0
 
-    sorRec = sorted(recipe)  # O(n log n)
-    sorIng = sorted(ingredients)
-
-    for i in range(len(sorRec)):  # O(n)
-        ing = sorIng[i]
-        rec = sorRec[i]
-        print(ing, rec)
-        if rec == ing:
-            if recipe[rec] <= ingredients[ing]:
-                countList.append(int(ingredients[ing]/recipe[rec]))
+    for rec in recipe:  # O(n)
+        if rec in ingredients:
+            if recipe[rec] <= ingredients[rec]:
+                countList.append(int(ingredients[rec]/recipe[rec]))
             else:
                 return 0
         else:
