@@ -6,18 +6,39 @@ import argparse
 # - prices[1] - [prices 0], prices[2]- prices[0], prices[3] - prices[0], prices[4] - prices[0]
 ##  prices[2] - prices[1], prices[3] - prices[1], prices[4] - prices[1]
 
+i = 0
+recursionCount = 0
+
 
 def find_max_profit(prices):
-    maxProfit = 0
-    i = 0
-    for i in range(len(prices) - 1):
-        i += 1
-        profit = (prices[i] - prices[i-1])
-        print(profit)
+    global i
+    maxProfit = int()
+    for price in range(len(prices)):
+        global recursionCount
+        recursionCount += 1
+        print("Recursion", recursionCount)
+        if i > len(prices):
+            continue
+
+        for price in range(len(prices) - 1):
+            i += 1
+            if i > len(prices) - 1:
+                continue
+            print("Iteration", i)
+            profit = (prices[i] - prices[recursionCount-1])
+            print("Max", maxProfit)
+            print("")
+            print(f"{prices[i]} - {prices[i - 1]} is: ", profit)
+            print("")
+            if profit > maxProfit:
+                maxProfit = profit
+
+        print("Result", maxProfit)
+        i = len(prices) - i
 
 
 if __name__ == '__main__':
-    # This is just some code to accept inputs from the command line
+        # This is just some code to accept inputs from the command line
     parser = argparse.ArgumentParser(
         description='Find max profit from prices.')
     parser.add_argument('integers', metavar='N', type=int,
