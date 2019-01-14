@@ -1,9 +1,17 @@
 #!/usr/bin/python
-
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  '''
+  descriptipn:
+    function should output the maximum number of whole batches that can be made 
+
+  pseudo:
+    - write a for loop
+    - check that all ingredients in the recipe are available  (if statement)
+    - check if ingredients with the same key in the recipe match, exceed, or are lower than the recipe
+    - find a way to count the batches
+  '''
 
 
 if __name__ == '__main__':
