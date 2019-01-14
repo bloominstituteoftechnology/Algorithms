@@ -3,6 +3,17 @@
 import argparse
 
 def find_max_profit(prices):
+  ''' 
+    define variable for highest in list
+    define variable for lowest in list
+    loop through list
+    put highest number in highest variable
+    put lowest in lowest
+    loop through range to highest
+    if lowest equals num return true
+    else remove lowest and recurse
+    return highest - lowest
+  '''
   pass
 
 
