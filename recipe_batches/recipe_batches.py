@@ -3,23 +3,13 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  count = 0
-  flag = True
-
-  if len(recipe) > len(ingredients):
-    return 0
-  ingredients_copy = ingredients.copy()
-  while flag == True:
-    for i, key in enumerate(recipe.items()):
-      if key[1] <= ingredients_copy[key[0]]:
-        ingredients_copy.update({key[0]: ingredients_copy[key[0]] - key[1]})
-      else:
-        flag = False
-    count += 1
-  if count == 1:
-    return count
-  else:
-    return count - 1
+  batches_arr = []
+  for i in recipe:
+    if i not in ingredients:
+      return 0
+    else:
+      batches_arr.append(ingredients[i] // recipe[i])
+  return min(batches_arr)
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
