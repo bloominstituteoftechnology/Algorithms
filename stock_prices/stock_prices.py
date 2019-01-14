@@ -1,8 +1,18 @@
 #!/usr/bin/python
 
 import argparse
-
+max = 0
 def find_max_profit(prices):
+  global max
+  if len(prices) == 0:
+    return 0
+  while len(prices) >= 2:
+    first = prices[0]
+    for num in prices:
+      if (first - num) > max:
+        max = first - num
+    return find_max_profit(prices[1:])
+  return max
   pass
 
 
