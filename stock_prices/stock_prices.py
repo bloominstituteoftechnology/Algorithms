@@ -4,8 +4,24 @@ import argparse
 
 
 def find_max_profit(prices):
-    pass
+    profit = 0
+    for cur, nxt in zip(prices, prices[1:]):
+        buy_price = cur
+        sell_price = nxt
 
+        if sell_price < buy_price:
+            buy_price = sell_price
+            # sell_price = nxt
+
+        profit = sell_price - buy_price
+        print("buy", buy_price)
+        print("sell", sell_price)
+    # else:
+
+    return profit
+
+
+print(find_max_profit([1050, 270, 1540, 3800, 2]))
 
 if __name__ == "__main__":
     # This is just some code to accept inputs from the command line
