@@ -3,7 +3,15 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+  maxProfit = 0
+  for index, price in enumerate(prices):
+    ##for all indexes after the current index, if the 2nd index value is larger, get the difference between the two
+      for index, nextPrice in enumerate(prices):
+        if nextPrice > price:
+          profit = nextPrice - price:
+
+      ##if the difference is bigger than the current maxProfit, update the maxProfit to that number.
+
 
 
 if __name__ == '__main__':
