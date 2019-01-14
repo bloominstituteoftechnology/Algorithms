@@ -3,8 +3,13 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+  available_buys = prices[:-1]
+  cheapest_buy_index = available_buys.index(min(available_buys))
+  cheapest_buy = available_buys[cheapest_buy_index]
+  available_sells = prices[cheapest_buy_index+1:]
+  largest_sell = available_sells[available_sells.index(max(available_sells))]
 
+  return largest_sell - cheapest_buy
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
