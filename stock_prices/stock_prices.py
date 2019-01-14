@@ -3,7 +3,20 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+    """
+    This function receives as input a list of stock prices 
+    function should return the maximum profit that can be made from a single buy and sell
+    find the difference between the smallest and largest prices in the list of prices.
+   
+    """  
+    largest_profit = 0
+    for index, initial_number in enumerate(prices):
+        for secondary_number in prices[index + 1 : ]:
+            profit = secondary_number - initial_number
+            if largest_profit == 0 or profit > largest_profit:
+                largest_profit = profit
+    #Time complexity is O(n^2) as two loops involved.. 
+    return largest_profit
 
 
 if __name__ == '__main__':
