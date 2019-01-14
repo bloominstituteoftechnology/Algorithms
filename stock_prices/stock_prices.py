@@ -11,7 +11,7 @@ def find_max_profit(prices, largest = 0):
         biggest_rest = rest[-1]
         current_result = biggest_rest - current
 
-        if current_result > local_largest:
+        if current_result > local_largest or local_largest == 0:
             local_largest = biggest_rest - current
         
         return find_max_profit(prices[1:], local_largest)
@@ -117,3 +117,9 @@ if __name__ == '__main__':
 # recursive has higher overhead in the beginning but does not scale as rapidly
 # Unfortunately I did not account for a negative profit being the highest
 # need to look again
+
+# altered line 14
+# if current_result > local_largest:
+# if current_result > local_largest or local_largest == 0:
+
+# tests pass
