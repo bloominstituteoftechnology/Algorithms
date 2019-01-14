@@ -3,6 +3,19 @@
 import math
 
 def recipe_batches(recipe, ingredients):
+  currMax = 0
+  prevMax = 99999
+  keyVals = recipe.keys()
+  for key in keyVals:
+    if not ingredients.get(key):
+      return 0
+    hold = ingredients.get(key)
+    while (hold/recipe.get(key))  >= 1:
+      currMax = currMax + 1
+      hold = hold - recipe.get(key)
+    if currMax < prevMax:
+      prevMax = currMax
+  return prevMax
   pass 
 
 
