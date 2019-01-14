@@ -4,8 +4,9 @@ import math
 
 
 def recipe_batches(recipe, ingredients):
+    batches = 0
     if len(recipe) != len(ingredients):
-        return 0
+        return batches
 
 
 if __name__ == '__main__':
