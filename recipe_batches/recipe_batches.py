@@ -3,7 +3,21 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  if len(ingredients) < len(recipe):
+    # If our ingredients has less than the recipe, then we definitely don't have enough
+    return 0
+
+  batches = {}
+
+  for key, ingredient in ingredients.items():
+    if recipe[key]: # If the recipe has the current ingredient
+      if ingredients[key] >= recipe[key]:
+        # We have enough of a ingredient for the recipe
+        batches[key] = int(ingredients[key] / recipe[key])
+      else:
+        # We don't have enough ingredients
+        return 0
+  return batches[min(batches, key=batches.get)]
 
 
 if __name__ == '__main__':
