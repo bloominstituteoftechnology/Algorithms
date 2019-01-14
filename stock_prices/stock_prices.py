@@ -13,6 +13,7 @@ def find_max_profit(prices):
       lowest_num = x
       return highest_num - lowest_num
     if prices.index(highest_num) < prices.index(x):
+      nonlocal count
       count = count + 1
       return find_the_low(sorted_prices[count])
   return find_the_low(sorted_prices[0])
