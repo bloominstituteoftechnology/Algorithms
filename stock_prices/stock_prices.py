@@ -5,16 +5,13 @@ import argparse
 
 def find_max_profit(prices):
     list_to_sum = []
-    for i in prices:
-        try:
-            if prices[i] < prices[i + 1]:
-                print(
-                    f'Gap between {prices[i]} and {prices[i + 1]} is a profit at {prices[i + 1] - prices[i]}')
-                list_to_sum.append(prices[i + 1] - prices[i])
-            else:
-                print(f'fadsfasfasdfasdf')
-        except:
-            pass
+    for i in range(len(prices)-1):
+        if prices[i] < prices[i + 1]:
+            print(
+                f'Gap between {prices[i]} and {prices[i + 1]} is a profit at {prices[i + 1] - prices[i]}')
+            list_to_sum.append(prices[i + 1] - prices[i])
+        else:
+            print(f'No good')
     return sum(list_to_sum)
 
 
