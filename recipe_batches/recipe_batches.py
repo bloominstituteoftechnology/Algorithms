@@ -11,7 +11,18 @@ def recipe_batches(recipe, ingredients):
     return lowest number in list
 
   '''
-  pass 
+  times = []
+
+  for key, value in recipe.items():
+    for key2, value2 in ingredients.items():
+      if key == key2:
+        times.append(int(value2/value))
+      elif key not in ingredients or key2 not in recipe:
+        times.append(0)
+  times.sort()
+  return times[0]
+    
+
 
 
 if __name__ == '__main__':
