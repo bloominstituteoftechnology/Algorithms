@@ -1,5 +1,5 @@
 # Algorithms
-
+#
 Now that we've talked about some strategies for solving algorithmic problems and walked through some examples, it's time to practice applying those strategies!
 
 To quickly recap, when you're confronted with a problem you haven't encountered before, the general strategy is as follows:
