@@ -2,8 +2,22 @@
 
 import argparse
 
+highnum = []
+lownum = []
+complist = []
+
 def find_max_profit(prices):
-  pass
+  for price in prices:
+    if price - [price] > 0:
+      append(lownum)
+    if price - [price] < 0:
+      append(highnum)  
+  for i in highnum:
+    for n in lownum:
+      highnum[i] > lownum[n]
+      complist.append([i]-[n])
+  print (complist)
+  pass 
 
 
 if __name__ == '__main__':
