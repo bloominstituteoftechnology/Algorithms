@@ -10,17 +10,14 @@ def find_max_profit(prices):
     # if there is a bigger sell point after
 
     buy = prices[0]
-    sell = prices[1]
+    sell = prices[0]
 
-    for price in prices:
-        if price > buy:
-            sell = price
-
-    for price in prices:
-        if price == sell:
-            break
-        if price < buy:
+    for price in prices[1:]:
+        if price < sell and price < buy:
             buy = price
+
+        if price > sell:
+            sell = price
 
     print(f"sell: {sell}, buy: {buy}")
 
