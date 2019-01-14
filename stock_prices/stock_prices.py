@@ -4,14 +4,22 @@ import argparse
 
 
 def find_max_profit(prices):
-    sorted_list = sorted(prices)
-    biggest_profit = sorted_list[len(sorted_list) - 1]
-    smallest_profit = sorted_list[0]
-    return print(biggest_profit - smallest_profit)
+    list_to_sum = []
+    for i in prices:
+        try:
+            if prices[i] < prices[i + 1]:
+                print(
+                    f'Gap between {prices[i]} and {prices[i + 1]} is a profit at {prices[i + 1] - prices[i]}')
+                list_to_sum.append(prices[i + 1] - prices[i])
+            else:
+                print(f'fadsfasfasdfasdf')
+        except:
+            pass
+    return sum(list_to_sum)
 
 
 if __name__ == '__main__':
-    # This is just some code to accept inputs from the command line
+        # This is just some code to accept inputs from the command line
     parser = argparse.ArgumentParser(
         description='Find max profit from prices.')
     parser.add_argument('integers', metavar='N', type=int,
