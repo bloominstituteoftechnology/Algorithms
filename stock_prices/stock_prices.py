@@ -4,7 +4,7 @@ import argparse
 def find_max_profit(prices):
   '''
   description:
-    this function will find the max profit from buying/selling a stock
+    returns the maximum profit that can be made from a single buy and sell
 
   pseudo: 
     - start with a loop
@@ -14,7 +14,13 @@ def find_max_profit(prices):
       greater than the previos profit value, which it'll then keep the greatest profit
     - it'll do this through the whole array until there is only one max profit
   '''
-  pass
+  max_profit = 0
+  for i in range(len(prices)):
+    for j in range (i+1, len(prices)):
+      if (prices[j] - prices[i]) > max_profit:
+        max_profit = prices[j] - prices[i]
+  return max_profit
+
 
 
 if __name__ == '__main__':
