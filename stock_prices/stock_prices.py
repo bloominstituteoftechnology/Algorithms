@@ -13,3 +13,20 @@ if __name__ == '__main__':
   args = parser.parse_args()
 
   print("A profit of ${profit} can be made from the stock prices {prices}.".format(profit=find_max_profit(args.integers), prices=args.integers))
+
+
+# NOTES
+# 1 Understanding
+  # given an array of prices in chronological order, this function
+  # should return the largest increase possible between two indexes
+  # moving from left to right
+
+# 2 Sketch
+  # what will this function do if passed the improper format method?
+  # is that something we need to be concerned with?
+
+# 3 come up with first plan
+
+# 4 Think of how to improve
+
+# 5 Implement improved solution
