@@ -3,6 +3,15 @@
 import argparse
 
 def find_max_profit(prices):
+  """
+  what do i need to do in this problem?  I need to compare the difference between each argument and the arguments that follow.  I need to return the largest positive value
+
+  iterate over the list
+  compare a & b, looking for a < b
+  save all the positives in a list
+  sort the list
+  return last item in the list
+  """
   pass
 
 
