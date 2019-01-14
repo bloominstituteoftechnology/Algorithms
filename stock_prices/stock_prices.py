@@ -13,7 +13,7 @@ recursionCount = 0
 def find_max_profit(prices):
     global i
     maxProfit = int()
-    for price in range(len(prices)):
+    for price in range(len(prices) - 1):
         global recursionCount
         recursionCount += 1
         print("Recursion", recursionCount)
@@ -28,17 +28,18 @@ def find_max_profit(prices):
             profit = (prices[i] - prices[recursionCount-1])
             print("Max", maxProfit)
             print("")
-            print(f"{prices[i]} - {prices[i - 1]} is: ", profit)
+            print(f"{prices[i]} - {prices[recursionCount - 1]} is: ", profit)
             print("")
             if profit > maxProfit:
                 maxProfit = profit
 
         print("Result", maxProfit)
         i = len(prices) - i
+    return(maxProfit)
 
 
 if __name__ == '__main__':
-        # This is just some code to accept inputs from the command line
+                # This is just some code to accept inputs from the command line
     parser = argparse.ArgumentParser(
         description='Find max profit from prices.')
     parser.add_argument('integers', metavar='N', type=int,
