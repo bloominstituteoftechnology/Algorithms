@@ -2,8 +2,27 @@
 
 import argparse
 
+def is_max_profit_negative(prices):
+	for i in range(0, len(prices) - 1):
+		if prices[i] < prices[i + 1]:
+			return False
+	return True
+
 def find_max_profit(prices):
-  pass
+  if len(prices) == 0:
+    return 0
+
+  if is_max_profit_negative(prices) == True:
+	  return -prices[-1]
+
+  profit = 0
+  cheapest = prices[0]
+
+  for i in range(1, len(prices)):
+    cheapest = min(cheapest, prices[i])
+    profit = max(profit,prices[i] - cheapest)
+
+  return profit
 
 
 if __name__ == '__main__':
