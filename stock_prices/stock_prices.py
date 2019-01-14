@@ -3,7 +3,20 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+
+  max_profit = None
+
+  for index_buy in range(len(prices) - 1):
+    price_buy = prices[index_buy]
+    index_sell = index_buy + 1
+
+    for price_sell in prices[index_sell:]:
+      profit = price_sell - price_buy
+
+      if max_profit == None or profit > max_profit:
+        max_profit = profit
+  
+  return max_profit
 
 
 if __name__ == '__main__':
