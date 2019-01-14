@@ -1,9 +1,22 @@
 #!/usr/bin/python
 
+# prices = [1050, 270, 1540, 3800, 2]
+
 import argparse
 
 def find_max_profit(prices):
-  pass
+    min_price = prices[0]
+    max_price = prices[0]
+    max_price_diff = -1
+
+    for price in prices[1:]:
+        min_price = min(price, min_price)
+        if price > max_price:
+            max_price_diff = max(max_price_diff, price - min_price)
+            max_price = price
+
+    return max_price_diff
+      
 
 
 if __name__ == '__main__':
