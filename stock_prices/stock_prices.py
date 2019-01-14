@@ -12,8 +12,14 @@ def find_max_profit(prices):
   sort the list
   return last item in the list
   """
-  pass
-
+  profit = []
+  for index, price in enumerate(prices):
+    buy = prices[index]
+    sell_list = prices[index + 1:]
+    if sell_list != []:
+      for sell_price in sell_list:
+        profit.append(sell_price - buy)
+  return sorted(profit)[-1]
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
