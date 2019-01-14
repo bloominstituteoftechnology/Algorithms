@@ -22,7 +22,7 @@ def find_max_profit(prices):
     #     index += 1
     #
     # return max_buy[0] - min_buy
-    max_profit = -10 # Yes there was a work around
+    max_profit = -10  # Yes there was a work around
     min_buy = 0
     sell_price = 0
     change_buy_index = True
