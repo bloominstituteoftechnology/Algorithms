@@ -3,7 +3,14 @@
 import argparse
 
 """
-initial commit
+Thoughts on solving this problem:
+
+We can do this using a quicksort-style algorithm. To determine the highest profit, we need to find the largest difference between any two numbers. Without regarding efficiency, we can do this with two loops:
+
+- Set initial index to the first value
+- For each following value in the list, compare difference. Store the difference.
+- Move the initial index to the next value and repeat until the gratest difference between any two numbers is found.
+
 """
 def find_max_profit(prices):
   pass
