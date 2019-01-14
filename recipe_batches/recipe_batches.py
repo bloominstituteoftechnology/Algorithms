@@ -3,6 +3,21 @@
 import math
 
 def recipe_batches(recipe, ingredients):
+  """
+  --  Fuction will receive receipe need as well as ingredients available
+  --  Function should output the maximum number of whole batches that can be made for the supplied recipe 
+      using the ingredients available
+      Approach  : -
+      1. Find keys inreceipe and ingredients dict
+      2. Check for the equality.. i.e. all ingredients available for receipe
+              - if yes then go ahead
+              - else can't make that receipe. Not all ingredients available
+      3. If all ingredients are available for receipe
+              - access value using key and check ingredient amount is greater than receipe needed
+                  --  if yes count multiple and return receipe batch
+                  --  Insufficient ingredients available
+
+  """
   pass 
 
 
