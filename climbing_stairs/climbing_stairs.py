@@ -4,7 +4,7 @@ import sys
 import math
 
 def climbing_stairs(n, cache=None):
-  return math.factorial(n) / math.factorial(n-3)
+  return math.factorial(n) / math.factorial(n-2)
 
 
 if __name__ == "__main__":
