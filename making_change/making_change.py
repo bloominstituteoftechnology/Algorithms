@@ -1,8 +1,11 @@
 #!/usr/bin/python
 
 import sys
+amount = 0
+denominations =[1,5,10,25,50]
 
 def making_change(amount, denominations):
+
   pass 
 
 
