@@ -1,16 +1,35 @@
 #!/usr/bin/python
 
 import argparse
-
+myList = [100, 90, 80, 50, 20, 10]
 def find_max_profit(prices):
-  max_profit = 0
-  for i, buy_price in enumerate(prices):
-    for j, sell_price in enumerate(prices):
-      if i == 0 and j == 1:
-        max_profit = sell_price - buy_price
-      elif j > i and sell_price - buy_price > max_profit:
-        max_profit = sell_price - buy_price
+  # max_profit = 0
+  # for i, buy_price in enumerate(prices):
+  #   for j, sell_price in enumerate(prices):
+  #     if i == 0 and j == 1:
+  #       max_profit = sell_price - buy_price
+  #     elif j > i and sell_price - buy_price > max_profit:
+  #       max_profit = sell_price - buy_price
+  # return max_profit
+
+
+  n = len(prices)
+  max_profit = -10000
+  if n <= 1:
+    return max_profit
+  
+  min_stock_price = prices[0]
+
+  for i in range(1, n):
+    current_profit = prices[i] - min_stock_price
+
+    if current_profit > max_profit:
+      max_profit = current_profit
+    if prices[i] < min_stock_price:
+      min_stock_price = prices[i]
   return max_profit
+
+print(find_max_profit(myList))
 
 
 
