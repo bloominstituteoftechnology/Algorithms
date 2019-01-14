@@ -3,6 +3,14 @@
 import math
 
 def recipe_batches(recipe, ingredients):
+  ''' 
+    make list of times
+    loop over recipe
+    loop over ingredients
+    find number of times ingredient[i] can be subtracted by recipe[i]
+    return lowest number in list
+
+  '''
   pass 
 
 
