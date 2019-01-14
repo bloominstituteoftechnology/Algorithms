@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import argparse
+import math
 
 # O(n^2)
 # def find_max_profit(prices):
@@ -17,7 +18,7 @@ import argparse
 
 
 def find_max_profit(prices):
-    max = -100000
+    max = -math.inf
     highest = 0
     smallest = prices[0]
     highInd = 0
