@@ -3,6 +3,15 @@
 import math
 
 def recipe_batches(recipe, ingredients):
+  """
+  i need to look at my recipes and make sure I have enough to make something from my recipe book based on the ingredients i have available
+
+  iterate through ingredient list looking for ingedient
+  when i find an ingredient i need to check the amount that i have available vs what i need
+  if i have enough of the ingredient continue to check the list
+  if i dont have enough finish seaching and return false 
+  """
+
   pass 
 
 
