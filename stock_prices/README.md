@@ -15,3 +15,27 @@ You can also test your implementation manually by executing `python stock_prices
 ## Hints
 
  * For this problem, we essentially want to find the difference between the smallest and largest prices in the list of prices.
+
+
+ braindump notes:
+
+ Find the biggest gap in prices in the future
+
+create a list of prices in the future
+
+If time > current time
+	add to list
+
+for each in list - others in list ro find the biggest gap
+
+lownum list defined
+highnum list defined
+
+For price in list
+	if price - [i] = positive number 
+		add to lownum <— new  
+  elif price - [i] = negative number
+    add to highnum
+
+what if you append into a list.... then find the biggest gap by finding the biggest gap per price.... put into a new list..... then find the biggest number out of the collection of largest numbers?
+
