@@ -3,7 +3,16 @@
 import sys
 
 def climbing_stairs(n, cache=None):
-  pass 
+  print('ran function')
+  if n == 0:
+    return 0
+  if n == 1:
+    return 1
+  if n == 2:
+    return 2
+
+  return climbing_stairs(n-1) + climbing_stairs(n-2)
+
 
 
 if __name__ == "__main__":
