@@ -3,18 +3,15 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  currMax = 0
-  prevMax = 99999
-  keyVals = recipe.keys()
-  for key in keyVals:
-    if not ingredients.get(key):
-      return 0
-    hold = ingredients.get(key)
-    while (hold/recipe.get(key))  >= 1:
-      currMax = currMax + 1
-      hold = hold - recipe.get(key)
-    if currMax < prevMax:
-      prevMax = currMax
+  prevMax = math.inf
+  ingVal = list(ingredients.values())
+  for i,val in enumerate(recipe.values()):
+    if ingredients.keys() != recipe.keys():
+      prevMax = 0
+    elif ingVal[i]/val < 1:
+      prevMax = 0
+    elif ingVal[i]/val < prevMax:
+      prevMax = round(ingVal[i]/val)
   return prevMax
   pass 
 
