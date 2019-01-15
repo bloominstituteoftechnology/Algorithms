@@ -5,6 +5,8 @@ import sys
 
 
 def find_max_profit(prices):
+    # O(n^2)
+    """
     max_profit = float("-inf")
     for index, selling_price in enumerate(prices):
         for buying_index in range(index):
@@ -12,8 +14,35 @@ def find_max_profit(prices):
             if profit > max_profit:
                 max_profit = profit
     return int(max_profit)
+    """
 
-print(find_max_profit([1050, 270, 1540, 3800, 2]))  # should return 3530
+    # O(n^2)
+    """
+    max_profit = float("-inf")
+
+    while prices != []:
+        bought = prices[0]
+
+        for p in prices[1:]:
+            profit = p - bought
+            max_profit = max(max_profit, profit)
+
+        prices.pop(0)
+
+    return max_pofit
+    """
+    
+    # O(n)
+    min_buy_price = prices[0]
+    max_profit = prices[1] - min_buy_price
+
+    for price in prices[1:]:
+        profit = price - min_buy_price
+        max_profit = max(max_profit, profit)
+        min_buy_price = min(min_buy_price, price)
+
+    return max_profit
+
 
 if __name__ == '__main__':
     # This is just some code to accept inputs from the command line
@@ -30,6 +59,7 @@ if __name__ == '__main__':
 
     print(
         "${profit} can be made from the stock prices {prices}.".format(
-            profit=find_max_profit(prices=args.integers)
+            profit=find_max_profit(prices=args.integers),
+            prices=args.integers
         )
     )
