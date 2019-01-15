@@ -5,8 +5,28 @@ import sys
 # two stairs at a time
 # three stairs at a time
 # and other random orders
-def climbing_stairs(n, cache=None):
-    options = [1, 2, 3]
+
+
+def climbing_stairs(n):
+    # Not using the cache yet, might get back to it
+    if n == 0:
+        return 1
+    if n <= 2:
+        return n
+
+    prev = 2
+    prev2 = 1
+    prev3 = 1
+    current = 0
+
+    for i in range(2, n):
+        current = prev + prev2 + prev3
+        prev3 = prev2  #  every iteration previous number gets set to next number in series
+        prev2 = prev
+        prev = current
+
+    return current
+
 
 
 if __name__ == "__main__":
