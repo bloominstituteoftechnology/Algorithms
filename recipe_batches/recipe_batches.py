@@ -3,7 +3,7 @@ import math
 
 def recipe_batches(recipe, ingredients):
   '''
-  descriptipn:
+  function descriptipn:
     function should output the maximum number of whole batches that can be made 
 
   pseudo:

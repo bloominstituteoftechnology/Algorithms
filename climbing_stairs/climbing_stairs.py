@@ -1,9 +1,31 @@
 #!/usr/bin/python
-
 import sys
 
 def climbing_stairs(n, cache=None):
-  pass 
+  '''
+  function description: 
+    function that counts the number of possible ways in which the child can ascend the staircase. 
+    child can hop 1, 2, or 3 steps at a time
+
+  pseudo code:
+    - note: similar to fibonacci 
+    - base case (handles 0, handles negatives)
+    - have options that represents hops 1, 2, and 3
+    - hint from testing: [0 for i in range()]
+  '''
+  # handles negatives
+  if n < 0:
+    return 0
+  # handles 0 and 1 (included 1 since it'll be 1 anyways)
+  elif n <= 1:
+    return 1
+  else:
+    # range in the cache array
+    cache = [0 for i in range(n+1)]
+    # handles the 3 options of hops (1, 2, 3 hops)
+    cache[n] = climbing_stairs(n-1, cache) + climbing_stairs(n-2, cache) + climbing_stairs(n-3, cache)
+    return cache[n]
+
 
 
 if __name__ == "__main__":

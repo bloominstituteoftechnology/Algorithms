@@ -4,10 +4,10 @@ import math
 
 def find_max_profit(prices):
   '''
-  description:
+  function description:
     returns the maximum profit that can be made from a single buy and sell
 
-  pseudo: 
+  pseudo code: 
     - start with a loop
     - at the index compare the other values to the right of it, if the right value is greater it'll find the difference
       - add something to hold the profit value
