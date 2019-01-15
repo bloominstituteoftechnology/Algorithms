@@ -3,8 +3,6 @@ import sys
 #n = number of plays per round + list length 
 #output = all of the possible plays
 
-
-
 def rock_paper_scissors(n,combos = []):
 
   list = ['rock', 'paper', 'scissors']  
