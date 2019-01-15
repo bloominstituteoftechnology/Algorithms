@@ -31,7 +31,7 @@ def recipe_batches(recipe, ingredients):
         return 0
     else:
       return 0
-  return min(counter)
+  return min(count)
   pass 
 
 
