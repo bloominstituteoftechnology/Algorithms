@@ -3,22 +3,31 @@
 import argparse
 
 def find_max_profit(prices):
-  if len(prices) <= 1:
+  buy_price = float("inf")
+  sell_price = 0
+
+  if len(prices) == 1: # When there is only one price in prices return 0
     return 0
 
-  max_price = prices[0]
-  min_price = prices[0]
+  for i, current_price in enumerate(prices):
+    if i == len(prices) - 1:
+      break
 
-  for i, price in enumerate(prices):
-    if price < min_price:
-      max_price = 0
-      min_price = price
-    elif price > max_price:
-      max_price = price
-    print(f"Max{max_price}")
-    print(f"Min{min_price}\n")
+    next_price = prices[i + 1]
 
-  return max_price - min_price
+    if current_price < buy_price: # We want to find the lowest buy price, so if the current price is lower we set it as the new buy price.
+      buy_price = current_price
+      sell_price = next_price # When we found a new low-buy price we reset to the next price
+      print(f"Curr_price: {current_price}, buy_price: {buy_price}")
+      print(f"Next_price: {next_price}, sell_price: {sell_price} \n")
+      continue
+
+    if next_price > sell_price:
+      sell_price = next_price
+      print(f"New next_price: {next_price}, sell_price: {sell_price} \n")
+
+  print(f"Profit: {sell_price - buy_price}  ---------- \n")
+  return sell_price - buy_price
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
