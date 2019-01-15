@@ -4,9 +4,8 @@ import sys
 
 cache = {}
 
-def climbing_stairs(n, c = None):
-  global cache
-
+def climbing_stairs(n, cache = cache):
+  
   if n in cache:
     return cache[n]
   
@@ -37,7 +36,7 @@ if __name__ == "__main__":
   else:
     print('Usage: climbing_stairs.py [num_stairs]')
 
-# print(climbing_stairs(50)) # 10562230626642
+# print(f'Result: {climbing_stairs(500)}') # 10562230626642
 
 # Initial thoughts, after Beej's demonstration of doing
 # fibonnaci with cache, getting a sppedy result was pretty
