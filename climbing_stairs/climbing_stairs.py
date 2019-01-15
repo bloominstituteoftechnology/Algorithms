@@ -13,6 +13,7 @@ def climbing_stairs(n, cache=None):
     elif n == 0:
         return 1
     else:
+      # branches out every time so 5-1, then 5-2, then 5-3 and then does minus 1, minus 2 then minus 3 on those answers. run time is 3^n
         return climbing_stairs(n-1, cache) + climbing_stairs(n-2, cache) + climbing_stairs(n-3, cache)
         pass
 
