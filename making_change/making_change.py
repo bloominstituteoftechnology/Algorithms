@@ -4,13 +4,12 @@ import sys
 
 
 def making_change(amount, denominations):
-    if amount < 0:
-        return 0
-    elif amount == 0:
+    if (amount == 0):
         return 1
+    elif (amount < 0 or denominations == []):
+        return 0
     else:
-        return making_change(amount-1, denominations) + making_change(amount-5, denominations) + making_change(amount-10, denominations) + making_change(amount-25, denominations) + making_change(amount-50, denominations)
-    pass
+        return (making_change(amount, denominations[:-1]) + making_change(amount - denominations[-1], denominations))
 
 
 if __name__ == "__main__":
