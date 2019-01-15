@@ -8,7 +8,7 @@ def recipe_batches(recipe, ingredients):
   --  Function should output the maximum number of whole batches that can be made for the supplied recipe 
       using the ingredients available
       Approach  : -
-      1. Find keys inreceipe and ingredients dict
+      1. Find keys in receipe and in gredients dict
       2. Check for the equality.. i.e. all ingredients available for receipe
               - if yes then go ahead
               - else can't make that receipe. Not all ingredients available
@@ -18,7 +18,10 @@ def recipe_batches(recipe, ingredients):
                   --  Insufficient ingredients available
   """
   batches = []
-  if recipe.keys() == ingredients.keys():
+  if recipe.keys() == ingredients.keys(): 
+    #as checking keys.. can use dict[key] instead of dict.get(key)
+    #The get() method returns a default value if the key is missing.
+    #if the key is not found dict[key], KeyError exception is raised
     for key in recipe:
         batches.append(ingredients[key] // recipe[key])
         return min(batches)
