@@ -1,10 +1,11 @@
 #!/usr/bin/python
 
 import sys
+#n = number of plays per round
+#output = all of the possible plays
 
 def rock_paper_scissors(n):
-  pass 
-
+ 
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:

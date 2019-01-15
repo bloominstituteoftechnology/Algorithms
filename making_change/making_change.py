@@ -5,13 +5,15 @@ amount = 30
 denominations =[1,5,10,25,50]
 
 def making_change(amount, denominations):
-  combo_count = 1
-  new_amount = amount - 5
-  countup_amount = new_amount + 5
 
-  while countup_amount < 50: 
+  k= len(denominations)
+  n= amount
 
-  (new_amount/5)
+
+
+  totalCombo = math.factorial(int(n))/math.factorial(int(k))*math.factorial(int(k))
+
+  print(totalCombo)
 
 
 
