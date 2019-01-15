@@ -3,8 +3,15 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+  plays = ["rock", "paper", "scissors"]
 
+  if n <= 0:
+    return [[]]
+  else:
+    results = []
+    prev = rock_paper_scissors(n-1)
+
+    return [[play] + result for play in plays for result in prev]
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
