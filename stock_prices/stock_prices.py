@@ -6,9 +6,9 @@ import argparse
 def find_max_profit(prices):
     # define return profit variable
     profit_list = []
-    # iterate through prices
+    # iterate through the prices list
     for i in range(len(prices) - 1):
-        # check if current price is more than min(price) right of the current price
+        # check if current price in list is less than price right of the current price
         if prices[i] < prices[i + 1]:
             profit_list.append(max(prices[i + 1:]) - prices[i])
     if profit_list == []:
