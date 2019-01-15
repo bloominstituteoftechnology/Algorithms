@@ -11,6 +11,27 @@ Thoughts on solving this problem:
 
 """
 def recipe_batches(recipe, ingredients):
+  count = []
+  # test for appropriate lengths
+  if len(recipe) != len(ingredients):
+    return 0
+  
+  recipeSort = sorted(recipe)
+  ingredSort = sorted(ingredients)
+
+  for i in range(len(recipeSort)):
+    ingredOne = ingredSort[i]
+    recOne = recipeSort[i]
+    # test the above variables
+    print(ingredOne, recOne)
+    if recOne == ingredOne:
+      if recipe[recOne] <= ingredients[ingredOne]:
+        count.append(int(ingredients[ingredOne]/recipe[recOne]))
+      else:
+        return 0
+    else:
+      return 0
+  return min(counter)
   pass 
 
 

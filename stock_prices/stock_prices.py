@@ -12,7 +12,13 @@ We can do this using a quicksort-style algorithm. To determine the highest profi
 
 """
 def find_max_profit(prices):
-  # commented out two-loop code
+  # went back to a two-loop idea so I can improve time complexity later
+  max = 0
+  for i in range(len(prices) - 1):
+    for j in range(i, len(prices)):
+      difference = prices[j] - prices[i]
+      if difference > max and i != j:
+        max = difference
   pass
 
 
