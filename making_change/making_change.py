@@ -14,30 +14,17 @@ def making_change(amount, denominations):
   elif amount == 0:
     return 1
 
-  elif amount < 5:
-    result = making_change(amount - denominations[0], denominations)
-    cache[amount] = result
-    return result
-
-  elif amount < 10 and amount >= 5 :
-    result = making_change(amount - denominations[0], denominations) + making_change(amount - denominations[1], denominations)
-    cache[amount] = result
-    return result
-
-  elif amount < 25 and amount >= 10 :
-    result = making_change(amount - denominations[0], denominations) + making_change(amount - denominations[1], denominations) + making_change(amount - denominations[2], denominations)
-    cache[amount] = result
-    return result
-
-  elif amount < 50 and amount >= 25 :
-    result = making_change(amount - denominations[0], denominations) + making_change(amount - denominations[1], denominations) + making_change(amount - denominations[2], denominations) + making_change(amount - denominations[3], denominations)
-    cache[amount] = result
-    return result
-
   else:
-    result = making_change(amount - denominations[0], denominations) + making_change(amount - denominations[1], denominations) + making_change(amount - denominations[2], denominations) + making_change(amount - denominations[3], denominations) + making_change(amount - denominations[4], denominations)
+    poss_denom = [coin for coin in denominations if coin <= amount]
+    # result = making_change(amount - greatest, denominations)
+    print(poss_denom)
+    result = 0
+    for i in poss_denom:
+      print(i)
+      result += making_change(amount - i, denominations)
     cache[amount] = result
     return result
+  
 
 if __name__ == "__main__":
   # Test our your implementation from the command line
