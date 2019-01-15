@@ -10,7 +10,8 @@ def climbing_stairs(n, cache=None):
     if n == 0:
         return 1
 
-    return climbing_stairs(n - 2) + climbing_stairs(n - 1) + 3
+    return (climbing_stairs(n - 3) + climbing_stairs(n - 2) +
+            climbing_stairs(n - 1))
 
 
 if __name__ == "__main__":
