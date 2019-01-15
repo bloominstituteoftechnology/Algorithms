@@ -5,11 +5,14 @@ import math
 
 def recipe_batches(recipe, ingredients):
     batches = []
+
     if len(recipe) == len(ingredients):
         for k in ingredients:
             batches.append(ingredients[k] // recipe[k])
+    else:
+        batches.append(0)
 
-    return batches
+    return min(batches)
 
 
 recipe = {"milk": 2, "sugar": 40, "butter": 20}
