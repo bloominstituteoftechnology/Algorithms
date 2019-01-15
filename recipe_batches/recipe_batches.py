@@ -3,7 +3,14 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+
+  batches = 0
+  for k, v in recipe:
+    for k2, v2 in ingredients:
+      if v % v2 >= 1:
+        batches += 1
+
+  return batches
 
 
 if __name__ == '__main__':
