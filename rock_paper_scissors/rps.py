@@ -6,12 +6,16 @@ def rock_paper_scissors(n):
   plays = []
   playChoices = ['rock','paper', 'scissors']
   
-  def recursionMemes(n):
+  def recursionMemes(n, templist = []):
     if n < 1:
-      return soemthing
+      plays.append(templist)
+      return 'end'
+    for play in playChoices:
+      n = n-1
+      recursionMemes(n, templist + [play] )
 
-
-  return recursionMemes(n)
+  recursionMemes(n, [])
+  return [play for play in plays if len(play) == n]
 
 
 if __name__ == "__main__":
