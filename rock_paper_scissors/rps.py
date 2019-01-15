@@ -1,19 +1,9 @@
 #!/usr/bin/python
 
 import sys
+from itertools import permutations
 
-def rock_paper_scissors(n, round = [], round_num = 1, possibilities = []):
-  ''' 
-    define options - rock paper or scissors
-    declare 0 and 1 cases
-    round place variable
-    possibilities variable
-    current round
-
-    loop through options to generate rounds not in possibilities
-    return possibilities
-    or recurse
-  '''
+def rock_paper_scissors(n):
   options = ['rock', 'paper', 'scissors']
 
   if n == 0:
@@ -21,21 +11,28 @@ def rock_paper_scissors(n, round = [], round_num = 1, possibilities = []):
   if n == 1:
     return [[options[0]], [options[1]], [options[2]]]
 
-  for i, val in enumerate(options):
-    round.append(options[i])
-    if round in possibilities:
-      return possibilities
-    if round_num == n:
-      possibilities.append(round)
-      round = []
-      round_num = 1
-    else:
-      rock_paper_scissors(n, round, round_num + 1, possibilities)
+  if n > 3:
+    choices = []
+    while len(choices) < n:
+      for i in options:
+        choices.append(i)
+    options = choices
+  total = permutations(options, n)
 
-  return possibilities
+  defaults = []
+  for i in options:
+    round = []
+    for j in range(n):
+      round.append(i)
+    defaults.append(round)
 
+  
+  perms = []
+  for i in list(total):
+    perms.append(list(i))
 
-print(rock_paper_scissors(2))
+  return perms + defaults
+
 
 
 if __name__ == "__main__":
