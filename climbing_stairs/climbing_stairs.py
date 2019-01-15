@@ -19,9 +19,14 @@ def climbing_stairs(n, cache=None):
   # handles 0 and 1 (included 1 since it'll be 1 anyways)
   elif n <= 1:
     return 1
+  # checks that there is a cache
+  elif cache and cache[n] > 0:
+    return cache[n]
   else:
-    # range in the cache array
-    cache = [0 for i in range(n+1)]
+    # if there is no cache it'll create one
+    if not cache:
+      # range (inclusive) in the cache array
+      cache = [0 for i in range(n+1)]
     # handles the 3 options of hops (1, 2, 3 hops)
     cache[n] = climbing_stairs(n-1, cache) + climbing_stairs(n-2, cache) + climbing_stairs(n-3, cache)
     return cache[n]

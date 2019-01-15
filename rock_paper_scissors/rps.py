@@ -1,8 +1,11 @@
 #!/usr/bin/python
-
 import sys
 
 def rock_paper_scissors(n):
+  '''
+  description:
+    Your output should be a list of lists containing strings. Each inner list should have length equal to the input n.
+  '''
   pass 
 
 
