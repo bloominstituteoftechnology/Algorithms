@@ -1,15 +1,18 @@
 #!/usr/bin/python
 
 import argparse
+import math
 
 def find_max_profit(prices):
-  highest = -max(prices)
+  # highest = -max(prices)
+  highest = float("-inf")
   for i, c in enumerate(prices[:-1]):
     if max(prices[i+1:]) - c >= highest:
       highest = max(prices[i+1:]) - c
+  print(highest)
   return highest
 
-
+# [10, 7, 5, 8, 11, 9]
 
   
 
