@@ -12,6 +12,17 @@ def recipe_batches(recipe, ingredients):
     - check if ingredients with the same key in the recipe match, exceed, or are lower than the recipe
     - find a way to count the batches
   '''
+  batches = []
+  for i in recipe:
+    if i is not ingredients:
+        batches.append(0)
+    elif recipe[i] > ingredients[i]:
+       batches.append(0)
+    else:
+      batches.append(math.floor(ingredients[i]/recipe[i]))	
+  return min(batches)
+
+
 
 
 if __name__ == '__main__':
