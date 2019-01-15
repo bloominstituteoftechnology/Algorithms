@@ -1,18 +1,11 @@
-
-rpsDict = {0: "rock", 1: "paper", 2: "scissors"}
-print(rpsDict[0])
+import itertools
+rpsDict = ['rock', 'paper', 'scissors']
+listNew = itertools.product(rpsDict, repeat=2)
+lis = list(listNew)
 empty_list = []
-inner_list = []
-
-for i in range(2):
-
-    for j in range(2):
-        print(j)
-        inner_list.append(rpsDict[i])
-        inner_list.append(rpsDict[j])
-
-
-print(inner_list)
+for index, x in enumerate(lis):
+    empty_list.append(list(lis[index]))
+print(empty_list)
 # if n < 0:
 #   return []
 # elif n == 0:
