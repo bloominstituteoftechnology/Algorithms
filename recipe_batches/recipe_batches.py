@@ -4,13 +4,17 @@ import math
 
 
 def recipe_batches(recipe, ingredients):
-    recipe_dict = {}
-    ingredients_dict = {}
-    for k, v in recipe.items():
-        recipe_dict[k] = v
-    for k, v in ingredients.items():
-        ingredients_dict[k] = v
-    return ingredients_dict
+    difference = []
+    for ingredient in recipe:
+        if ingredient in ingredients:
+            difference.append(ingredients[ingredient] / recipe[ingredient])
+        else:
+            difference = 0
+            break
+    if min(difference) < 1:
+        return 0
+    else:
+        return round(max(difference) - 0.5)
 
 
 if __name__ == '__main__':
