@@ -3,7 +3,15 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  max_batches = 1000000
+  for item in recipe.keys():
+    if item not in ingredients.keys():
+      return 0
+    current_batches = ingredients[item] // recipe[item]
+    if current_batches < max_batches:
+      max_batches = current_batches
+
+  return max_batches 
 
 
 if __name__ == '__main__':
