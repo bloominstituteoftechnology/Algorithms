@@ -11,26 +11,24 @@ def recipe_batches(recipe, ingredients):
   if i have enough of the ingredient continue to check the list
   if i dont have enough finish seaching and return false 
   """
-  recipe_avail = 0
+  min_avail = []
   for k, v in recipe.items():
     if k in ingredients.keys():
-      if v > ingredients[k]:
-        return 0
-      else:
-        ingredients[k] = ingredients[k] - v
-        recipe_avail += 1
-  return recipe_avail
-  
+      recipe[k] = math.floor(ingredients[k] / v)
+      min_avail.append(recipe[k])
+    else:
+      return 0
+  return sorted(min_avail)[0]
 
 
-recipe = { 'milk': 100, 'butter': 50, 'flour': 5 }
-ingredients = { 'milk': 132, 'butter': 55, 'flour': 51 }
-print(recipe_batches(recipe, ingredients))
+# recipe = { 'milk': 100, 'butter': 50, 'flour': 5 }
+# ingredients = { 'milk': 132, 'butter': 55, 'flour': 51 }
+# print(recipe_batches(recipe, ingredients))
 
 
-# if __name__ == '__main__':
-#   # Change the entries of these dictionaries to test 
-#   # your implementation with different inputs
-#   recipe = { 'milk': 100, 'butter': 50, 'flour': 5 }
-#   ingredients = { 'milk': 132, 'butter': 48, 'flour': 51 }
-#   print("{batches} batches can be made from the available ingredients: {ingredients}.".format(batches=recipe_batches(recipe, ingredients), ingredients=ingredients))
+if __name__ == '__main__':
+  # Change the entries of these dictionaries to test 
+  # your implementation with different inputs
+  recipe = { 'milk': 100, 'butter': 50, 'flour': 5 }
+  ingredients = { 'milk': 132, 'butter': 48, 'flour': 51 }
+  print("{batches} batches can be made from the available ingredients: {ingredients}.".format(batches=recipe_batches(recipe, ingredients), ingredients=ingredients))
