@@ -3,8 +3,12 @@
 import sys
 
 def climbing_stairs(n, cache=None):
-  pass 
-
+  if n < 0:
+    return 0
+  if n == 0:
+    return 1
+  else:
+    return climbing_stairs(n-1) + climbing_stairs(n-2) + climbing_stairs(n-3)
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
