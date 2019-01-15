@@ -3,15 +3,28 @@
 import argparse
 
 
-def find_max_profit(prices):
-    result = float("-inf")
-    for index, first in enumerate(prices):
-        for compare in prices[index+1:]:
-            check = compare - first
-            if check > result:
-                result = check
+# def find_max_profit(prices):
+#     result = float("-inf")
+#     for index, first in enumerate(prices):
+#         for compare in prices[index+1:]:
+#             check = compare - first
+#             if check > result:
+#                 result = check
 
-    return result
+#     return result
+
+
+def find_max_profit(prices):
+    min_buy_price = prices[0]
+    max_profit = prices[1] - min_buy_price
+
+    for p in prices[1:]:
+        profit = p - min_buy_price
+
+        max_profit = max(profit, max_profit)
+        min_buy_price = min(p, min_buy_price)
+
+    return max_profit
 
 # TODO Complete recursive version
 #     max_profit = float("-inf")
