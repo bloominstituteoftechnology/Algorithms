@@ -4,9 +4,18 @@ import sys
 def rock_paper_scissors(n):
   '''
   description:
-    Your output should be a list of lists containing strings. Each inner list should have length equal to the input n.
+    generates all of the possible plays that can be made in a game of "Rock Paper Scissors", given some input `n`, which represents the number of plays per round. 
+  
+  pseudo code:
+    - hint: inner recursive helper function
+    - add an empty list  that will store the mini lists with a '+'
+    - have something that represents rock, paper, scissors
+    - base case (handles 0)
+    - for loop needed but where?
   '''
-  pass 
+
+
+   
 
 
 if __name__ == "__main__":
