@@ -14,13 +14,18 @@ def recipe_batches(recipe, ingredients):
   '''
   batches = []
   for i in recipe:
-    if i is not ingredients:
-        batches.append(0)
+    # handles if an ingredient is missing
+    if i not in ingredients:
+      batches.append(0)
+    # handles if the ingredients are less that what's needed in the recipe
     elif recipe[i] > ingredients[i]:
-       batches.append(0)
+      batches.append(0)
+    # checks how many ingredient items there are per recipe item, adds it to an array
     else:
-      batches.append(math.floor(ingredients[i]/recipe[i]))	
+      batches.append(math.floor(ingredients[i]/recipe[i]))
+  # min chooses the minimum ingredient batch b/c that's the only amount available to make a whole batch
   return min(batches)
+  
 
 
 

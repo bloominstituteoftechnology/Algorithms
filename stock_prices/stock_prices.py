@@ -15,10 +15,16 @@ def find_max_profit(prices):
       greater than the previos profit value, which it'll then keep the greatest profit
     - it'll do this through the whole array until there is only one max profit
   '''
+  # stores max_profit current value and will handle negative values
   max_profit = math.inf * -1
+  # first for loop, price on the left
   for i in range(len(prices)):
+    # second for loop, price on the right
     for j in range (i+1, len(prices)):
+      # checking that the new values are greater than the current max_profit
       if (prices[j] - prices[i]) > max_profit:
+        # if the new values are greater, it'll store that difference as the current max_profit and continue the loop until it ends
+        # if the new values are lower, it'll skip those values and continue the loop until it ends
         max_profit = prices[j] - prices[i]
   return max_profit
 
