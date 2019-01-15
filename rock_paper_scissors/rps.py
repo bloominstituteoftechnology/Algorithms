@@ -1,9 +1,26 @@
 #!/usr/bin/python
 
 import sys
+import math
+import itertools
 
 def rock_paper_scissors(n):
-  pass 
+  if n < 1:
+    return [[]]
+  obj = {
+    'r': 'rock',
+    'p': 'paper',
+    's': 'scissors'
+  }
+  ret = []
+
+  tup = list(itertools.product('rps', repeat=n))
+  
+  for el in tup:
+    ret.append(list(el))
+
+  ret = [[obj[x] for x in row] for row in ret]
+  return ret
 
 
 if __name__ == "__main__":
