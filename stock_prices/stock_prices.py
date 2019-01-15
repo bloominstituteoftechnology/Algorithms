@@ -4,11 +4,7 @@ import argparse
 
 
 def find_max_profit(prices):
-    # first pass solution
-    # We have to init buy first price
-    # if there is a lower price we can only buy that one
-    # if there is a bigger sell point after
-
+    # second pass solution
     buy = prices[0]
     sell = 0
 
@@ -18,8 +14,6 @@ def find_max_profit(prices):
 
         if buy < price and price > sell:
             sell = price
-
-    print(f"sell: {sell}, buy: {buy}")
 
     max_profit = sell - buy
 
@@ -34,5 +28,6 @@ if __name__ == '__main__':
                         nargs='+', help='an integer price')
     args = parser.parse_args()
 
-    print("A profit of ${profit} can be made from the stock prices {prices}.".format(
+    print("A profit of ${profit} can be made from the stock prices
+          {prices}.".format(
         profit=find_max_profit(args.integers), prices=args.integers))
