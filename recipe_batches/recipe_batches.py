@@ -6,22 +6,22 @@ import math
 
 
 def recipe_batches(recipe, ingredients):
-    # If differnt ingredients return 0
-    if len(recipe) != len(ingredients):
+    # lowest number of batches that can be made
+
+    # If recipe has more ingredients than ingrdients available
+    if len(recipe) > len(ingredients):
         return 0
 
-    for ingredient in recipe:
+    for i, ingredient in enumerate(recipe):
         if ingredients[ingredient] // recipe[ingredient] == 0:
             return 0
 
-        vals = []
-        vals.append(ingredients[ingredient] // recipe[ingredient])
-        low = vals[0]
-        for val in vals:
-            if val < low:
-                low = val
+        print(recipe[0])
 
-        return low
+        if ingredients[ingredient] // recipe[ingredient] < low:
+            low = ingredients[ingredient] // recipe[ingredient]
+
+    return low
 
 
 if __name__ == '__main__':
