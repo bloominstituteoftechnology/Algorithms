@@ -31,7 +31,7 @@ def find_max_profit(prices):
 
     return max_pofit
     """
-    
+
     # O(n)
     min_buy_price = prices[0]
     max_profit = prices[1] - min_buy_price

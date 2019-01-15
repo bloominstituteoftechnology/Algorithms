@@ -13,13 +13,48 @@ def climbing_stairs(n, cache=None):
 """
 
 
-def climbing_stairs(n, cache=None):
+def climbing_stairs(n, cache={}):
+    """
     if n == 0:
         return 1
     elif n == 1 or n == 2:
         return n
     else:
-        return climbing_stairs(n-1) + climbing_stairs(n-2) + climbing_stairs(n-3)
+        return climbing_stairs(n-1) + climbing_stairs(n-2)
+        + climbing_stairs(n-3)
+    """
+    # memoization
+    """
+    if n == 0 or n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    elif n in cache:
+        return cache[n]
+    else:
+        cache[n] = climbing_stairs(n-1, cache) + climbing_stairs(n-2, cache)
+        + climbing_stairs(n-3, cache)
+        return cache[n]
+    """
+
+    if n == 0:
+        return 1
+    if n <= 2:
+        return n
+
+    prev_prev_prev = 1
+    prev_prev = 1
+    prev = 2
+    cur = 0
+
+    for _ in range(2, n):
+        cur = prev + prev_prev + prev_prev_prev
+        prev_prev_prev = prev_prev
+        prev_prev = prev
+        prev = cur
+
+    return cur
+
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
