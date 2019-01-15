@@ -16,7 +16,7 @@ def find_max_profit(prices):
     - it'll do this through the whole array until there is only one max profit
   '''
   # stores max_profit current value and will handle negative values
-  max_profit = math.inf * -1
+  max_profit = -math.inf
   # first for loop, price on the left
   for i in range(len(prices)):
     # second for loop, price on the right
@@ -27,6 +27,40 @@ def find_max_profit(prices):
         # if the new values are lower, it'll skip those values and continue the loop until it ends
         max_profit = prices[j] - prices[i]
   return max_profit
+
+  # # First Pass Instructor Solution O(n^2):
+  # max_profit = -math.inf
+
+  # while prices != []:
+  #   bought = prices[0]
+
+  #   for p in prices[1:]:
+  #     profit = p - bought
+  #     if profit > max_profit:
+  #       max_profit = profit
+      
+  #   prices.pop(0)
+
+  # return(max_profit)
+
+  # # Second Pass Instructor Solution O(n):
+  # min_buy_price = prices[0]
+  # max_profit = prices[1] - min_buy_price
+
+  # for p in prices:
+  #   profit = p - min_buy_price
+
+  #   # # These 2 lines can replace the 2 if statements below
+  #   # max_profit = max(profit, max_profit)
+  #   # min_buy_price = min(p, min_buy_price)
+
+  #   if profit > max_profit:
+  #     max_profit = profit
+
+  #   if p < min_buy_price:
+  #     min_buy_price = p
+  
+  # return max_profit
 
 
 
