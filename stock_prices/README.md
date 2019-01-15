@@ -14,4 +14,4 @@ You can also test your implementation manually by executing `python stock_prices
 
 ## Hints
 
- * For this problem, we essentially want to find the difference between the smallest and largest prices in the list of prices.
+ * For this problem, we essentially want to find the difference between the smallest and largest prices in the list of prices. 
