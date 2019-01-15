@@ -5,19 +5,16 @@ amount = 30
 denominations =[1,5,10,25,50]
 
 def making_change(amount, denominations):
+  combo_count = 1
+  new_amount = amount - 5
+  countup_amount = new_amount + 5
 
-  if amount >= 25 and amount <= 50:
-    x = round((amount/5)/2)
+  while countup_amount < 50: 
 
-    y = (amount/25)
-    z = round(amount/25)
-    xx = y - z
-    xy = xx(25)
+  (new_amount/5)
 
-    combos = xy + x
-    return combos
-  else:
-    return (print("not in range"))
+
+
 
 making_change(amount, denominations)
 
