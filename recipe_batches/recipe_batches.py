@@ -53,9 +53,13 @@ if __name__ == '__main__':
 # Currently failing tests. Going to paste them here so I can inspect a little
 
 # print(recipe_batches({ 'milk': 100, 'flour': 4, 'sugar': 10, 'butter': 5 }, { 'milk': 1288, 'flour': 9, 'sugar': 95 })) # 0
+# 22 steps
 # print(recipe_batches({ 'milk': 100, 'butter': 50, 'cheese': 10 }, { 'milk': 198, 'butter': 52, 'cheese': 10 })) # 1
+# 20 steps
 # print(recipe_batches({ 'milk': 2, 'sugar': 40, 'butter': 20 }, { 'milk': 5, 'sugar': 120, 'butter': 500 })) # 2
+# 20 steps
 # print(recipe_batches({ 'milk': 2 }, { 'milk': 200})) # 100
+# 16 steps
 
 # I see it, was forgetting to return just the first index of batches
 # return batches
@@ -63,3 +67,19 @@ if __name__ == '__main__':
 # return batches[0]
 
 # and tests pass!!!
+
+# Interesting note, the number of on hand ingredients
+# or the number of keys in the second dictionary do not
+# add any more steps
+
+# Grabbing data from the longest test case and reducing
+# necessary ingredients to see if I can spot the trend
+
+# Recipe Ingredients    Steps
+# 1                     16
+# 2                     18
+# 3                     20
+# 4                     22
+# 5                     24
+
+# Think we are looking at O(n)
