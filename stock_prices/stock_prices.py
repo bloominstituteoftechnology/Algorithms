@@ -3,7 +3,19 @@
 import argparse
 
 def find_max_profit(prices):
-  
+  maxProfit = float("-inf")
+
+  while prices != []:
+    buyPrice = prices[0]
+
+    for price in prices[1:]:
+      profit = price - buyPrice
+      if profit > maxProfit:
+        maxProfit = profit
+
+    prices.pop(0)
+
+  return(maxProfit)
 
 
 if __name__ == '__main__':
