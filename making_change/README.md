@@ -39,3 +39,20 @@ You can also test your implementation manually by executing `python making_chang
    Next up, on the next iteration, `higher_amount` will now be 2. The difference between `higher_amount` and our coin value now is 1. Well we just figured out an answer for 1, so now we have an answer for 2. Add that to our cache. 
 
    Once this loop finishes, we'll have figured out all of the ways to make different amounts using the current coin. At that point, all we have to do is perform that loop for every single coin, and then return the answer in our cache for the original amount!
+
+   Re making change, I'm worried this is too much of a giveaway, but here goes.
+
+more hints: 
+There are a lot of choices we can make each step of the way, but two of them stand out:
+
+1. We could pay out the smallest denomination remaining in our amount. Take that off the total, and try again.
+
+2. Or we could forget about the smallest denomination, and try paying out the amount again using the remaining denominations (no longer including the smallest).
+
+Put another way, one path is to take the smallest denomination off the total. And another path is to not take anything off the total and look at the remaining denominations.
+
+"Minion #1! If I take the nickel off the total, how many more ways can I make change with the remaining amount?
+
+"Minion #2! If I _don't_ take a nickel off the total, and only consider the higher denominations in the future, how many more ways can I make change with the amount?
+
+"Get back to me when you're done so I can add the results together."
