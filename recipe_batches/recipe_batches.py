@@ -3,7 +3,17 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  batches = []
+  for item in recipe:
+    if item not in ingredients:
+      return 0
+    elif recipe[item] > ingredients[item]:
+      return 0
+    else:
+      # Divides and returns the integer value of the quotient. It dumps the digits after the decimal.
+      # https://data-flair.training/blogs/python-operator/
+      batches.append(ingredients[item] // recipe[item])
+  return min(batches)   
 
 
 if __name__ == '__main__':
