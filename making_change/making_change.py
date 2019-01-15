@@ -21,6 +21,10 @@ def making_change_nocache(amount, denominations):
 def making_change(amount, denominations):
     cache = [0 for i in range(amount + 1)]
     cache[0] = 1
+    # for denomination in denominations:
+    #     for higher_amount in range(denomination, amount + 1):
+    #         cache[higher_amount] += cache[higher_amount - denomination]
+
     for higher_amount in range(1, amount + 1):
         cache[higher_amount] += cache[higher_amount - 1]
     for higher_amount in range(5, amount + 1):
