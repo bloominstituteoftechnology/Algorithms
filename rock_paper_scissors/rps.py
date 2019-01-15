@@ -3,14 +3,15 @@ import random
 import sys
 
 def rock_paper_scissors(n):
-
+  plays = []
   playChoices = ['rock','paper', 'scissors']
-  plays = [[]]
-  while count < 5:
-    for i in range(n):
-      x = random.randint(0,2)
+  
+  def recursionMemes(n):
+    if n < 1:
+      return soemthing
 
-  pass 
+
+  return recursionMemes(n)
 
 
 if __name__ == "__main__":
