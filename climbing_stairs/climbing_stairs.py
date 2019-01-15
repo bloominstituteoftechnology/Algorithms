@@ -4,7 +4,18 @@ import sys
 import math
 
 def climbing_stairs(n, cache=None):
-  return math.factorial(n) / math.factorial(n-2)
+  if n < 0:
+    return 0
+  if n == 0:
+    return 1
+  else:
+    print('1',climbing_stairs(n-1))
+    print('2', climbing_stairs(n-2))
+    print('3', climbing_stairs(n-3))
+    return int(climbing_stairs(n-1) + climbing_stairs(n-2) + climbing_stairs(n-3))
+   
+  
+
 
 
 if __name__ == "__main__":

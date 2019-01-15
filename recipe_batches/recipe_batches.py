@@ -7,8 +7,11 @@ def recipe_batches(recipe, ingredients):
   batches = ingredients[firstkey]/recipe[firstkey]
 
   for key in recipe:
-    if ingredients[key]/recipe[key] < batches:
-      batches = ingredients[key]/recipe[key]
+    if key in ingredients:
+      if ingredients[key]/recipe[key] < batches:
+        batches = ingredients[key]/recipe[key]
+    else:
+      return 0
     
  
   return int(batches)

@@ -3,9 +3,10 @@
 import argparse
 
 def find_max_profit(prices):
-  max_profit = 0
+  max_profit = prices[1] - prices[0]
+  print(max_profit)
   for n in range(len(prices)):
-    for j in range(n,len(prices)):
+    for j in range(n+1,len(prices)):
       if prices[j] - prices[n] > max_profit:       
         max_profit = prices[j] - prices[n]
 

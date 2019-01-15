@@ -1,8 +1,15 @@
 #!/usr/bin/python
-
+import random
 import sys
 
 def rock_paper_scissors(n):
+
+  playChoices = ['rock','paper', 'scissors']
+  plays = [[]]
+  while count < 5:
+    for i in range(n):
+      x = random.randint(0,2)
+
   pass 
 
 
