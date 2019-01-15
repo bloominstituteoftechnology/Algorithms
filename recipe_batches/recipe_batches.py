@@ -16,23 +16,13 @@ def recipe_batches(recipe, ingredients):
               - access value using key and check ingredient amount is greater than receipe needed
                   --  if yes count multiple and return receipe batch
                   --  Insufficient ingredients available
-
   """
   batches = []
   if recipe.keys() == ingredients.keys():
     for key in recipe:
-        #print(key)
-        #print(ingredients[key])
-        #print(recipe[key])
-        enough_ingredient = int(ingredients[key] / recipe[key])
-        #print("for key {} :  {}".format(key , enough_ingredient))
-        batches.append(enough_ingredient)
-            
-        if 0 in batches:
-            return 0 
-        else:
-            return min(batches)
-            
+        batches.append(ingredients[key] // recipe[key])
+        return min(batches)
+      
   else:
       return 0 
 
