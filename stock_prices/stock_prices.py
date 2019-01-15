@@ -4,15 +4,20 @@ import argparse
 
 
 def find_max_profit(prices):
-    list_to_sum = []
-    for i in range(len(prices)-1):
+    # define return profit variable
+    profit_list = []
+    # iterate through prices
+    for i in range(len(prices) - 1):
+        # check if current price is more than min(price) right of the current price
         if prices[i] < prices[i + 1]:
-            print(
-                f'Gap between {prices[i]} and {prices[i + 1]} is a profit at {prices[i + 1] - prices[i]}')
-            list_to_sum.append(prices[i + 1] - prices[i])
-        else:
-            print(f'No good')
-    return sum(list_to_sum)
+            profit_list.append(max(prices[i + 1:]) - prices[i])
+    if profit_list == []:
+        for i in range(len(prices) - 1):
+            if prices[i] > prices[i + 1]:
+                profit_list.append(min(prices[i + 1:]) - prices[i])
+    return max(profit_list)
+    # if the current price is larger find the difference between smallest price right of the current price with i and append to the profit list
+    # once list is completed, return largest profit
 
 
 if __name__ == '__main__':
