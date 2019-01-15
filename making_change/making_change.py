@@ -3,7 +3,14 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
+  if amount == 0 or amount == 1:
+    return 1
+
+  if amount not in denominations:
+    denominations[amount] = (amount - 1) + (amount - 2) + (amount - 3) + (amount - 4) + (amount - 5)
+  
+  return denominations
+
 
 
 if __name__ == "__main__":
