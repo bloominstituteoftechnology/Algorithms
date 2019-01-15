@@ -10,9 +10,8 @@ def rock_paper_scissors(n):
     if n < 1:
       plays.append(templist)
       return 'end'
-    for play in playChoices:
-      n = n-1
-      recursionMemes(n, templist + [play] )
+    for play in playChoices:      
+      recursionMemes(n-1, templist + [play] )
 
   recursionMemes(n, [])
   return [play for play in plays if len(play) == n]

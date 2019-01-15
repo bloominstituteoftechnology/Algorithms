@@ -9,7 +9,6 @@ def climbing_stairs(n, cache=None):
   if n == 0:
     return 1
   else:
-    print(int(climbing_stairs(n-1) + climbing_stairs(n-2) + climbing_stairs(n-3)))
     return int(climbing_stairs(n-1) + climbing_stairs(n-2) + climbing_stairs(n-3))
    
   
