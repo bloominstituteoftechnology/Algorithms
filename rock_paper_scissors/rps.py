@@ -3,23 +3,50 @@
 import sys
 
 
+# def rock_paper_scissors_1(n):
+#     rps_list = [['rock'], ['paper'], ['scissors']]
+
+#     def rec(list, n):
+#         if n == 0:
+#             return [[]]
+
+#         if n == 1:
+#             return list
+
+#         # for i, item in enumerate(list):
+
+#         # list[0] + list[i]
+
+#         return rec(list, n - 1)
+
+# return rec(rps_list, n)
+
+
 def rock_paper_scissors(n):
     rps_list = [['rock'], ['paper'], ['scissors']]
 
-    def rec(list, n):
-        if n == 0:
-            return [[]]
+    if n == 0:
+        return [[]]
 
-        if n == 1:
-            return list
+    if n == 1:
+        return list
 
-        # for i, item in enumerate(list):
+    combo = []
 
-        # list[0] + list[i]
+    for i in range(3**n):
+        # for the first third of loops
+        if i < round(.3333 * 3**n):
+            combo.append(rps_list[0])
+        elif i < round(.6666 * 3**n):
+            combo.append(rps_list[1])
+        else:
+            combo.append(rps_list[2])
 
-        return rec(list, n - 1)
+    while len(combo[0]) != n:
+        for i in range(3**n):
+            combo[i] = combo[i] + rps_list[i % 3]
 
-    return rec(rps_list, n)
+    print(combo)
 
 
 if __name__ == "__main__":
