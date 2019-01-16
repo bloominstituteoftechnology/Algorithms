@@ -1,19 +1,22 @@
 #!/usr/bin/python
 
 import argparse
+import math
 
 def find_max_profit(prices):
-  L1 = prices[:-1]
-  L2 = prices[0:]
 
-  buy = min(L1)
-  sell = max(L2)
+  max_profit = float("-inf")
 
-  profit = sell-buy
+  while prices != []:
+    bought = prices[0]
+  
+    for price in prices[1:]:
+      profit = price - bought
+      if profit > max_profit:
+        max_profit = profit
+    prices.pop(0)
 
-  return profit
-
-
+  print(max_profit)
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
