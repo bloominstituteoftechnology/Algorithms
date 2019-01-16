@@ -10,6 +10,7 @@ def rock_paper_scissors(n):
     return [['rock'], ['paper'], ['scissors']]
   else:
     # print(f'This is the list === {list(product(array, repeat = n))}') #returns a tuple
+    # use list comprehension to convert tuple to list
     combinations = [list(x) for x in list(product(array, repeat = n))]
     return combinations
 
