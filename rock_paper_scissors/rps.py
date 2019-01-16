@@ -24,9 +24,6 @@ def rock_paper_scissors(n, plays = None):
 
   return rock_paper_scissors(n // 3, rock) + rock_paper_scissors(n // 3, paper) + rock_paper_scissors(n // 3, scissors)
 
-
-
-
 if __name__ == "__main__":
   if len(sys.argv) > 1:
     num_plays = int(sys.argv[1])
