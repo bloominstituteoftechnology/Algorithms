@@ -2,9 +2,17 @@
 
 import sys
 
-def making_change(amount, denominations):
-  pass 
 
+def making_change(amount, denominations):
+  results = [0] * (amount + 1)
+  results[0] = 1
+  print(results, "results")
+  for denom in denominations:
+      for idx in range(len(results)):
+        if idx >= denom:
+          results[idx] += results[idx - denom]
+
+  return results[amount]
 
 if __name__ == "__main__":
   # Test our your implementation from the command line
