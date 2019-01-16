@@ -3,6 +3,16 @@
 import math
 
 def recipe_batches(recipe, ingredients):
+  prevMax = math.inf
+  ingVal = list(ingredients.values())
+  for i,val in enumerate(recipe.values()):
+    if ingredients.keys() != recipe.keys():
+      prevMax = 0
+    elif ingVal[i]/val < 1:
+      prevMax = 0
+    elif ingVal[i]/val < prevMax:
+      prevMax = round(ingVal[i]/val)
+  return prevMax
   pass 
 
 

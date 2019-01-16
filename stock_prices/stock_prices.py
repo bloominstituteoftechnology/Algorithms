@@ -1,9 +1,19 @@
 #!/usr/bin/python
-
+import math
 import argparse
 
+
 def find_max_profit(prices):
-  pass
+  maxNum = float("-inf")
+  if len(prices) == 0:
+    return 0
+  while len(prices) >= 2:
+    first = prices[0]
+    big = max(prices[1:])
+    if big - first > maxNum:
+        maxNum = big - first
+    prices = prices[1:]
+  return maxNum
 
 
 if __name__ == '__main__':
