@@ -2,14 +2,20 @@
 
 import sys
 
+total = 0
+
 
 def making_change(change, denominations=[1, 5, 10, 25, 50]):
+    global total
     if change == 0:
         return 1
-    elif change < 0:
+    if change < 0:
         return 0
+    if len(denominations) == 1:
+        return 1
 
-    return making_change(change-50, [1, 5, 10, 25]) + making_change(change-25, [1, 5, 10, 50]) + making_change(change-10, [1, 5, 25, 50]) + making_change(change-5, [1, 10, 25, 50]) + making_change(change-1, [5 10, 25, 50])
+    return making_change(change-denominations[-1], denominations) + \
+        making_change(change, denominations[:-1])
 
 
 if __name__ == "__main__":
