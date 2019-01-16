@@ -5,13 +5,13 @@ import sys
 def making_change(amount, denominations):
   if amount == 0 or amount == 1:
     return 1
-
-  if amount not in denominations:
-    denominations[amount] = (amount - 1) + (amount - 2) + (amount - 3) + (amount - 4) + (amount - 5)
   
-  return denominations
+  ways = [1] + [0] * amount
 
-
+  for coin in denominations:
+    for x in range(coin, amount + 1):
+      ways[x] += ways[x - coin]
+  return ways[amount]
 
 if __name__ == "__main__":
   # Test our your implementation from the command line
