@@ -6,21 +6,20 @@ import sys
 def rock_paper_scissors(n):
     rps_list = [['rock'], ['paper'], ['scissors']]
 
-    # base case of 0
-    if n == 0:
-        return [[]]
-    if n == 1:
-        return rps_list
+    def rec(list, n):
+        if n == 0:
+            return [[]]
 
-    # if n == 2 3^2 of options
-    possible_plays = []
-    for i in range(3**n):
-        possible_plays.append(rps_list[i % 3])
+        if n == 1:
+            return list
 
-    for i in range(len(possible_plays)):
-        possible_plays[i].extend(rps_list[i % 3])
+        # for i, item in enumerate(list):
 
-    print(possible_plays)
+        # list[0] + list[i]
+
+        return rec(list, n - 1)
+
+    return rec(rps_list, n)
 
 
 if __name__ == "__main__":
