@@ -2,6 +2,7 @@
 
 import sys
 
+# First Pass (Shoot Me)
 def rock_paper_scissors(n, plays = None):
   if plays == None:
     plays = []
@@ -22,9 +23,6 @@ def rock_paper_scissors(n, plays = None):
       play.append('scissors')
 
   return rock_paper_scissors(n // 3, rock) + rock_paper_scissors(n // 3, paper) + rock_paper_scissors(n // 3, scissors)
-  
-  # return rock_paper_scissors(n // 3, plays[:len(plays)/3]) + rock_paper_scissors(n // 3, plays[len(plays)/3:2 * len(plays)/3]) + rock_paper_scissors(n // 3, plays[2 * len(plays)/3:])
-
 
 
 
