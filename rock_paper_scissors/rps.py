@@ -3,14 +3,17 @@
 import sys
 
 def rock_paper_scissors(n):
+    if n == 0:
+        return [[]]
+    
     rps_list = ['rock', 'paper', 'scissors']
     result = []
 
-    #need to define inner helper funtion as to store list in list, this function should take ans return list
-    def inner_helper(li = []):
-        if len(li) < n:
-            for items in rps_list: #1 : rock, 2 : paper, 3: scissors
-                print(items)
+    return [[item] + another_combi for item in rps_list for another_combi in rock_paper_scissors(n-1)]
+
+           
+  
+                
             
     
     
