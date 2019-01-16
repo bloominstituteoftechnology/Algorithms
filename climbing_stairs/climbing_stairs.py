@@ -5,22 +5,28 @@ import sys
 #n = number of stairs in ascending staircase
 #hop options = hop either 1, 2, or 3 steps at a time
 
-def climbing_stairs(n, cache=None):
+def countWaysUtil(n,m):
+
+  if n <= 1:
+    return n
+  res = 0
+  i = 1
+  while i<=m and i<=n:
+    res = res + countWaysUtil(n-i, m) 
+    i = i + 1
+  return res 
+
+def climbing_stairs(s, m):
+
+  return countWaysUtil(s+1,m)
   
-  if n == 0:
-      return 1
-  
-  elif n < 0:
-      return 0
+m = 3
+s = 5
+print(climbing_stairs(s,m))
 
-
-n = 6 
-print(climbing_stairs(n))
-
-'''
 if __name__ == "__main__":
   if len(sys.argv) > 1:
     num_stairs = int(sys.argv[1])
     print("There are {ways} ways for a child to jump {n} stairs.".format(ways=climbing_stairs(num_stairs), n=num_stairs))
   else:
-    print('Usage: climbing_stairs.py [num_stairs]')'''
+    print('Usage: climbing_stairs.py [num_stairs]')
