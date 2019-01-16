@@ -29,14 +29,13 @@ def rock_paper_scissors(n):
     return rock_paper_scissors(n-1, cache=cache, iter=iter+1)"""
 
     results = [[rock], [paper], [scissors]]
+    final_results = []
     
-    if n < 1:
+    """if n < 1:
         return [[]]
     elif n == 1:
         return results
 
-    # O(n^2)
-    final_results = []
     for _ in range(1, n):
         for result in results:
             final_results.append(result + [rock])
@@ -45,7 +44,21 @@ def rock_paper_scissors(n):
         
         results = final_results
         final_results = []
-    return results
+    return results"""
+    
+    outcomes = []
+    plays = ["rock", "paper", "scissors"]
+    
+    def find_outcomes(rorunds_left, result):
+        if rorunds_left == 0:
+            outcomes.append(result)
+            return
+        for play in plays:
+            find_outcomes(rorunds_left - 1, result + [play])
+
+    find_outcomes(n, [])
+    
+    return outcomes
 
 
 if __name__ == "__main__":
