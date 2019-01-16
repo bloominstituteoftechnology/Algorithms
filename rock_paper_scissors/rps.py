@@ -3,8 +3,21 @@
 import sys
 
 def rock_paper_scissors(n):
+  outcomes = []
   rps = ['rock', 'paper', 'scissors']
-  result = []
+
+  def find_outcome(rounds_left, result):
+
+    if rounds_left == 0:
+      outcomes.append(result)
+      return
+
+    for i in rps:
+      find_outcome(rounds_left - 1, result + [i])
+
+  find_outcome(n, [])
+
+  return outcomes
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
