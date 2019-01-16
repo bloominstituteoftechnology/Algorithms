@@ -1,26 +1,24 @@
 #!/usr/bin/python
 
 import sys
-amount = 30
+amount = 100
 denominations =[1,5,10,25,50]
+m = len(denominations)
 
-def making_change(amount, denominations):
+def making_change(denominations, m, amount):
+  if (amount == 0):
+    return 1
 
-  k= len(denominations)
-  n= amount
+  if (amount < 0):
+    return 0
+  
+  if (m <=0 and amount >= 1):
+    return 0
+  
+  return making_change(denominations, m - 1, amount ) + making_change(denominations, m, amount- denominations[m-1] ); 
 
+print(making_change(denominations, m, amount))
 
-
-  totalCombo = math.factorial(int(n))/math.factorial(int(k))*math.factorial(int(k))
-
-  print(totalCombo)
-
-
-
-
-making_change(amount, denominations)
-
-'''
 if __name__ == "__main__":
   # Test our your implementation from the command line
   # with `python making_change.py [amount]` with different amounts
@@ -29,4 +27,4 @@ if __name__ == "__main__":
     amount = int(sys.argv[1])
     print("There are {ways} ways to make {amount} cents.".format(ways=making_change(amount, denominations), amount=amount))
   else:
-    print("Usage: making_change.py [amount]")'''
+    print("Usage: making_change.py [amount]")
