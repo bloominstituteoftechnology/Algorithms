@@ -4,10 +4,19 @@ import sys
 
 
 def rock_paper_scissors(n):
-    string = [['rock'], ['paper'], ['scissors']]
-    for x in string:
-      
+    outcomes = []
+    plays = ['rock', 'paper', 'scissors']
 
+    def find_outcome(rounds_left, result):
+        if rounds_left == 0:
+            outcomes.append(result)
+            return
+        for play in plays:
+            find_outcome(rounds_left - 1,  result + [play])
+
+    find_outcome(n, [])
+
+    return outcomes
 
 
 if __name__ == "__main__":
@@ -18,4 +27,4 @@ if __name__ == "__main__":
         print('Usage: rps.py [num_plays]')
 
 
-#### Enter number of rps games. Print the first position that man times. 
+# Enter number of rps games. Print the first position that many times. then move on to the next
