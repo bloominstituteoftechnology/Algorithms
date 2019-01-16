@@ -1,17 +1,23 @@
 #!/usr/bin/python
 
 import sys
-
-def climbing_stairs(n, cache=None):
-  print('ran function')
+cache = {}
+def climbing_stairs(n, cache={}):
+  #cache = {}
   if n == 0:
     return 0
   if n == 1:
     return 1
   if n == 2:
     return 2
+  if n == 3:
+    return 4
+  if n in cache:
+    return cache[n]
 
-  return climbing_stairs(n-1) + climbing_stairs(n-2)
+  cache[n] = climbing_stairs(n-1, cache) + climbing_stairs(n-2, cache) + climbing_stairs(n-3, cache)
+  print(cache)
+  return cache[n]
 
 
 
