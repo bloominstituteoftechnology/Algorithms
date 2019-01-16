@@ -1,19 +1,35 @@
 #!/usr/bin/python
 
 import sys
-
-type = ['rock', 'paper', 'scissors']
+types = ['rock', 'paper', 'scissors']
 def rock_paper_scissors(n):
-  return game_helper(n, new =[])
 
-def game_helper(n, new):
+  def game_helper(n, hold, temp):
+    if n == 0:
+      hold += [temp]
+    else:
+      for t in types:
+         ## Rock ## Rock,Rock  ## Rock ## Rock, Paper
+        game_helper(n-1, hold, temp + [t]) ## (2, __, rock) ## (1, __, rock, rock) ## (0, rock,rock, N/A)
+                             ## (2, __, rock) ## (1, __, rock, paper) ## (0, rock,rock, N/A)
+                                     ## (2, __, rock) ## (1, __, rock, rock) ## (0, rock,rock, N/A)
+        ## 1, [], ['rock']
+        ## 0, [['rock', 'rock']], ['rock', 'rock'] temp = []
+        # 1 [], ['paper']
+        # 0 [], ['scissors]
+      
+    return hold
+
+  game_list = []
   if n == 0:
-    new.append([])
+    game_list.append([])
   else:
-    new[n] += game_helper(n-1, ) + game_helper
+    game_list = game_helper(n, [], [])
 
-  return new
-  pass
+  print(game_list)
+  return game_list
+
+
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
@@ -22,5 +38,3 @@ if __name__ == "__main__":
   else:
     print('Usage: rps.py [num_plays]')
 
-## can't have the same list in the main list (matching plays)
-## 
