@@ -3,13 +3,19 @@
 import sys
 
 
-def climbing_stairs(n, cache=None):
+cache = {}
+
+
+def climbing_stairs(n, b=0):
     if (n == 1 or n == 0):
         return 1
     elif (n == 2):
         return 2
-    else:
-        return climbing_stairs(n - 3) + climbing_stairs(n - 2) + climbing_stairs(n - 1)
+    elif n in cache:
+        return cache[n]
+    nth = climbing_stairs(n - 3) + climbing_stairs(n-2)+climbing_stairs(n - 1)
+    cache[n] = nth
+    return nth
 
 
 if __name__ == "__main__":
