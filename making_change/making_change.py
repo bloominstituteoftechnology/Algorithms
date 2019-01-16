@@ -3,6 +3,7 @@
 import sys
 
 def making_change(amount, denominations, cache={}):
+    """
     # If amount is 0 then there is 1 solution
     if amount == 0:
         return 1
@@ -25,6 +26,24 @@ def making_change(amount, denominations, cache={}):
     cache[amount] = after_last_denom + without_last_denom
     
     return after_last_denom + without_last_denom
+    """
+
+    """for cents in range(amount+1):
+        coinCount = cents
+        for j in [c for c in denominations if c <= cents]:
+                if minCoins[cents-j] + 1 < coinCount:
+                    coinCount = minCoins[cents-j]+1
+        minCoins[cents] = coinCount
+    return minCoins[amount]"""
+
+    if amount == 0:
+        return 1
+    if amount < 0:
+        return 0
+    if len(denominations) == 0:
+        return 0
+
+    return making_change(amount - denominations[-1], denominations) + making_change(amount, denominations[:-1])
 
 
 if __name__ == "__main__":
