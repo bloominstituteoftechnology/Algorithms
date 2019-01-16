@@ -1,6 +1,16 @@
 #!/usr/bin/python
+''' DYNAMIC SOLUTION IN PROGRESS --------
+
+table = [[0 for x in range(m)] for x in range(amount+1)]
+
+for i in range(m):
+  table[0][i] = 1
+
+'''
+
 
 import sys
+
 amount = 100
 denominations =[1,5,10,25,50]
 m = len(denominations)
