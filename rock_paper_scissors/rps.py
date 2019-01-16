@@ -22,22 +22,21 @@ def rock_paper_scissors(n):
     rec(n, 'scissors')
     return allpos[::3]
 
-
 # def rock_paper_scissors(n):
 #     allpos = []
-#     items = ['rock', 'paper', 'scissors']
-#     lis = []
-#     for i in items:
-#         lis = [i]
-#         while n != 0:
-#             for j in items:
-#                 lis += [j]
-#                 n -= 1
-#             allpos += [lis]
-#     return allpos
 
+#     def rec(i, clist=[]):
+#         if i == 0:
+#             allpos.append(clist)
+#             return
+#         elif i < 0:
+#             return 0
 
-print(rock_paper_scissors(2))
+#         for item in ['rock', 'paper', 'scissors']:
+#             rec(i-1, clist + [item])
+#         rec(n, [])
+#         return allpos
+
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
