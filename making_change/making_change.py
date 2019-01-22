@@ -3,7 +3,15 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
+  """
+  The function needs to take an amount and find out how many permutations of the 
+  denominations given it would take to reach that amount. Trying to find a pattern
+  within the solutions right now.
+  """
+  if amount < 5:
+    return 1
+  if amount <= 9:
+    return 2
 
 
 if __name__ == "__main__":
