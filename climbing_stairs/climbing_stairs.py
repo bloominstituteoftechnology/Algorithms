@@ -3,7 +3,9 @@
 import sys
 
 def climbing_stairs(n, cache={}):
-  if n == 0:
+  if n in cache:
+    return cache[n]
+  elif n == 0:
     return 1
   elif n == 1:
     return 1
