@@ -5,17 +5,14 @@ import sys
 
 def climbing_stairs(n, cache=None):
 
-    
-    place = [0] * (n)
-    print(place)
-    place[0] = 1
-    place[1] = 1
-    place[2] = 2
-    i = 3
-    while i <= n:
-        place[i] = climbing_stairs(i - 3) + climbing_stairs(i - 2) + climbing_stairs(i - 1)
-        i += 1
-    return place[n]
+    cache = [0] * (n + 1)
+    cache[0] = 1
+    cache[1] = 1
+    cache[2] = 2
+
+    for i in range(3, n + 1):
+      cache[i] = cache[i - 1] + cache[i - 2] + cache[i - 3]
+    return cache[n] 
 
 
 if __name__ == "__main__":
