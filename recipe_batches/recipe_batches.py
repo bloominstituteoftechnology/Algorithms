@@ -3,13 +3,20 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  for i in recipe:
-    for x in ingredients:
-      if ingredients[x] - recipe[i] <= 0:
-        print(ingredients[x], recipe[i])
+  
+    count = []
+    for ingredient in recipe:
+      if ingredient in ingredients:
+         count.append(ingredients[ingredient] // recipe[ingredient])
+      else:
         return 0
-  else:
-    return min(float(ingredients[x] / recipe[x]))
+    return min(count)
+
+     
+ 
+ 
+  # else:
+  #   return min(float(ingredients[x] / recipe[x]))
 
 
 # if __name__ == '__main__':
