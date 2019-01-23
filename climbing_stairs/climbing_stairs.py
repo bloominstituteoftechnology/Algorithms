@@ -3,10 +3,16 @@
 import sys
 
 def climbing_stairs(n, cache=None):
-  if n == 0:
-    return 0
-  else:
-    return n + 1 
+    if (n == 1 or n == 0): 
+        return 1
+    elif (n == 2): 
+        return 2
+      
+    else : 
+        return climbing_stairs(n - 3) + climbing_stairs(n - 2) + climbing_stairs(n - 1) 
+
+  
+ 
 
 
 if __name__ == "__main__":
@@ -16,7 +22,45 @@ if __name__ == "__main__":
   else:
     print('Usage: climbing_stairs.py [num_stairs]')
 
-    print(climbing_stairs(3))
+    print(climbing_stairs(5))
 
-    # visualize steps
-    # 4 steps = 1 big step, 3 steps and 1 step, 2 steps and 2 steps, 1 step and 3 steps, 4 steps
+  #  ''' visualize steps
+  #  0 steps:
+
+     
+  #    4 steps = 
+  #     1,1,1,1,
+  #     1,1,2
+  #     2,1,1
+  #     3,1
+  #     1,3
+  #     2,2
+
+  #   '''
+    
+
+  # '''
+  # 5 steps =
+
+  # 3,2
+  # 3,1,1
+  # 2,3
+  # 1,1,3
+  # 2,2,1
+  # 1,1,1,1,1
+  # 1,1,1,2
+  # 1,1,3
+  # 1,1,2,1
+  # 1,3,1
+  # 1,2,1,1,
+  # 1,2,2
+
+
+  # '''
+  
+
+  
+  
+  
+
+print(climbing_stairs(10))
