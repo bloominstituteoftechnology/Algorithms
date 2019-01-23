@@ -3,12 +3,16 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass
+ 
   """
   use nested for loops to compare the recipe and ingredient keys
   add total variable to count how many batchs can be made
   """ 
-
+  batches = 0
+  for key, value in recipe.items():
+      print(key, value)
+  for key, value in ingredients.items():
+      print(key, value)
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
