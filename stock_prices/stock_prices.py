@@ -17,7 +17,7 @@ def find_max_profit(prices):
 # loop through stock price
   for i in range(0, len(prices)-1):
 
-    sell_price = prices[i+1]
+    sell_price = p+rices[i1]
 
     if change_buy_index:
 

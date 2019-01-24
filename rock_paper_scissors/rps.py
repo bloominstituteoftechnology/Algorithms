@@ -3,7 +3,13 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+  outcomes = []
+  plays = ['rock', 'paper', 'scissors']
+
+  result = []
+  for play in plays:
+    result.append(play)
+  outcomes.append(result)
 
 
 if __name__ == "__main__":
