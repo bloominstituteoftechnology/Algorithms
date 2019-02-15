@@ -2,7 +2,7 @@
 
 Now that we've talked about some strategies for solving algorithmic problems and walked through some examples, it's time to practice applying those strategies!
 
-To quickly recap, when you're confronted with a problem you haven't encountered before, the general strategy is as follows:
+To quickly recap, when you're confronted with a problem you haven't encountered before, the general strategy (adapted from [George Pólya's Problem Solving Principles](https://en.wikipedia.org/wiki/How_to_Solve_It)) is as follows:
 
 1. Understand the question you're being asked. The way everyone will go about doing this may be slightly different, but in general, a couple of good ways to do this are:
    * Ask clarifying questions to understand the ins and outs of the problem.
@@ -26,6 +26,7 @@ To quickly recap, when you're confronted with a problem you haven't encountered 
 Please don't consider this list of steps to be canonical or definitive. Everyone thinks about problems differently. Treat them only as guidelines. 
 
 As you accrue more experience solving these sorts of algorithmic problems, you'll start to encounter problems you'll have seen before, i.e., some problems won't be novel to you anymore. In those cases you'll oftentimes be able to implement a better solution right off the bat, i.e., you'll be able to skip step 3. 
+
 
 ## What You'll Be Doing
 
