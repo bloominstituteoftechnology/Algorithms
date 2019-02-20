@@ -18,16 +18,12 @@ def climbing_stairs(n, cache=None):
         total = 0
         for step in range(MAX_STEP, 0, -1):
             stairs_after_step = n - step
-            try:
-                candidate = cache[stairs_after_step]
-            except IndexError:
-                cache[stairs]
-            else:
-
-            result = candidate if candidate is not None else climbing_stairs(
-                stairs_after_step, cache)
-            cache[stairs_after_step] = result
-            total += result
+            if stairs_after_step < 0:
+                continue
+            if cache[stairs_after_step] == 0:
+                cache[stairs_after_step] = climbing_stairs(
+                    stairs_after_step, cache)
+            total += cache[stairs_after_step]
 
         return total
 
