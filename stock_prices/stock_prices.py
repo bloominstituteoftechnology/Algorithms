@@ -6,16 +6,14 @@ def find_max_profit(prices):
   
   max = prices[0]
   min = prices[0]
-  minIndex = 0
   profit = prices[1] - prices[0]
 
 
-  for i, price in enumerate(prices):
+  for price in prices:
     if price < min:
       min = price
       max = price
-      minIndex = i
-    if price > max and i > minIndex:
+    if price > max:
       max = price
       if profit < max - min:
         profit = max - min
