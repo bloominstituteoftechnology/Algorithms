@@ -11,12 +11,33 @@ if I step through the array keeping track of the lowest price I find
 and subtracting it from the max price then keep track of which max prices
 are the largest I should get the max profit possible
 
+buy_price = low_price
+sell_price = max_price
+
+ok so my inital solution works for the first test set
+but not for the second set where there's no way to make a profit
+I don't think my solution really takes into account the fact that 
+you have to buy before you sell
+
+so if I walk through the list when I find a lower buy price and then if that 
+is able to find a higher profit then set those values
 
 '''
 
 
 def find_max_profit(prices):
-  pass
+  low_price = max_price = prices[0]
+
+  for p in prices:
+
+    if p < low_price:
+      low_price = p
+
+    if max_price - low_price < p - low_price:
+      max_price = p
+    #if sell_price - p > sell_price - buy_price:
+
+  return max_price - low_price 
 
 
 if __name__ == '__main__':
