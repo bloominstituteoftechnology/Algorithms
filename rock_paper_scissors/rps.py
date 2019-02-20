@@ -1,9 +1,11 @@
 #!/usr/bin/python
 
 import sys
+import itertools
 
 def rock_paper_scissors(n):
-  pass 
+  results = list(itertools.product(["rock", "paper", "scissors"], repeat=n))
+  return [list(e) for e in results]
 
 
 if __name__ == "__main__":
