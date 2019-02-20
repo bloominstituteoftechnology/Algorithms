@@ -1,5 +1,7 @@
 import unittest
-from rps import rock_paper_scissors 
+from rps import rock_paper_scissors_no_helper
+
+rock_paper_scissors = rock_paper_scissors_no_helper
 
 class Test(unittest.TestCase):
 

@@ -22,9 +22,17 @@ def rock_paper_scissors(n):
     return helper(n, cache)
 
 
+def rock_paper_scissors_no_helper(n):
+    if n == 0:
+        return [[]]
+
+    return [[option] + perm
+            for option in OPTIONS for perm in rock_paper_scissors_no_helper(n - 1)]
+
+
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         num_plays = int(sys.argv[1])
-        print(rock_paper_scissors(num_plays))
+        print(rock_paper_scissors_no_helper(num_plays))
     else:
         print('Usage: rps.py [num_plays]')
