@@ -3,6 +3,13 @@
 import sys
 
 def making_change(amount, denominations):
+  if amount < 0:
+    return 0
+  if amount == 0:
+    return 1
+  else:
+    for d in denominations:
+      
   pass 
 
 

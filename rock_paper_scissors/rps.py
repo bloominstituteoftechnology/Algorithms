@@ -1,9 +1,20 @@
 #!/usr/bin/python
-
+import random
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+  plays = []
+  playChoices = ['rock','paper', 'scissors']
+  
+  def recursionMemes(n, templist = []):
+    if n < 1:
+      plays.append(templist)
+      return 'end'
+    for play in playChoices:      
+      recursionMemes(n-1, templist + [play] )
+
+  recursionMemes(n, [])
+  return [play for play in plays if len(play) == n]
 
 
 if __name__ == "__main__":
