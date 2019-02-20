@@ -16,7 +16,7 @@ Run the test file by executing `python test_rps.py`.
 
 You can also test your implementation manually by executing `python rps.py [n]`.
 
-## Hints
+## Hints 
 
  * You'll want to define a list with all of the possible Rock Paper Scissors plays.
  * Another problem that asks you to generate a bunch of permutations, so we're probably going to want to opt for using recursion again. Since we're building up a list of results, we'll have to pass the list we're constructing around to multiple recursive calls so that each recursive call can add to the overall result. However, the tests only give our function `n` as input. To get around this, we could define an inner recursive helper function that will perform the recursion for us, while allowing us to preserve the outer function's function signature. 
