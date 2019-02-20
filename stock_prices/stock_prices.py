@@ -4,10 +4,16 @@ import argparse
 
 
 def find_max_profit(prices):
+    # days without a price change are invalid
     if len(prices) < 2:
         return 0
+
+    # initialize with first two positions
     max = prices[1] - prices[0]
     min_seen = prices[0]
+
+    # convert prices into interator and skip the first, since otherwise
+    # max will be set to 0 on the first step
     p_iter = iter(prices)
     next(p_iter)
     for price in p_iter:
@@ -16,6 +22,9 @@ def find_max_profit(prices):
         if price < min_seen:
             min_seen = price
     return max
+
+# time complexity is O(n)
+# space complexity is O(1)
 
 
 if __name__ == '__main__':
