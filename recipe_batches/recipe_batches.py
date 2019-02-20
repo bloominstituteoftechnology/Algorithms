@@ -1,18 +1,26 @@
 #!/usr/bin/python
-
 import math
 
 
 def recipe_batches(recipe, ingredients):
-    # print(ingredients)
-    howMany = 0
-    for r in recipe:
-        if recipe[r] - ingredients[r] >= 0:
-            howMany = 0
-        else:
-            total = ingredients[r] / recipe[r]
-            howMany = total
-    print(howMany)
+    batches = 0
+    done = False
+    try:
+        while not done:
+            shortage = False
+            for key in recipe.keys():
+                ingredients[key] -= recipe[key]
+                if ingredients[key] == 0:
+                    done = True
+                elif ingredients[key] < 0:
+                    done = True
+                    shortage = True
+            if not shortage:
+                batches += 1
+    except KeyError:
+        print('That key does not exist bruhh')
+    finally:
+        return batches
 
 
 recipe_batches({'milk': 100, 'butter': 50, 'flour': 5},
