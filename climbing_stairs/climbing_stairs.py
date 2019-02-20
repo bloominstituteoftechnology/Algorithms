@@ -8,7 +8,7 @@ MAX_STEP = 3
 
 def climbing_stairs(n, cache=None):
     if cache is None:
-        cache = {}
+        cache = [0] * n
 
     if n < 0:
         return 0
@@ -18,7 +18,12 @@ def climbing_stairs(n, cache=None):
         total = 0
         for step in range(MAX_STEP, 0, -1):
             stairs_after_step = n - step
-            candidate = cache.get(stairs_after_step)
+            try:
+                candidate = cache[stairs_after_step]
+            except IndexError:
+                cache[stairs]
+            else:
+
             result = candidate if candidate is not None else climbing_stairs(
                 stairs_after_step, cache)
             cache[stairs_after_step] = result
