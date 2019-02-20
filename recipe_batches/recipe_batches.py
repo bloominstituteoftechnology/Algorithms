@@ -8,20 +8,20 @@ def recipe_batches(recipe, ingredients):
   i_keys = ingredients.keys()
 
   results = []
+  min = None
+  
   # want to loop through each of they keys inside recipe
-  for key in r_keys:
+  for i, key in enumerate(r_keys):
+    value = None
     # integer divide each recipe key with the corresponding key in ingredients
     if key in i_keys:
-      results.append(ingredients[key] // recipe[key])
+      value = ingredients[key] // recipe[key]
     else:
-      results.append(0)
-
-  # the lowest number out of the reuslts is the maximum number of full batches you can make
-  min = results[0]
-  for num in results :
-    if num < min:
-      min = num
-  
+      value = 0
+    
+  # initialize the value on first run and if the new value is lower than the current min update it
+    if min == None or min > value:
+      min = value
   return min
 
 print(recipe_batches({ 'milk': 100, 'flour': 4, 'sugar': 10, 'butter': 5 }, { 'milk': 1288, 'flour': 9, 'sugar': 95 }))
