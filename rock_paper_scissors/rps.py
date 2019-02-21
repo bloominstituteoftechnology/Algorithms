@@ -3,37 +3,45 @@
 import sys
 
 def rock_paper_scissors(n):
-  # PR(n,r) = n^r
-  # if r == 0:
-  #   return 0
-  # if r == 1:
-  #   return 3
-  # if r == 2:
-  #   return 9
-  # if r == 3:
-  #   return 27
-  if n == 1:
-    return [['rock'], ['paper'], ['scissors']]
-  rock_list = ['rock']
-  paper_list = ['paper']
-  scissors_list = ['scissors']
-  full_list = [['rock'], ['paper'], ['scissors']]
-  listed = []
-    # concat = full_list*3
-  list_multiplier = 3**n//3
-  print(list_multiplier)
-  big_list = full_list*list_multiplier
-  def concat_rock(the_list, x):
-      
-    the_list[x].append('rock')
-    print(the_list)
-  concat_rock(big_list, 0)
-  pass 
+	rps = []
+	r = []
+	p = []
+	s = []
+	rock = ["rock"]
+	paper = ["paper"]
+	scissors = ["scissors"]
+
+	if n == 0:
+		print(rps)
+	else:
+
+		for i in range(3**n//3):
+			r.append(rock)
+		for i in range(3**n//3):
+			p.append(paper)
+		for i in range(3**n//3):
+			s.append(scissors)
+
+		for j in range(len(r)):
+			print(j)
+			if j == 0 or j % 3 == 0:
+				r[j] = r[j] + ['rock']
+				p[j] = p[j] + ['rock']
+				s[j] = s[j] + ['rock']
+			if j == 1 or (j - 1) % 3 == 0:
+				r[j] = r[j] + ['paper']
+				p[j] = p[j] + ['paper']
+				s[j] = s[j] + ['paper']
+			if j == 2 or (j - 2) % 3 == 0:
+				r[j] = r[j] + ['scissors']
+				p[j] = p[j] + ['scissors']
+				s[j] = s[j] + ['scissors']
 
 
-if __name__ == "__main__":
-  if len(sys.argv) > 1:
-    num_plays = int(sys.argv[1])
-    print(rock_paper_scissors(num_plays))
-  else:
-    print('Usage: rps.py [num_plays]')
+		print(r)
+		print(p)
+		print(s)
+
+
+
+print(rock_paper_scissors(1))

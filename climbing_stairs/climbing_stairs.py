@@ -26,18 +26,7 @@ def climbing_stairs(n, cache={}):
   cache[n] = nth
   return nth
 
-
-
-
-          
-            
-
-    
-
-
-
   pass 
-
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
