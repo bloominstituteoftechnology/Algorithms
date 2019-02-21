@@ -38,17 +38,17 @@ def knapsack_solver(items, capacity):
         return 'Too small'
     best_seen = Combo()
 
-    # set up first row
+    # set up first row, this is the smallest item, so just fill in all the
+    # cols with just it
     cache[0] = {}
     for space in range(smallest_size, capacity + 1):
         cache[0][space] = Combo().add_item(items[0])
 
-    # items loop
+    # start iterating over items
     for i in range(1, len(items)):
         cache[i] = {}
         item = items[i]
         (index, size, value) = item
-        # print(item)
 
         for space in range(smallest_size, capacity + 1):
             # first col, either the last row's first col, or just this item, depending on what's larger
@@ -58,18 +58,19 @@ def knapsack_solver(items, capacity):
                 else:
                     cache[i][space] = cache[i - 1][space]
 
-            # loop through prior items and find largest possible combo
+            # else, loop through prior items and find largest possible combo
             # from adding on this item
             else:
 
                 # find out how much space is left at this amount of space after this item is deducted
                 remaining_space = space - size
 
-                # if there is too little space, use prior best value
+                # if there is too little space, use prior item row's best value
                 if remaining_space < smallest_size:
                     cache[i][space] = cache[i - 1][space]
 
-                # otherwise compare value to left, to this item.value + the optimal use of remaining space
+                # otherwise compare value immediately above, to this item.value + the optimal
+                # use of remaining space from prior row
                 else:
 
                     best_fitting = cache[i - 1][remaining_space]
