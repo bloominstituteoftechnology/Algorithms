@@ -18,13 +18,11 @@ def helper(amount, denominations, cache=None):
         total = 0
 
         while denominations:
-            denom = denominations.pop()
-            print(denom)
+            denom = denominations[-1]
             remaining = amount - denom
-            while remaining > -1:
-                plus = helper(remaining, denominations[:])
-                total += plus
-                remaining = amount - denom
+            plus = helper(remaining, denominations[:])
+            total += plus
+            denominations.pop()
 
     return total
 
@@ -40,4 +38,4 @@ if __name__ == "__main__":
     else:
         print("Usage: making_change.py [amount]")
 
-print(making_change(2, [1, 5, 10, 25, 50]))
+print(making_change(10, [1, 5, 10, 25, 50]))
