@@ -3,15 +3,17 @@
 import sys
 
 
-def climbing_stairs(n, cache=None):
-    if n == 1:
-        return 1
+def climbing_stairs(n, cache=[]):
     if n <= 0:
-        return 0
-    return climbing_stairs(n - 1) + climbing_stairs(n - 2) + climbing_stairs(n - 3)
+        return 1
+    if n == 1 or n == 2:
+        return n
+    if n in cache:
+        return cache[n]
+    val = climbing_stairs(n - 1) + climbing_stairs(n -
+                                                   2) + climbing_stairs(n - 3)
+    return val
 
-
-print(climbing_stairs(5))
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:

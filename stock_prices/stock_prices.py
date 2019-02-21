@@ -20,8 +20,7 @@ def find_max_profit(prices):
         return profit
 
 
-myPrices = [100, 90, 80, 50, 20, 10, 200]
-print(find_max_profit(myPrices))
+print(find_max_profit([100, 90, 80, 50, 20, 10]))
 
 
 if __name__ == '__main__':
