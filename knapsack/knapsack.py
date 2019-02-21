@@ -14,7 +14,6 @@ class Combo:
 
     def add_item(self, item):
         (index, size, value) = item
-        print(self.items)
 
         return Combo(
             value=self.value + value,
@@ -31,7 +30,7 @@ empty_sack = Combo()
 
 def knapsack_solver(items, capacity):
     items = sorted(items, key=lambda item: item.size)
-    cache = {}
+    cache = [None] * len(items)
 
     smallest_size = items[0].size
 
@@ -39,44 +38,50 @@ def knapsack_solver(items, capacity):
         return 'Too small'
     best_seen = Combo()
 
+    # set up first row
+    cache[0] = {}
+    for space in range(smallest_size, capacity + 1):
+        cache[0][space] = Combo().add_item(items[0])
+
     # items loop
-    for i in range(len(items)):
+    for i in range(1, len(items)):
+        cache[i] = {}
         item = items[i]
-        print(item)
         (index, size, value) = item
         # print(item)
-        # print(smallest_size, capacity + 1)
 
-        # capacity loop
         for space in range(smallest_size, capacity + 1):
-            if space == 50 and index == 5:
-                return
+            # first col, either the last row's first col, or just this item, depending on what's larger
+            if space == smallest_size:
+                if item.value > cache[i - 1][space].value:
+                    cache[i][space] = Combo().add_item(item)
+                else:
+                    cache[i][space] = cache[i - 1][space]
+
             # loop through prior items and find largest possible combo
             # from adding on this item
+            else:
 
-            remaining_space = space - size
-            if remaining_space < 0:
-                continue
+                # find out how much space is left at this amount of space after this item is deducted
+                remaining_space = space - size
 
-            best_fitting = cache.get(remaining_space, empty_sack)
+                # if there is too little space, use prior best value
+                if remaining_space < smallest_size:
+                    cache[i][space] = cache[i - 1][space]
 
-            if best_seen.value < best_fitting.value + value and item.index not in best_fitting.items:
-                new_best = best_fitting.add_item(item)
-                print('>>>>>>>>>>>>>>>>>>')
-                print('cache')
-                for line in sorted(list(cache)):
-                    print(line, ':', cache[line])
-                print(best_fitting)
-                print(item, space)
-                print('item', item, 'space', space, 'remaining space', remaining_space,
-                      'old', best_seen, 'new', new_best)
-                best_seen = new_best
+                # otherwise compare value to left, to this item.value + the optimal use of remaining space
+                else:
 
-            cache[space] = best_seen
+                    best_fitting = cache[i - 1][remaining_space]
+                    best_seen = cache[i - 1][space]
 
-    print(cache)
-    best = cache[capacity]
-    print(best)
+                    if best_seen.value < best_fitting.value + value:
+                        new_best = best_fitting.add_item(item)
+                        best_seen = new_best
+
+                    cache[i][space] = best_seen
+
+    best = cache[-1][capacity]
     return {'Value': best.value, 'Chosen': sorted(best.items)}
 
 
