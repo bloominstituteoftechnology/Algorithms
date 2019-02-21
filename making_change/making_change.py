@@ -1,14 +1,26 @@
 #!/usr/bin/python
 
 import sys
+from collections import defaultdict
+
+
+class Cache:
+    def __init__(self):
+        self.denom_dict = defaultdict(lambda: defaultdict(lambda: None))
+
+    def store(self, denom, input, output):
+        self.denom_dict[denom][input] = output
+
+    def retrieve(self, denom, input):
+        return self.denom_dict[denom][input]
 
 
 def making_change(amount, denominations):
     sort_denoms = sorted(denominations)
-    return helper(amount, sort_denoms)
+    return helper(amount, sort_denoms, Cache())
 
 
-def helper(amount, denominations, cache=None):
+def helper(amount, denominations, cache):
     if amount < 0:
         return 0
     if amount == 0:
@@ -20,7 +32,12 @@ def helper(amount, denominations, cache=None):
         while denominations:
             denom = denominations[-1]
             remaining = amount - denom
-            plus = helper(remaining, denominations[:])
+            cached = cache.retrieve(denom=denom, input=remaining)
+            if cached is None:
+                plus = helper(remaining, denominations[:], cache)
+                cache.store(denom=denom, input=remaining, output=plus)
+            else:
+                plus = cached
             total += plus
             denominations.pop()
 
