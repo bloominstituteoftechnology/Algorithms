@@ -2,8 +2,27 @@
 
 import sys
 
-def climbing_stairs(n, cache=None):
-  pass 
+# 0 steps = 1 possible way
+# 1 steps = 1 possible way
+# 2 steps = 2 possible way
+
+# for every step combination possiblity, populate cache, return catch
+
+
+def climbing_stairs(n, cache={}):
+ 
+  if n <= 1:
+    return 1
+  if n == 2:
+    return 2
+  if n in cache:
+    return cache[n]
+
+  possiblities = climbing_stairs(n-1) + climbing_stairs(n-2) + climbing_stairs(n-3) 
+  cache[n] = possiblities
+
+  return possiblities
+
 
 
 if __name__ == "__main__":

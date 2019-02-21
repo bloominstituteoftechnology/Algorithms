@@ -3,7 +3,19 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  batches = []
+
+# for every item in the recipe, check to see if it is there, if not return 0
+# if it is, then devide the number of ingredients you have, by the number the recipe calls for
+# and then return the number rounded down to the line above to get how many batches you would be able to make
+  for i in recipe:
+    if i not in ingredients:
+      return 0
+    else:
+      batches.append(ingredients[i]//recipe[i])
+      
+
+  return min(batches)
 
 
 if __name__ == '__main__':
