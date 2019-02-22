@@ -2,8 +2,9 @@
 
 import sys
 
-def rock_paper_scissors(n):
+def rock_paper_sci(n):
 	rps = []
+	empty_list = [["rock"],["paper"],["scissors"]]
 	r = []
 	p = []
 	s = []
@@ -11,37 +12,49 @@ def rock_paper_scissors(n):
 	paper = ["paper"]
 	scissors = ["scissors"]
 
+
 	if n == 0:
 		print(rps)
+
+	if n == 1:
+		return [rock, paper, scissors]
 	else:
 
-		for i in range(3**n//3):
-			r.append(rock)
-		for i in range(3**n//3):
-			p.append(paper)
-		for i in range(3**n//3):
-			s.append(scissors)
+		# for i in range(3**n//3):
+		# 	r.append(rock)
+		# for i in range(3**n//3):
+		# 	p.append(paper)
+		# for i in range(3**n//3):
+		# 	s.append(scissors)
+		# print(r)
+		# print(p)
+		# print(s)
 
-		for j in range(len(r)):
-			print(j)
-			if j == 0 or j % 3 == 0:
-				r[j] = r[j] + ['rock']
-				p[j] = p[j] + ['rock']
-				s[j] = s[j] + ['rock']
-			if j == 1 or (j - 1) % 3 == 0:
-				r[j] = r[j] + ['paper']
-				p[j] = p[j] + ['paper']
-				s[j] = s[j] + ['paper']
-			if j == 2 or (j - 2) % 3 == 0:
-				r[j] = r[j] + ['scissors']
-				p[j] = p[j] + ['scissors']
-				s[j] = s[j] + ['scissors']
+		# print(rps)
+		
+		
+
+		def rps_rounds(n, rps_list):
+			new_list = []
+			r = []
+			p = []
+			s = []
+			if n == 1:
+				print(rps_list)
+				return rps_list
+			else:
+				for i in rps_list:
+					new_list.append(i + rock)
+					new_list.append(i + paper)
+					new_list.append(i + scissors)
+				# print(new_list)
+				rps_rounds(n-1, new_list)
 
 
-		print(r)
-		print(p)
-		print(s)
+			# rps_rounds(n-1,rps_list)
+		
 
+			
+		print(rps_rounds(n,empty_list))
 
-
-print(rock_paper_scissors(1))
+print(rock_paper_sci(2))
