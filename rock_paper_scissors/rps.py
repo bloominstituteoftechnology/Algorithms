@@ -2,29 +2,24 @@
 
 import sys
 
-def rock_paper_sci(n):
-	rps = []
+def rock_paper_scissors(n):
 	empty_list = [["rock"],["paper"],["scissors"]]
-	r = []
-	p = []
-	s = []
 	rock = ["rock"]
 	paper = ["paper"]
 	scissors = ["scissors"]
 
-
 	if n == 0:
-		print(rps)
+		print("So we just gonna sit here?")
+		return None
 
 	if n == 1:
-		return [rock, paper, scissors]
+		print(empty_list)
+		return empty_list
 	else:
 
 		def rps_rounds(n, rps_list):
 			new_list = []
-			r = []
-			p = []
-			s = []
+			
 			if n == 1:
 				print(rps_list)
 				return rps_list
@@ -39,4 +34,15 @@ def rock_paper_sci(n):
 			
 		rps_rounds(n,empty_list)
 
-print(rock_paper_sci(1))
+for k,i in enumerate(sys.argv):
+	if k > 0:
+		print("__________________________________________")
+		print('\n')
+		rock_paper_scissors(int(i))
+		print('\n')
+		print("__________________________________________")
+
+	if i == '0':
+		print('\n')
+		print("Requires an argument. => 'python Rock_Paper_Sci.py 1'")
+		print('\n')
