@@ -3,8 +3,20 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
 
+  options = [5, 10, 25, 50]
+  cache = [1] * (amount + 1)
+
+  for coin in options:
+    for i in range(coin, amount +1):
+      remainder = i - coin
+      cache[i] += cache[remainder]
+  return cache[amount]
+ 
+
+
+
+print(making_change(20, [1, 5, 10, 25, 50]))
 
 if __name__ == "__main__":
   # Test our your implementation from the command line
