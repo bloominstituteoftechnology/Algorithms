@@ -15,7 +15,6 @@ def make_change(amount, denominations, cache):
         return 1
     elif len(denominations) == 1:
         return 1
-
     else:
         try:
             if cache[f'{amount}-{denominations}'] > 0:
@@ -26,9 +25,6 @@ def make_change(amount, denominations, cache):
         while denominations[-1] > amount:
             denominations.pop()
         for i in range(amount//denominations[-1] + 1):
-            # print(
-            #     f"Current i is {i}, amount is {amount - (i * denominations[-1])}, denomination is {denominations[-1]}")
-
             perms += make_change(amount - (i *
                                            denominations[-1]), denominations[:-1], cache)
         cache[f'{amount}-{denominations}'] = perms
@@ -39,14 +35,7 @@ def making_change(amount, denominations):
     if amount is 0 or amount is 1:
         return 1
     else:
-        print(f'print amount {amount}')
         return make_change(amount, list(denominations), {})
-        # return make_change(amount, list(denominations), [0 for i in range(amount + 1)])
-
-
-solution = making_change(30, [1, 5, 10, 25, 50])
-print('solution')
-print(solution)
 
 
 if __name__ == "__main__":
