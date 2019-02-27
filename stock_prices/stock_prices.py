@@ -3,21 +3,7 @@
 import argparse
 
 def find_max_profit(prices):
-  bigDif = 0
-  loss = 0
-  currentDif = 0
-  while len(prices) > 0:
-    for num in range(len(prices)):
-        currentDif = prices[num] - prices[0]
-        if currentDif > bigDif:
-          bigDif = currentDif
-        if currentDif < bigDif:
-          loss = currentDif
-    del prices[0]
-  if bigDif == 0:
-    return loss
-  return bigDif
-
+  pass
   
 
 

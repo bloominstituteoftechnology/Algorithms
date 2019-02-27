@@ -3,15 +3,7 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  if len(recipe) != len(ingredients):
-    return 0
-  for itemRecipe, ammtRecipe in recipe.items():
-    for itemIng, ammtIngr in ingredients.items():
-      if itemRecipe == itemIng:
-        if ammtIngr / ammtRecipe < 1:
-          return 0
-        else:
-          return math.floor(ammtIngr / ammtRecipe)
+  pass
        
 
 

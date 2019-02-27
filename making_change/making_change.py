@@ -4,14 +4,7 @@ import sys
 
 def making_change(amount, denominations):
 
-  options = [5, 10, 25, 50]
-  cache = [1] * (amount + 1)
-
-  for coin in options:
-    for i in range(coin, amount +1):
-      remainder = i - coin
-      cache[i] += cache[remainder]
-  return cache[amount]
+  pass
  
 
 
