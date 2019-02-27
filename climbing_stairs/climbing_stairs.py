@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# init
 
 import sys
 
