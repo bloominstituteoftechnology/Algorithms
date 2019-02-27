@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# initt
+# init
 
 import sys
 
