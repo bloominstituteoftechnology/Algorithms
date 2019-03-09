@@ -28,7 +28,7 @@ class Test(unittest.TestCase):
     file_contents = open('data/small3.txt', 'r')
     self.small_3_items = []
     
-    for line in file_contents.readlines():
+    for line in file_contents.readlines(): 
       data = line.rstrip().split()
       self.small_3_items.append(Item(int(data[0]), int(data[1]), int(data[2])))
 

@@ -3,7 +3,14 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
+  changeOptions={0:1}
+  for denomination in denominations:
+    for higher_amount in range(denomination,amount+1):
+        try:
+          changeOptions[higher_amount]+=changeOptions[higher_amount-denomination]
+        except:
+          changeOptions[higher_amount]=1
+  return changeOptions[amount]
 
 
 if __name__ == "__main__":
