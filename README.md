@@ -6,7 +6,7 @@ There isn't an official prescribed order for tackling the problems, though a sub
 
  1. `stock_prices`
  2. `recipe_batches`
- 3. `counting_stairs`
+ 3. `eating_cookies`
  4. `rock_paper_scissors`
  5. `making_change`
  6. [Stretch Problem] `knapsack`
