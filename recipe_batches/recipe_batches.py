@@ -4,15 +4,15 @@ import math
 
 def recipe_batches(recipe, ingredients):
   min_ingridients = None
-  for i, min_amount in recipe.items():
+  for i, amount_required in recipe.items():
     #assign 0 for ingridients that are not there
     amount_we_have = ingredients.get(i, 0)
-    amount_can_have = amount_we_have // min_amount
-    if min_amount != None:
-      min_amount = min(min_ingridients, amount_can_have)
+    amount_can_have = amount_we_have // amount_required
+    if min_ingridients != None:
+      min_ingridients = min(min_ingridients, amount_can_have)
     else:
-      min_amount = amount_can_have
-  return min_amount        
+      min_ingridients = amount_can_have
+  return min_ingridients        
   
 
 if __name__ == '__main__':
