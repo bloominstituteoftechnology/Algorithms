@@ -13,7 +13,7 @@ def eating_cookies(n, cache=None):
   count = 0
 
   for num in range(1, myN + 1):
-    
+
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
