@@ -24,6 +24,6 @@ You can also test your implementation manually by executing `python eating_cooki
 ## Hints
 
  * Since this question is asking you to generate a bunch of possible permutations, you'll probably want to use recursion for this.
- * Think about base cases that we would want our recursive function to stop recursing on. How many ways are there to climb 0 stairs? What about a negative number of stairs? 
+ * Think about base cases that we would want our recursive function to stop recursing on. How many ways are there to eat 0 cookies? What about a negative number of cookies? 
  * Once we've established some base cases, how can we recursively call our function such that we move towards one or more of these base cases?
  * As far as performance optimizations go, caching/memoization might be one avenue we could go down? How should we make a cache available to our recursive function through multiple recursive calls?
