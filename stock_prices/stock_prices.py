@@ -3,8 +3,16 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+  maximum_profit = float('-inf')
 
+  for (i, buying_price) in enumerate(prices[:len(prices)-1]):
+  #compare elements to each other except the last one
+    for selling_price in prices[i+1:]:
+      profit = float(selling_price - buying_price)
+      if profit > maximum_profit:
+        maximum_profit = profit
+
+  return maximum_profit
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
