@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="467da39d-aded-4ee4-aa31-13cffa4bc8aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/recipe_batches/recipe_batches.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_batches/recipe_batches.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe_batches/test_recipe_batches.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_batches/test_recipe_batches.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eating_cookies/eating_cookies.py" beforeDir="false" afterPath="$PROJECT_DIR$/eating_cookies/eating_cookies.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,32 +19,32 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recipe_batches/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SECOND">
-              <first_editor />
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/eating_cookies/eating_cookies.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/recipe_batches/recipe_batches.py">
+        <entry file="file://$PROJECT_DIR$/eating_cookies/test_eating_cookies.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state relative-caret-position="315">
+              <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recipe_batches/test_recipe_batches.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
+        <entry file="file://$PROJECT_DIR$/eating_cookies/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SECOND">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -61,8 +60,9 @@
         <option value="$PROJECT_DIR$/stock_prices/README.md" />
         <option value="$PROJECT_DIR$/stock_prices/stock_prices.py" />
         <option value="$PROJECT_DIR$/stock_prices/test_stock_prices.py" />
-        <option value="$PROJECT_DIR$/recipe_batches/test_recipe_batches.py" />
         <option value="$PROJECT_DIR$/recipe_batches/recipe_batches.py" />
+        <option value="$PROJECT_DIR$/recipe_batches/test_recipe_batches.py" />
+        <option value="$PROJECT_DIR$/eating_cookies/eating_cookies.py" />
       </list>
     </option>
   </component>
@@ -87,7 +87,7 @@
             <path>
               <item name="Algorithms" type="b2602c69:ProjectViewProjectNode" />
               <item name="Algorithms" type="462c0819:PsiDirectoryNode" />
-              <item name="recipe_batches" type="462c0819:PsiDirectoryNode" />
+              <item name="eating_cookies" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -208,17 +208,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553600407058</updated>
-      <workItem from="1553600408513" duration="2143000" />
+      <workItem from="1553600408513" duration="2914000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_stock_prices_py - 2019.03.26 at 07h 49m 04s.xml">
-      <configuration name="Unittests in test_stock_prices.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_stock_prices_py - 2019.03.26 at 07h 59m 32s.xml">
-      <configuration name="Unittests in test_stock_prices.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_test_stock_prices_py - 2019.03.26 at 07h 59m 38s.xml">
       <configuration name="Unittests in test_stock_prices.py" configurationId="tests" />
     </history-entry>
@@ -237,16 +231,28 @@
     <history-entry file="Unittests_in_test_recipe_batches_py - 2019.03.26 at 08h 16m 43s.xml">
       <configuration name="Unittests in test_recipe_batches.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_test_recipe_batches_py - 2019.03.26 at 08h 19m 51s.xml">
+      <configuration name="Unittests in test_recipe_batches.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_recipe_batches_py - 2019.03.26 at 08h 19m 57s.xml">
+      <configuration name="Unittests in test_recipe_batches.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_recipe_batches_py - 2019.03.26 at 08h 20m 01s.xml">
+      <configuration name="Unittests in test_recipe_batches.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_recipe_batches_py - 2019.03.26 at 08h 20m 05s.xml">
+      <configuration name="Unittests in test_recipe_batches.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2143000" />
+    <option name="totallyTimeSpent" value="2914000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="23" width="1260" height="737" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24958949" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24958949" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -256,7 +262,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32868218" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32868218" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -297,14 +303,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/recipe_batches/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SECOND">
@@ -315,8 +313,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/recipe_batches/test_recipe_batches.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -325,8 +323,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/recipe_batches/recipe_batches.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        <state relative-caret-position="330">
+          <caret line="22" column="59" lean-forward="true" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eating_cookies/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eating_cookies/eating_cookies.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eating_cookies/test_eating_cookies.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

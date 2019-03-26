@@ -2,11 +2,18 @@
 
 import sys
 
+#1, 2, 3
+
 # The cache parameter is here for if you want to implement
 # a solution that is more efficient than the naive 
 # recursive solution
 def eating_cookies(n, cache=None):
-  pass
+
+  myN = n
+  count = 0
+
+  for num in range(1, myN + 1):
+    
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
