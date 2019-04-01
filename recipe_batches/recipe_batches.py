@@ -3,8 +3,16 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
-
+  amount = 10000000000
+  for key in recipe:
+    if key not in ingredients:
+      amount = 0
+    else: 
+      x =  math.floor(ingredients[key] / recipe[key])
+      if x < amount :
+        amount = x
+  return amount
+    
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
