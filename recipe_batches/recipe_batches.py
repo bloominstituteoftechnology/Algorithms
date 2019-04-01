@@ -7,6 +7,7 @@ def recipe_batches(recipe, ingredients):
   for key in recipe:
     if key not in ingredients:
       amount = 0
+      break
     else: 
       x =  math.floor(ingredients[key] / recipe[key])
       if x < amount :
