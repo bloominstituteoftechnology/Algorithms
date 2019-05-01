@@ -3,7 +3,22 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  #Loop over both dictionaries
+  #Compare each Key Value 
+  #If Recipe > Ingredients break the search and return 0
+  #Else calculate how many of each you can make.
+  smallest = 1000000000000000
+    recipe = list(recipe.values())
+    ingredients = list(ingredients.values())
+    for i in range(0, len(recipe)):
+      if(recipe[i] > ingredients[i]):
+        return 0
+      else:
+        total = ingredients[i]//recipe[i]
+        if total < smallest:
+          smallest = total
+    return smallest
+
 
 
 if __name__ == '__main__':
