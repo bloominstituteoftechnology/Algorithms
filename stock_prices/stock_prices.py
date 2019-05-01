@@ -1,9 +1,18 @@
 #!/usr/bin/python
 
 import argparse
+from math import inf
 
 def find_max_profit(prices):
-  pass
+  min_price = inf
+  max_profit = -inf
+  for price in prices:
+    profit = price - min_price
+    if profit > max_profit:
+      max_profit = profit
+    if price < min_price:
+      min_price = price
+  return max_profit
 
 
 if __name__ == '__main__':
