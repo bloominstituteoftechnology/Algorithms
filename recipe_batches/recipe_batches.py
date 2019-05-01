@@ -3,13 +3,15 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  batches = 10000000
+  batches = -1
   for k in recipe:
     if k in ingredients.keys():
       x = ingredients[k] // recipe[k]
-      print(x)
-      if x < batches:
-        batches = x
+      if batches != -1:
+        if x < batches:
+          batches = x
+      else:
+          batches = x
     else:
       batches = 0
   return batches
