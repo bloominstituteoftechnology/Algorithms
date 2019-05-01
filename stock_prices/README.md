@@ -8,6 +8,7 @@ For example, `find_max_profit([1050, 270, 1540, 3800, 2])` should return 3530, w
 
 ## Testing
 
+
 Run the test file by executing `python test_stock_prices.py`.
 
 You can also test your implementation manually by executing `python stock_prices.py [integers_separated_by_a_single_space]`
