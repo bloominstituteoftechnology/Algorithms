@@ -3,7 +3,18 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  left_over = [ingredients.get(k, 0) - v for k,v in recipe.items()]
+  smallest_amount_left = min(left_over)
+  if smallest_amount_left < 0:
+    return 0
+  else:
+    amount_of_batches = 100
+    for k,v in recipe.items():
+      batch = ingredients.get(k) // v
+      if amount_of_batches > batch:
+        amount_of_batches = batch
+  return amount_of_batches
+
 
 
 if __name__ == '__main__':
