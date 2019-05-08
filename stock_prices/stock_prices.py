@@ -40,8 +40,6 @@ def find_max_profit(prices):
       change_buy_index = False
       
   return max_profit
-a = [100, 90, 80, 50, 20, 10]
-print(find_max_profit(a))
 
 
 if __name__ == '__main__':
