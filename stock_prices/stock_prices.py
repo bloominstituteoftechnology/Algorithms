@@ -3,6 +3,14 @@
 import argparse
 
 def find_max_profit(prices):
+    #input: list of prices
+    #output: max profit from single buy/sell
+    #must buy, then sell
+    #subtract x from y, with y coming before x in the list
+    #edge cases:
+        #empty array: 0
+        #single item: -n (have to buy first, so no profit, only loss of purchase price)
+        #2 items: return prices[1] - prices[0]
   pass
 
 
