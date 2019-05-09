@@ -1,6 +1,6 @@
 # Making Change
 
-You work as a bank teller, handling people's bank transactions (this is your part-time gig while you're studying at Lambda; only fourteen more weeks of this stinking job until you go find a job as a software developer!). 
+You work as a bank teller, handling people's bank transactions (this is your part-time gig while you're studying at Lambda). 
 
 One day one of the wealthiest and also most eccentric patrons of the bank walks up to your stall. They hand you some cash and tell you they want you to figure out exactly how many ways there are to make change for the amount of money they plopped down in front of you using only pennies, nickels, dimes, quarters, and half-dollars. 
 
