@@ -3,7 +3,18 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  
+  max_recipe_for_each_ingredient = []
+
+  for row in recipe.items():
+      if row[0] not in ingredients:
+        return 0
+      elif row[1] > ingredients[row[0]]:
+        return 0
+      max_recipe_for_each_ingredient.append(int(ingredients[row[0]]/row[1]))
+  
+  return min(max_recipe_for_each_ingredient)
+
 
 
 if __name__ == '__main__':
