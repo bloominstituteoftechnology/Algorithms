@@ -1,8 +1,54 @@
 #!/usr/bin/python
 
+from random import randint
+import time
 import argparse
+import math
+
+
+start = (time.time())
 
 def find_max_profit(prices):
+ min = prices[0]
+ max = prices[0]
+ for i in range(0, len(prices)-1):
+   if min > prices[i]:
+     min = prices[i]
+     max = prices[i + 1]
+   elif max < prices[i]:
+     max = prices[i]
+ return max - min
+
+print(find_max_profit([1050, 270, 1540, 3800, 2]))
+
+end_time = (time.time())
+
+ivan_total_time = end_time - start
+
+start = time.time()
+
+
+
+def find_max_profit1(prices):
+  min_price = prices[0]
+  max_profit = prices[1] - min_price
+
+  for i in range(1, len(prices)):
+    price = prices[i]
+    max_profit = max(price - min_price, max_profit)
+    min_price = min(price, min_price)
+
+  return max_profit
+
+find_max_profit([1050, 270, 1540, 3800, 2])
+
+end_time = time.time()
+
+lambda_total_time = end_time - start
+
+start = time.time()
+
+def find_max_profit2(prices):
   max_profit = -10
   buy_price = 0
   sell_price = 0
@@ -41,6 +87,60 @@ def find_max_profit(prices):
       
   return max_profit
 
+find_max_profit([1050, 270, 1540, 3800, 2])
+
+end_time = time.time()
+
+sergey_total_time = end_time - start
+
+start = time.time()
+
+def find_max_profit3(prices):
+
+  if len(prices) > 1:
+    current_min_price_so_far = prices[0]
+    max_profit_so_far = prices[1] - prices[0]
+
+  for n in prices[1:]:
+    if n < current_min_price_so_far:
+      current_min_price_so_far = n
+      continue
+    elif (n - current_min_price_so_far) > max_profit_so_far:
+      max_profit_so_far = n - current_min_price_so_far
+  
+  return max_profit_so_far
+
+find_max_profit([1050, 270, 1540, 3800, 2])
+
+end_time = time.time()
+
+ben_total_time = end_time - start
+
+
+start = time.time()
+
+def find_max_profit4(prices):
+  
+  profit = prices[1] - prices[0]
+
+  for i in range(len(prices)-1):
+    for j in range(i+1, len(prices)-1):
+      if prices[j] - prices[i] > profit:
+        profit = prices[j] - prices[i]
+
+  return profit
+
+find_max_profit([1050, 270, 1540, 3800, 2])
+
+end_time = time.time()
+
+jonah_total_time = end_time - start
+
+print('Ivan total time', ivan_total_time)
+print('lambda_total_time total time', lambda_total_time)
+print('sergey_total_time total time', sergey_total_time)
+print('ben_total_time total time', ben_total_time)
+print('jonah_total_time total time', jonah_total_time)
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
