@@ -3,7 +3,7 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  if len(recipe) != len(ingredients):
+  if len(recipe) > len(ingredients):
     return 0
   index = 0
   result = []
