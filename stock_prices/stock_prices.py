@@ -3,7 +3,13 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+  maxProf = float("-inf")
+  for i in range(0, len(prices)-1):
+    for j in range(i+1, len(prices)-1):
+      diff = prices[j] - prices[i]
+      if diff > maxProf:
+        maxProf = diff
+  return maxProf
 
 
 if __name__ == '__main__':
