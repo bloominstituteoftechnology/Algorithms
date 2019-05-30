@@ -42,7 +42,6 @@ def find_max_profit(prices):
   print(profit)
   #print(curr)
   #print(next)
-
   #create loop
 
   #find the largest value
