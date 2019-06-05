@@ -8,7 +8,7 @@ import sys
 def eating_cookies(n, cache=None):
     if n ==0: # base case
         return 1
-    elif n <= 2: # base case
+    elif n <= 2: # base case -- return is same when n=1 or n=2
       return n
     else:
       # current number of ways to eat cookies is the sum of number of ways
