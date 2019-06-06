@@ -2,8 +2,30 @@
 
 import math
 
-def recipe_batches(recipe, ingredients):
-  pass 
+'''
+UNDERSTANDING:
+
+-Takes in 2 dictionaries = 1 dictionary is amount of ingredients needed, 1 is amount of ingredients available
+- returns the amount of batch you can make
+
+'''
+
+def recipe_batches(dict1, dict2):
+    arr = []
+    if len(dict1) != len(dict2):
+        return 0
+      
+    for i in dict1:
+        for j in dict2:
+            # arr.append(dict2[j] % dict1[i])
+            if (i == j):
+                arr.append(dict2[j] / dict1[i])
+    
+    max_batch = int(min(arr))       
+    # for j in dict2:
+    #     print(dict2[j])
+    
+    return max_batch
 
 
 if __name__ == '__main__':
