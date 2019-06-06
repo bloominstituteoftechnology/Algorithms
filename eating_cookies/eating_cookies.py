@@ -13,7 +13,7 @@ def eating_cookies(n, cache=None):
         with open('eating_cookies.cache', 'rb') as F:
             cache = pickle.load(F)
             if len(cache) > n:
-                print('using cache')
+                # print('using cache')
                 return cache[n]  
     except:
         pass       

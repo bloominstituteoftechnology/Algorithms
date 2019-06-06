@@ -48,11 +48,9 @@ def fromDeci(base, inputNum):
 def rock_paper_scissors(n):
     r = []
     ro = [('rock', 0), ('paper', 1), ('scissors', 2)]
-    l3n = len(str(fromDeci(3,3**n))) - 1 # max number is 1 less
-    # print('l3n', l3n)
+    l3n = len(str(fromDeci(3,3**n - 1))) 
     for i in range(3 ** n):
         b3 = str(fromDeci(3, i)).zfill(l3n)
-        # print('b3', b3)
         lr = []
         for j in range(n):
             lr.append(ro[int(b3[j])][0])
