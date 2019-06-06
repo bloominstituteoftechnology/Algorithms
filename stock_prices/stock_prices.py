@@ -3,10 +3,8 @@
 Understanding: 
 Input: num of input price follow by the number of price.
 Ouput: max profit output price
-
-Plan:
-if prevPrice > curPrice && curPrice < nextPrice => buyPrice = curPrice
-if prevPrice < curPrice && curPrice > nextPrice => sellPrice = curPrice
+find the maximum difference between the smallest and largest prices in the list of prices, but we also have to make sure that the max profit is computed by subtracting some price by another price that comes before it; 
+it can't come after it in the list of prices.
 
 maxProfit = sell - buy
 
