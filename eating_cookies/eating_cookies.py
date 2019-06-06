@@ -7,7 +7,7 @@ import sys
 # The cache parameter is here for if you want to implement
 # a solution that is more efficient than the naive 
 # recursive solution
-#def eating_outer(n):
+
 cache = {}
 def eating_cookies(n, cache=cache):
   
@@ -22,7 +22,7 @@ def eating_cookies(n, cache=cache):
     cache[n] = eating_cookies(n-3) + eating_cookies(n-2) + eating_cookies(n-1)
 
   return cache[n]
-  #return eating_cookies(n)  
+
 
   
 
