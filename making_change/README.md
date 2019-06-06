@@ -19,7 +19,7 @@ For this problem, there's a test that tests your implementation with small input
 
 You'll find that without implementing performance optimizations into your solution, your solution will likely hang on the large input test. 
 
-To run the tests separately, run `python test_making_change.py -k small` in order to run jsut the small input test. Run `python test_making_change.py -k large` to execute just the large input test. If you want to run both tests, just run `python test_making_change.py`.
+To run the tests separately, run `python test_making_change.py -k small` in order to run just the small input test. Run `python test_making_change.py -k large` to execute just the large input test. If you want to run both tests, just run `python test_making_change.py`.
 
 You can also test your implementation manually by executing `python making_change.py [amount]`
 
