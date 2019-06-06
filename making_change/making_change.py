@@ -4,8 +4,6 @@ import sys
 
 
 def making_change(amount, denominations):
-    if amount < 5:
-        return 1
     cache = [0 for i in range(amount + 1)]
     cache[0] = 1
     for coin in denominations:
