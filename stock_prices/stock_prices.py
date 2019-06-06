@@ -19,19 +19,20 @@ anlayze:
 def find_max_profit(prices):
   #profit
   max_value = 0
-  max_value_location = 0
-  min_value = 1e1000
+  max_value_location = 0 #save the location of the max_value,we'll need it
+  min_value = 1e1000 #some artibrary big number to compare min_value against
   # get the max value even the last element matters
   for i in range(1, len(prices)):
     if prices[i] > max_value:
       max_value = prices[i]
       max_value_location = i   
   # get the min value when buying the stock
-  # the last element wouldn't matter because we wouldn't be able to sell it
+  # we want to find the min price left of our max_value
+  # because sell only when we have bought it already
   for j in range(0, max_value_location):
     if min_value > prices[j]:
       min_value = prices[j] 
-  return max_value-min_value
+  return max_value-min_value # return the profits
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
