@@ -7,18 +7,18 @@ import sys
 # recursive solution
 def eating_cookies(n, cache=None):
     if n < 0:
-        return None
-    if n == 0:
+        return 0
+    elif n < 2:
         return 1
-    if n <= 2:
-        return n
+    else:
+        number_of_ways_to_eat = 0
+        number_of_ways_to_eat += eating_cookies(n - 3, cache)
+        number_of_ways_to_eat += eating_cookies(n - 2, cache)
+        number_of_ways_to_eat += eating_cookies(n - 1, cache)
+        
+        return number_of_ways_to_eat
 
-    property1 = 0
-    property1 += eating_cookies(n - 3, cache)
-    property1 += eating_cookies(n - 2, cache)
-    property1 += eating_cookies(n - 1, cache)
-
-    return property1
+print(eating_cookies(5, []))
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
