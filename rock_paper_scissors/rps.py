@@ -12,20 +12,15 @@ def rock_paper_scissors(n):
 
         nonlocal rps, selected
 
-        # print(locals())
         if n < 0:
             plays.append(selected)
             return None
 
-        for rotate in range(3):
-            for selector in range(3):
-                selected.append(rps[selector])
-                print('selected:', selected)
-                loop(n - 1, plays)
+        for selector in range(3):
+            selected.append(rps[selector])
+            loop(n - 1, plays)
 
-                selected = selected[:-1]
-
-            rps = rps[1:] + [rps[0]]
+            selected = selected[:-1]
 
         return plays
 
