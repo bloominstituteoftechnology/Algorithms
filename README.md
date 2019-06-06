@@ -4,7 +4,7 @@ Each directory contains a separate problem that you'll be tasked with solving. I
 
 There isn't an official prescribed order for tackling the problems, though a subjective ranking of the given problems from easiest to hardest might go something like this:
 
- 1. `stock_prices`
+ 1. `stock_prices`c
  2. `recipe_batches`
  3. `eating_cookies`
  4. `rock_paper_scissors`
