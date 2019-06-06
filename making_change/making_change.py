@@ -4,12 +4,13 @@ import sys
 
 def making_change(amount, denominations):
   o = 0
-  print(amount)
-  for i in denominations:
-    if amount - i == 0:
+  if amount == 0:
+    return 1
+  for i in range(len(denominations) - 1, -1, -1):
+    if amount - denominations[i] == 0:
       o += 1
-    elif amount - i > 0:
-      o += making_change(amount - i, denominations)
+    elif amount - denominations[i] > 0:
+      o += making_change(amount - denominations[i], denominations[:i+1])
   return o
 
 
