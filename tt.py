@@ -1,19 +1,12 @@
-def eating_outer(n):
-  cache = {}
-  def eating_cookies(n, cache=cache):
-    
-    if n == 3:
-      return 4
-    elif n == 2:
-      return 2
-    elif n <= 1:
-      return 1
+cache=[]
+def rock_paper_scissors(n):
+  if n <= 1:
+    return ['r','p','s']
 
-    if n not in cache:
-      cache[n] = eating_cookies(n-3) + eating_cookies(n-2) + eating_cookies(n-1)
+  
+  cache.append(rock_paper_scissors(n-1))
+  
+  #print(cache)
+  return cache
 
-    return cache[n]
-  return eating_cookies(n)  
-
-for i in range(50):
-    print(f'{i} : {eating_outer(i)}')
+print(rock_paper_scissors(5))
