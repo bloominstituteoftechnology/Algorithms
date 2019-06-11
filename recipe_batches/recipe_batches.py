@@ -3,7 +3,23 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  # create a dictionary to hold the dividends:
+  # divs = {}
+  lowest = None
+
+  # Loop through the recipe
+  for ing, amt in recipe.items():
+    # Compare to ingredients
+    if ing in ingredients:
+      compare = ingredients[ing] // amt
+    else:
+      compare = 0
+
+    if (lowest is None) or (compare < lowest):
+      lowest = compare
+
+  return lowest
+
 
 
 if __name__ == '__main__':
