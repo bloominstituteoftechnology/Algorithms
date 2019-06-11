@@ -3,6 +3,23 @@
 import argparse
 
 def find_max_profit(prices):
+
+  largest_index = 0
+  smallest_index = 0
+  j = 0
+  
+  for i in prices:
+    if prices[i] > prices[largest_index]:
+      largest_index == i
+
+  while j < largest_index:
+    if prices[j] < prices[0]:
+      smallest_index == j
+      j += 1
+
+  
+  return prices[largest_index] - prices[smallest_index]
+
   pass
 
 
