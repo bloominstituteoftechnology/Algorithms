@@ -3,7 +3,8 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+ #compare Dictionaries, subtract recipe from ingredients 
+ 	return recipe.items() & ingredients.items()
 
 
 if __name__ == '__main__':
