@@ -3,11 +3,11 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-	given_recipe = set(recipe.keys())
-	if given_recipe.intersection(ingredients.keys()) != given_recipe:
-		return 0
-		
+			
 	needed_ingredients = {key: ingredients[key] for key in ingredients if key in recipe}
+
+	if list(needed_ingredients.keys()) != list(recipe.keys()):
+		return 0
 
 	batches = 100000
 	for item in needed_ingredients:
@@ -22,8 +22,15 @@ def recipe_batches(recipe, ingredients):
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
   # your implementation with different inputs
-  recipe = { 'milk': 1, 'butter': 5, 'flour': 1, 'honey': 7 }
-  ingredients = { 'milk': 10, 'butter': 15, 'flour': 5, 'eggs': 100  }
+  recipe = { 'milk': 1, 'butter': 5, 'flour': 1}
+  ingredients = { 'milk': 10, 'butter': 15, 'eggs': 100  }
+
+
+
+
+
+
+
   print("{batches} batches can be made from the available ingredients: {ingredients}.".format(batches=recipe_batches(recipe, ingredients), ingredients=ingredients))
 
   recipe_batches(recipe,ingredients)
