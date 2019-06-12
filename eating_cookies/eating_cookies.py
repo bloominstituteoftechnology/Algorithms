@@ -14,11 +14,13 @@ def eating_cookies(n):
         return n
     if n == 3:
         return 4
+    if n == 4:
+        return 8
 
-    return(eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3))
+    return(eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3) + eating_cookies(n-4))
 
 
-print(eating_cookies(10))
+print(eating_cookies(6))
 
 
 if __name__ == "__main__":
