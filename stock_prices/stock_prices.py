@@ -8,20 +8,31 @@ def find_max_profit(prices):
   smallest_index = 0
   j = 0
   
-  for i in prices:
-    if prices[i] > prices[largest_index]:
-      largest_index == i
+  for i, price in enumerate(prices):
+    price = prices[i]
+    #print(price)
+    
+    if price > prices[largest_index]:
+      
+      largest_index = i
+
+
 
   while j < largest_index:
-    if prices[j] < prices[0]:
-      smallest_index == j
-      j += 1
+    
+    #print(j)
+    if prices[j] < prices[smallest_index]:
+      #print(prices[j])
+      smallest_index = j
+    j += 1
+    #print(smallest_index)
 
-  
+  print(prices[largest_index] - prices[smallest_index])
+
   return prices[largest_index] - prices[smallest_index]
 
-  pass
-
+  
+find_max_profit([10, 7, 5, 8, 11, 9])
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
