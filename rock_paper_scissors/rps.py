@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import sys
-
+# Options Rock, paper, scissors
 def rock_paper_scissors(n):
   pass 
 
