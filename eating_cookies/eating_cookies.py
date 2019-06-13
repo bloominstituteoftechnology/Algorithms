@@ -12,9 +12,9 @@ def eating_cookies(n, cache=None):
   if n == 0 or n == 1:
     return 1
   else:
-    numWays += eating_cookies(n -1)
-    numWays += eating_cookies(n -2)
-    numWays += eating_cookies(n -3)
+    # Fixing this to be DRY
+    for i in range(1, 4):
+      numWays += eating_cookies(n -i)
 
   return numWays
 if __name__ == "__main__":
