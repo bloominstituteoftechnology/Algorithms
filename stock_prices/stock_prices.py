@@ -4,7 +4,7 @@ import argparse
 
 #recieves and list of amazon stock prices
 def find_max_profit(prices):
-  #base case
+  #base case: if there is one or less stock prices no profit can be had
   if len(prices) <= 1:
     return 0
   else: 
