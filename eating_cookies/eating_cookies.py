@@ -11,12 +11,11 @@ def eating_cookies(n, cache=None):
     return 0
   if n == 0 or n == 1:
     return 1
-  else:
-    # Fixing this to be DRY
-    for i in range(1, 4):
-      numWays += eating_cookies(n -i)
-
+  # Fixing this to be DRY
+  for i in range(1, 4):
+    numWays += eating_cookies(n -i)
   return numWays
+
 if __name__ == "__main__":
   if len(sys.argv) > 1:
     num_cookies = int(sys.argv[1])
