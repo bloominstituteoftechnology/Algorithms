@@ -7,17 +7,18 @@ def find_max_profit(prices):
   maxProfit = None
   i = 0
   for buyPrice in prices:
+    # Looping through all the prices but keeping the buyPrice always 1 index lower than the sell price 
     if minPrice == None:
       minPrice = buyPrice
     if minPrice > buyPrice:
       minPrice = buyPrice
-
+    # I'm using an index based range here to keep the sell price always 1 index higher than the buyPrice
     for i in range(prices.index(buyPrice)+1, len(prices)):
       if maxProfit == None:
         maxProfit = prices[i] - minPrice
       if prices[i] - minPrice > maxProfit:
         maxProfit = prices[i] - minPrice
-        
+
   return maxProfit
   
 
