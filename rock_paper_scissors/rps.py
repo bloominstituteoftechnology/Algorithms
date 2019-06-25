@@ -3,7 +3,24 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+    if n == 0:
+        return [[]]
+    elif n == 1:
+        return [["rock"],["paper"],["scissors"]]
+    else:
+        result = []
+        print('hi',result)
+        prev = rock_paper_scissors(n - 1)
+        print('hey', prev)
+        for combo in prev:
+            for choice in ["rock", "paper", "scissors"]:
+                newCombo = combo.copy()
+     
+                newCombo.append(choice)
+ 
+                result.append(newCombo)
+           
+    return result
 
 
 if __name__ == "__main__":
