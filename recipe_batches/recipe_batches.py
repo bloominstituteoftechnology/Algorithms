@@ -6,12 +6,10 @@ def recipe_batches(recipe, ingredients):
     needed_ingredients = {key: ingredients[key] for key in ingredients if key in recipe}
     if list(needed_ingredients.keys()) != list(recipe.keys()):
         return 0
-
     batches = 1000
     for item in needed_ingredients:
         if ingredients[item] // recipe[item] < batches:
-            batches = ingredients[item] // recipe[item]
-    
+            batches = ingredients[item] // recipe[item]    
     return batches
 
 if __name__ == '__main__':
