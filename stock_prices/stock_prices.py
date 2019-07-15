@@ -3,7 +3,7 @@
 import argparse
 
 def find_max_profit(prices):
-  max_profit = 0
+  max_profit = -999999
   for i in range(len(prices)-1, 1, -1):
     for j in range(0,i):
       profit = prices[i] - prices[j]
