@@ -4,11 +4,12 @@ import argparse
 
 def find_max_profit(prices):
   max_profit = -999999
+  max_sell = -999999
   for i in range(len(prices)-1, 1, -1):
-    for j in range(0,i):
-      profit = prices[i] - prices[j]
-      if profit > max_profit:
-        max_profit = profit
+    if prices[i] > max_sell:
+      max_sell = prices[i]
+    if max_profit < max_sell - prices[i-1]:
+      max_profit = max_sell - prices[i-1]
   return max_profit
 
 if __name__ == '__main__':
