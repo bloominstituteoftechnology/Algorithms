@@ -3,6 +3,7 @@
 import argparse
 
 def find_max_profit(prices):
+  profit = prices[1] - prices[0]
   pass
 
 
