@@ -41,8 +41,8 @@ making_change.py [amount]`
 
 ## Hints
 
- * This problem can be thought of as a more difficult version of the climbing
-   stairs problem. 
+ * This problem can be thought of as a more difficult version of the eating
+   cookies problem. 
  * As far as base cases go, again, think about some cases where we'd want the
    recursion to stop executing. What should happen when the amount of cents
    given is 0? What should happen when the amount of cents given is negative?
