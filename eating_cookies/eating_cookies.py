@@ -15,7 +15,11 @@ def eating_cookies(n, cache=None):
         return 2
     val = eating_cookies(n - 1) + eating_cookies(n - 2) + eating_cookies(n - 3)
     memcache[n] = val
+    print(val)
     return val
+
+
+eating_cookies(4)
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
@@ -23,3 +27,6 @@ if __name__ == "__main__":
     print("There are {ways} ways for Cookie Monster to eat {n} cookies.".format(ways=eating_cookies(num_cookies), n=num_cookies))
   else:
     print('Usage: eating_cookies.py [num_cookies]')
+
+    [0, 1, 2, 3]
+    [1, 1, 2, 4]
