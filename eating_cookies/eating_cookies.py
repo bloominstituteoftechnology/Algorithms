@@ -16,7 +16,7 @@ import sys
 # 1 = eat(0) + eat(-1) + eat(-2)
 
 
-def eating_cookies(n, cache=None):
+def eating_cookies2(n, cache=None):
     # For each possible number of cookies to eat
     # calculate the number of ways to eat n cookies
     # n = (n - 3) + (n -2) + (n - 1)
@@ -30,9 +30,30 @@ def eating_cookies(n, cache=None):
     if cache[n] != 0:
         return cache[n]
 
-    cache[n] = eating_cookies(n - 3, cache) \
+    cache[n] = eating_cookies(n - 1, cache) \
         + eating_cookies(n - 2, cache) \
-        + eating_cookies(n - 1, cache)
+        + eating_cookies(n - 3, cache)
+    return cache[n]
+
+
+def eating_cookies(n, cache=None):
+    if cache is None:
+        cache = [0] * (n + 1)
+
+    if cache[0] == 0:
+        cache[:4] = [1, 1, 2, 4]
+
+    if cache[n] != 0:
+        return cache[n]
+
+    for i in range(1, n + 1):
+        # calculate cache if it doesn't exist
+        # add new data to cache
+        if cache[i] != 0:
+            continue
+
+        cache[i] = cache[i - 3] + cache[i - 2] + cache[i - 1]
+
     return cache[n]
 
 
