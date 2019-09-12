@@ -19,6 +19,7 @@ import sys
 
 #     return memo[amount]
 
+
 def making_change(amount, coins, memo=None):
     if memo is None:
         # Set up our array
