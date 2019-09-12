@@ -4,7 +4,7 @@ import argparse
 
 
 def find_max_profit(prices):
-    #create list to hold values
+	# create list to hold values
 	profit_list = []
 	for i in range(len(prices)):
 		j = i + 1

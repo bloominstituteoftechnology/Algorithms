@@ -1,6 +1,7 @@
 import unittest
 from recipe_batches import recipe_batches
 
+
 class Test(unittest.TestCase):
 
   def test_recipe_batches(self):
