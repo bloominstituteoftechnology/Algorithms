@@ -21,6 +21,8 @@ def eating_cookies(n):
         return cache[num]
     return eat(n)
 
+# print (eating_cookies(3))
+
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
