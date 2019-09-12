@@ -68,12 +68,15 @@ def knapsack_solver(items, capacity):
                 ratio_list.append(new_item)
                 break
 
+    current_size = 0
+    selected_items = []
 
-    # for item in ratio_list:
-    #     print(item)
-    print(len(ratio_list))
     for item in ratio_list:
-        print(item['ratio'])
+        if (current_size + item['size']) > capacity:
+            continue
+        selected_items.append(items[item['index']])
+
+    print(selected_items)
     return 0
 
 
