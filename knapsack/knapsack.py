@@ -56,23 +56,13 @@ def knapsack_solver(items, capacity):
             'ratio': ratio
         }
 
-        # location = find_location(ratio_list, new_item['ratio'])
-        # print(location, new_item['ratio'])
-        # print(new_item['ratio'])
-
-        # if location == -1:
-        #     ratio_list.append(new_item)
-        #     print(ratio_list)
-        # else:
-        #     ratio_list.insert(location, new_item)
-
         for index, value in enumerate(ratio_list):
             if value['ratio'] < new_item['ratio']:
                 ratio_list.insert(index, new_item)
                 break
 
     for item in ratio_list:
-        print(f'l: {item["ratio"]}')
+        print(item)
 
 
 if __name__ == '__main__':
