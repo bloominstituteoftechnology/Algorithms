@@ -75,6 +75,7 @@ class Test(unittest.TestCase):
   def setUp_large(self):
     file_contents = open('data/large1.txt', 'r')
     self.large_1_items = []
+    self.maxDiff = None
     
     for line in file_contents.readlines():
       data = line.rstrip().split()
