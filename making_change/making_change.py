@@ -4,20 +4,34 @@ import sys
 
 # For each denomination get the number of ways to make change with that denomination
 
+# def making_change(amount, coins, memo=None):
+#     if memo is None:
+#         memo = [0] * (amount + 1)
+#         memo[0] = 1
+
+#     if amount <= 1:
+#         return 1
+
+#     if memo[amount] > 0:
+#         return memo[amount]
+
+#     memo[amount] += making_change(amount - 1, coins, memo)
+
+#     return memo[amount]
 
 def making_change(amount, coins, memo=None):
     if memo is None:
+        # Set up our array
         memo = [0] * (amount + 1)
         memo[0] = 1
-
-    if amount <= 1:
-        return 1
-
-    if memo[amount] > 0:
-        return memo[amount]
-
-    memo[amount] += making_change(amount - 1, coins, memo)
-
+    for i in range(len(coins)):  # 0, 1, 2...len(coins)
+        for j in range(coins[i], amount + 1):  # 1, 2...amount / 5, 6...amount
+            if (j - coins[i]) >= 0:
+                # memo[1] += memo[1 - 1] // 1
+                # memo[2] += memo[2 - 1] // 1
+                # memo[5] += memo[5 - 1] // 2
+                # memo[6] += memo[6 - 1] // 2
+                memo[j] += memo[j - coins[i]]
     return memo[amount]
 
 
