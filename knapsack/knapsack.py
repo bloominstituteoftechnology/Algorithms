@@ -44,7 +44,7 @@ Item = namedtuple('Item', ['index', 'size', 'value'])
 
 
 def knapsack_solver(items, capacity):
-    ratio_list = [{'ratio': -1}] * len(items)
+    ratio_list = []
     for item in items:
         index, size, value = [*item]
         ratio = item.value / item.size
@@ -56,13 +56,25 @@ def knapsack_solver(items, capacity):
             'ratio': ratio
         }
 
+        if len(ratio_list) == 0:
+            ratio_list.append(new_item)
+            continue
+
         for index, value in enumerate(ratio_list):
-            if value['ratio'] < new_item['ratio']:
+            if value['ratio'] <= new_item['ratio']:
                 ratio_list.insert(index, new_item)
                 break
+            elif (index == (len(ratio_list) - 1)):
+                ratio_list.append(new_item)
+                break
 
+
+    # for item in ratio_list:
+    #     print(item)
+    print(len(ratio_list))
     for item in ratio_list:
-        print(item)
+        print(item['ratio'])
+    return 0
 
 
 if __name__ == '__main__':
