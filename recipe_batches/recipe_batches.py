@@ -1,10 +1,27 @@
 #!/usr/bin/python
 
-import math
+# import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  batches = 0
+  lowest = 0
 
+  if len(recipe) > len(ingredients):
+    return 0
+  
+  lowest = min(ingredients.values())
+  ingredients_list = ingredients.items()
+  key = ''
+
+  for item in ingredients_list:
+    
+    if item[1] == lowest:
+      key = item[0]
+
+      amount = recipe.get(key)
+      batches = item[1] // amount
+     
+  return batches
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
