@@ -3,7 +3,23 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  max_number = 0
+  limit = None
+  for key, value in recipe.items():
+    if key in ingredients:
+      number = ingredients[key] //value
+    else:
+      max_number= 0
+      break
+    if limit == None:
+      max_number = number
+      limit = max_number
+    else:
+      if number< limit:
+        limit = number
+
+
+  return max_number
 
 
 if __name__ == '__main__':
