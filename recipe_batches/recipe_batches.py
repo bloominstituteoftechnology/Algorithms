@@ -3,8 +3,8 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
-
+  # common = recipe.keys() & ingredients.keys()
+  return min(int(ingredients.items()) // int(recipe.items()))
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
