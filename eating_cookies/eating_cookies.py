@@ -6,7 +6,16 @@ import sys
 # a solution that is more efficient than the naive 
 # recursive solution
 def eating_cookies(n, cache=None):
-  pass
+    if n ==0: # base case
+        return 1
+    elif n <= 2: # base case -- return is same when n=1 or n=2
+      return n
+    else:
+      # current number of ways to eat cookies is the sum of number of ways
+      # for previous 3 lower number of cookies in jar
+      # just like Fibonaci -> current number is the sum of 2 previous numbers
+      return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
+  
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
