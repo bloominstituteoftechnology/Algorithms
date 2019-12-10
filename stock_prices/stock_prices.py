@@ -5,17 +5,17 @@ import math
 
 def find_max_profit(prices):
 
-	maxProfit = -math.inf
+  maxProfit = -math.inf
 
-	for i in range(0, len(prices) - 1):
-		
-		for j in range(i+1, len(prices)):
-			profit = prices[j] - prices[i]
+  for i in range(0, len(prices) - 1):
+    
+    for j in range(i+1, len(prices)):
+      profit = prices[j] - prices[i]
 
-			if (profit) > maxProfit:
-				maxProfit = profit
+      if (profit) > maxProfit:
+        maxProfit = profit
 
-	return maxProfit				
+  return maxProfit        
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
