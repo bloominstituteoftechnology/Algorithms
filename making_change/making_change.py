@@ -2,8 +2,22 @@
 
 import sys
 
+
+
 def making_change(amount, denominations):
-  pass 
+	ways = 0
+	for i in range(0,amount+1):
+		for j in range(0,(amount//5) + 1):
+			for k in range(0,(amount//10) + 1):
+				for l in range(0,(amount//25) + 1):
+					for m in range(0, (amount//50) + 1):
+						if i + 5*j + 10*k + 25*l + 50*m == amount:
+							# print(f'This is a solution ({i}, {j}, {k}, {l}, {m})')
+							ways+=1
+	return ways
+
+  
+
 
 
 if __name__ == "__main__":
