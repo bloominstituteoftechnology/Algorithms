@@ -2,7 +2,7 @@
 
 """
 input --> list of stock prices
-output -->  max-profit = single buy, single sell (but first buying before selling)
+output -->  max-profit = single buy - single sell (but first buying before selling)
 
 For example, `find_max_profit([1050, 270, 1540, 3800, 2])` should return 3530, which is the maximum profit that can be made from a single buy and then sell of these stock prices. 
 
@@ -25,10 +25,31 @@ import argparse
 
 
 
-
 def find_max_profit(prices):
-    # find the max number and isolate it
-    # max_num = sort(prices)
+
+    # The total amount of profit after comparing the two numbers
+    profit = 0
+
+    # max profit should be min_prices - max_prices --> final solution
+    max_profit = 0
+    
+    #find the max number and isolate it. 
+    max_price = sorted(prices)[-1]
+    print("Max number is: ",max_price)
+    
+    # #Find minimum price left of max
+    # min_price = min(prices)
+    # print("min number is: ", min_price)
+
+    # previous price
+    
+    # next price
+    
+    # Loop through the prices
+    for i in prices:
+      print(i)
+
+
 
 
 if __name__ == '__main__':
