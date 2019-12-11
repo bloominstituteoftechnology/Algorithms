@@ -3,7 +3,15 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
+  o = 0
+  if amount == 0:
+    return 1
+  for i in range(len(denominations) - 1, -1, -1):
+    if amount - denominations[i] == 0:
+      o += 1
+    elif amount - denominations[i] > 0:
+      o += making_change(amount - denominations[i], denominations[:i+1])
+  return o
 
 
 if __name__ == "__main__":
