@@ -3,7 +3,20 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+    # Instantiate vars
+    current_min_so_far = 1000000000
+    max_profit = -1000000000
+    
+    # Loop through prices
+    for i in range(len(prices)):
+        current_profit = prices[i] - current_min_so_far
+        if current_profit > max_profit:
+            max_profit = current_profit
+        
+        if prices[i] < current_min_so_far:
+            current_min_so_far = prices[i]
+    
+    return max_profit
 
 
 if __name__ == '__main__':
