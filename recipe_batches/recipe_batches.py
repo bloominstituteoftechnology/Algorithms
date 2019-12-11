@@ -3,8 +3,19 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
-
+  numBatches = 0
+  # Check if the ingredients contains all the recipe items
+  while True:
+    for ingredient in recipe:
+      if ingredients.get(ingredient) == None:
+        # We don't have all the ingredients available in the list so exit.
+        return numBatches
+      else:
+        ingredients[ingredient] = ingredients.get(ingredient) - recipe.get(ingredient)
+        if ingredients[ingredient] < 0:
+          return numBatches
+    numBatches += 1
+    
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 

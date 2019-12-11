@@ -3,8 +3,17 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
+  numWaysChange = 0
+  if amount == 0:
+    return 1
+  elif amount < 0:
+    return 0
 
+  for n in range(0, len(denominations)):
+    # Limit the number of recursive calls each denomination can make
+    # The penny recursion shouldn't make nickel recursions but the nickel recursion can make both nickel and penny recursions.
+    numWaysChange += making_change(amount - denominations[n], denominations[:n+1])
+  return numWaysChange
 
 if __name__ == "__main__":
   # Test our your implementation from the command line

@@ -6,7 +6,15 @@ import sys
 # a solution that is more efficient than the naive 
 # recursive solution
 def eating_cookies(n, cache=None):
-  pass
+  numWays = 0
+  if n < 0:
+    return 0
+  if n == 0 or n == 1:
+    return 1
+  # Fixing this to be DRY
+  for i in range(1, 4):
+    numWays += eating_cookies(n -i)
+  return numWays
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
