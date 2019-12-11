@@ -2,7 +2,30 @@
 
 import argparse
 
+# if x is negative
+#       find closest to 0
+# if x is positive
+#       find farthest from 0
+#
+
 def find_max_profit(prices):
+  negative_list = []
+  positive_list = []
+  for index, x in enumerate(prices):
+    if index <len(prices) - 1 and x >= prices[index + 1]:
+      negative_list.append(-(x-prices[index + 1]))
+      negative_list.sort
+    elif index == len(prices)-1:
+      break
+    else: 
+      positive_list.append(prices[index + 1]-x)
+      positive_list.sort()
+  if(positive_list == []):
+    return negative_list[-1]
+  elif(len(positive_list)-1 > 2):
+    return positive_list[-1]
+  else:
+    return sum(positive_list)
   pass
 
 

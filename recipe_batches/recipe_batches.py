@@ -3,7 +3,16 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  batches = []
+  for x in recipe:
+    if x not in ingredients:
+      batches.append(0)
+    elif recipe[x] > ingredients[x]:
+      batches.append(0)
+    else:
+      batches.append(math.floor(ingredients[x]/recipe[x]))
+  batches_complete = min(batches)
+  return batches_complete or 0 
 
 
 if __name__ == '__main__':
