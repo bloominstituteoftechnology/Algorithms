@@ -2,8 +2,20 @@
 
 import argparse
 
+#recieves and list of amazon stock prices
 def find_max_profit(prices):
-  pass
+  #base case: if there is one or less stock prices no profit can be had
+  if len(prices) <= 1:
+    return 0
+  else: 
+  #max profit is computed by subtracting some price by another price that comes before it
+    max_profit = prices[len(prices)-1] - prices[len(prices)-2]
+    for x in range(1, len(prices)):
+      for y in range(x+1, len(prices)):
+        profit = prices[y] - prices[x]
+        if profit > max_profit:
+          max_profit = profit
+  return max_profit
 
 
 if __name__ == '__main__':
