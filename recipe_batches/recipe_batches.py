@@ -27,7 +27,7 @@ import math
 #     GOAL - RETURN HOW MANY BATCHES OF RECIPE CAN BE MADE FROM INPUT OF 2 DICTIONARIES
 #     {1ST RECIPES}, 2ND {CURRENT INGREDIENTS}
 #       BASED ON TEST RESULTS NO NEED TO ACCOUNT FOR BAD INPUT
-#
+#     - ACCOUNT FOR HAVING NO INGREDIENTS IN STORED
 #     EX:
 # INPUT
 #         recipe_batches(
@@ -50,18 +50,24 @@ print('PROGRAM START')
 def recipe_batches(recipe, ingredients):
   print('FUNCTION CALLED')
   maxBatches = int
+  recipes_values = recipe.values()
+  print('recipe.values')
+  print(recipe.values)
+  ingredients_values = ingredients.values()
+  print('ingredients.values')
+  print(ingredients.values)
   # FOR EACH VALUE IN THE FIRST DICTIONARY,
-  for i in recipe:
+  for i in recipes_values:
     print('I IN RECIPE')
     print(i)
    # if value1 is lessor than value2 return value1 / value2
-    recipesCount = i[1]
+    recipesCount = i
     print('recipesCount')
     print(recipesCount)
-    for i2 in ingredients:
+    for i2 in ingredients_values:
       print('I2 IN RECIPE')
       print(i2)
-      ingredientsCount = i2[1]
+      ingredientsCount = i2
       print('ingredientsCount')
       print(ingredientsCount)
       if recipesCount < ingredientsCount:
