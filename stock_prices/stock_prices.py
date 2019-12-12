@@ -45,11 +45,11 @@ def find_max_profit(prices):
   next_price = prices[1]
   print("Next", next_price)
 
-  #Profit after subtracting prev_price & next_price 
+  #Intializing the profit after subtracting prev_price & next_price 
   profit = 0
   # print("profit", profit)
 
-  #Hold the max profit --> Need to return?
+  #Intializing the largest profit margin to be returned
   max_profit = 0
   # print("Max Profit", max_profit)
 
@@ -58,12 +58,24 @@ def find_max_profit(prices):
   if n <= 2: #--> If the length of prices is smaller than or equal to 2
     return next_price - prev_price # --> Subtract next and previous prices = max_profit
 
-  max_profit = next_price = prev_price
+  max_profit = next_price - prev_price
 
-  print(f"Max profit is {max_profit}")
+  # print(f"Max profit is {max_profit}")
 
+  # Iterate through the list --> I know that our target should be 3800 - 270  = 3530 = max_profit
+  for i in range(1, n - 1):
+    profit = prices[i] - next_price
+    # print("Profit in loop", profit )
+    # print("Subtraction", profit - next_price)
+    
+    # If the total profit is bigger than our current max_profit 0, the replace with the larger profit number
+    if profit > max_profit:
+      max_profit = profit
+      # print("Our Max Profit:", max_profit)
 
-  # print("Previous:",prev_price,"Next:", next_price)
+  return max_profit
+      
+
     
 
 if __name__ == '__main__':
