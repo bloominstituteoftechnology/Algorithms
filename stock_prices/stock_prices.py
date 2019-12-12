@@ -2,26 +2,40 @@
 
 import argparse
 
+# THIS CODE WORKS UNLESS LAST NUMBER IS THE MOST PROFIT
+
+# def find_max_profit(prices):
+#   max_profit = [0]
+#
+#   for i in range(0, len(prices) - 1):
+#     cur_index = i
+#
+#     for x in range(cur_index + 1, len(prices) - 1):
+#
+#       if prices[x] - prices[cur_index] > max_profit[0]:
+#         max_profit[0] = prices[x] - prices[cur_index]
+#
+#
+#
+#       elif prices[x] - prices[cur_index] < 0 and max_profit[0] == 0:
+#         max_profit[0] = prices[x] - prices[cur_index]
+#
+#   return max_profit[0]
+# print('maxprofit')
+# print(find_max_profit([100, 55, 4, 98, 10, 18, 90, 95, 43, 11, 47, 67, 89, 42, 49, 79, 10000]))
 
 def find_max_profit(prices):
-  max_profit = [0]
-
-  for i in range(0, len(prices) - 1):
-    cur_index = i
-
-    for x in range(cur_index + 1, len(prices) - 1):
-
-      if prices[x] - prices[cur_index] > max_profit[0]:
-        max_profit[0] = prices[x] - prices[cur_index]
-
-
-
-      elif prices[x] - prices[cur_index] < 0 and max_profit[0] == 0:
-        max_profit[0] = prices[x] - prices[cur_index]
-
-  return max_profit[0]
+  current_min_price_so_far = prices[0]
+  profit = prices[0]
+  for price in prices:
+    print(price)
+    if price - current_min_price_so_far > profit and prices.index(price) != 0:
+      profit = price - current_min_price_so_far
+    if price < current_min_price_so_far:
+      current_min_price_so_far = price
+  return profit
 print('maxprofit')
-print(find_max_profit([2,5,7,8,2,7,1,8,0,10]))
+print(find_max_profit([2,5,7,8,2,7,1,8,3,100,1000]))
 
 if __name__ == '__main__':
     # This is just some code to accept inputs from the command line
