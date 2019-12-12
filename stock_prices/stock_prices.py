@@ -18,6 +18,7 @@ Because you bought at 3800 and sold at 2
 
 What matters is if you buy a stock at i of 1, you can only sell it at i > 1
 
+loop through the array, store to a variable, compare, and reassign something
 
 """
 
@@ -28,7 +29,7 @@ import argparse
 def find_max_profit(prices):
 
     # The total amount of profit after comparing the two numbers
-    profit = 0
+    profit = []
 
     # max profit should be min_prices - max_prices --> final solution
     max_profit = 0
@@ -41,13 +42,20 @@ def find_max_profit(prices):
     # min_price = min(prices)
     # print("min number is: ", min_price)
 
-    # previous price
-    
-    # next price
+    # previous price --> prev_price
+    prev_price = [0]
+
+    # next price --> next_price
+    next_price = [1]
     
     # Loop through the prices
     for i in prices:
-      print(i)
+      if i < max_price:
+          profit = [max_price - i]
+          max_profit = sorted(profit)
+      print("max profit", max_profit)
+
+
 
 
 

@@ -14,3 +14,5 @@ if __name__ == "__main__":
     print("There are {ways} ways for Cookie Monster to eat {n} cookies.".format(ways=eating_cookies(num_cookies), n=num_cookies))
   else:
     print('Usage: eating_cookies.py [num_cookies]')
+
+eating_cookies(0)
