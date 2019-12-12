@@ -8,57 +8,63 @@ For example, `find_max_profit([1050, 270, 1540, 3800, 2])` should return 3530, w
 
 We get this by subtracting 3800 - 270  = 3530
 
+270 comes before 3800
+
 
 HINTS:
 maximum difference between smallest and largest prices
 
 we also have to make sure that the max profit is computed by subtracting some price by another price that comes _before_ it; it can't come after it in the list of prices. 
 
+max_profit = next_price - previous_price
+
 Because you bought at 3800 and sold at 2
 
-What matters is if you buy a stock at i of 1, you can only sell it at i > 1
+
 
 loop through the array, store to a variable, compare, and reassign something
+
+ 3800 - 270  = 3530
+[  1050  |  270  |  1540 |  3800 |   2   ]
+|   i0   |   i1  |   i2  |   i4  |   i5  |
+
+
 
 """
 
 import argparse
 
-
-
 def find_max_profit(prices):
 
-    # The total amount of profit after comparing the two numbers
-    profit = []
+  #Subtract previous price from next price
+  #Price at index 0
+  prev_price = prices[0]
+  print("Previous", prev_price)
 
-    # max profit should be min_prices - max_prices --> final solution
-    max_profit = 0
+  #Price at index 1
+  next_price = prices[1]
+  print("Next", next_price)
+
+  #Profit after subtracting prev_price & next_price 
+  profit = 0
+  # print("profit", profit)
+
+  #Hold the max profit --> Need to return?
+  max_profit = 0
+  # print("Max Profit", max_profit)
+
+  n = len(prices)
+  
+  if n <= 2: #--> If the length of prices is smaller than or equal to 2
+    return next_price - prev_price # --> Subtract next and previous prices = max_profit
+
+  max_profit = next_price = prev_price
+
+  print(f"Max profit is {max_profit}")
+
+
+  # print("Previous:",prev_price,"Next:", next_price)
     
-    #find the max number and isolate it. 
-    max_price = sorted(prices)[-1]
-    print("Max number is: ",max_price)
-    
-    # #Find minimum price left of max
-    # min_price = min(prices)
-    # print("min number is: ", min_price)
-
-    # previous price --> prev_price
-    prev_price = [0]
-
-    # next price --> next_price
-    next_price = [1]
-    
-    # Loop through the prices
-    for i in prices:
-      if i < max_price:
-          profit = [max_price - i]
-          max_profit = sorted(profit)
-      print("max profit", max_profit)
-
-
-
-
-
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
@@ -69,3 +75,39 @@ if __name__ == '__main__':
   print("A profit of ${profit} can be made from the stock prices {prices}.".format(profit=find_max_profit(args.integers), prices=args.integers))
 
 find_max_profit([1050, 270, 1540, 3800, 2])
+
+
+"""
+# The total amount of profit after comparing the two numbers
+    profit = []
+
+    # max profit should be min_prices - max_prices --> final solution
+    max_profit = 0
+    
+    #find the max number and isolate it. 
+    max_price = sorted(prices)[-1]
+    print("Max number is: ",max_price)
+
+    index = int(prices.index(max_price))
+    print("index", int(prices.index(max_price)))
+    
+    # #Find minimum price left of max
+    min_price = min(prices)
+    print("min number is: ", min_price)
+
+    # previous price --> prev_price
+    prev_price = [0]
+
+    # next price --> next_price
+    next_price = [1]
+    
+    # Loop through the prices
+    # for i in prices:
+    #   if i < max_price:
+    #       profit = [max_price - i]
+    #       max_profit = sorted(profit)
+    #       # return max(max_profit)
+    #   # print("max profit", max_profit, "profit", profit)
+
+    # print("Out of loop",max( max_profit))
+"""
