@@ -6,6 +6,10 @@ import sys
 # a solution that is more efficient than the naive 
 # recursive solution
 def eating_cookies(n, cache=None):
+  cookies = 0
+  # compare different patters on how to eat all the cookies
+  # count how many different ways we can eat all the cookies 
+  # 
   pass
 
 if __name__ == "__main__":
