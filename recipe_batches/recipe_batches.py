@@ -67,9 +67,7 @@ def recipe_batches(recipe, ingredients):
 # print(recipe_batches(
 #     {'milk': 100, 'butter': 50, 'flour': 5},
 #     {'milk': 301, 'butter': 50, 'flour': 0}
-# ))
-
-
+# )
 print(recipe_batches(
     {'milk': 2, 'sugar': 40, 'butter': 20},
     {'milk': 5, 'sugar': 120, 'butter': 500}

@@ -9,6 +9,12 @@ import argparse
 # i is 2 then j goes to 0,1
 # i is 3 then j goes to 0,1,2
 # etc
+
+# Pseudo
+# Initialize max profite to second - first value
+# Let i increment ahead and let j start from beginning
+# Subtract i from j at 0, then j at 1, up to i, etc
+# See if any are higher than max profit that was initialized and give it that value
 def find_max_profit(prices):
 
   # Initializing max_profit
