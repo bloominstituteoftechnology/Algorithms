@@ -58,7 +58,7 @@ def recipe_batches(recipe, ingredients):
 
       if current_max <= 0:
         return 0
-      elif max_batches == None or current_max < max_batches:
+      elif max_batches == 0 or current_max < max_batches:
         max_batches = current_max
     return max_batches
 
