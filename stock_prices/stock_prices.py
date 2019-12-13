@@ -1,6 +1,5 @@
-#!/usr/bin/python
-
 import argparse
+
 def find_max_profit(prices):
  #global variable to hold profits
  profits = []
@@ -18,8 +17,6 @@ def find_max_profit(prices):
  			profits.append(result)
  #return the max of the profits variable
  return max(profits)
-
-# find_max_profit([12, 5, 6, 11, 9, 3])
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
