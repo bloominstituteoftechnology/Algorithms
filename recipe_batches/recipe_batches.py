@@ -3,7 +3,26 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+	# BASE CASES
+	if len(ingredients) != len(recipe):
+		return 0
+	# we need a counter to keep a track of how many batches can be done
+	batches = 0
+
+	# we need to iterate to access key/value for both recipe and ingredients
+	for ingredient in recipe:
+		# as long as we have enough ingredients, keep going!
+		while ingredients[ingredient] >= recipe[ingredient]:
+			# we check if ingredients current value is greater than recipe current value
+			if(ingredients[ingredient] >= recipe[ingredient]):
+				# if it is, we subtract ingredients value and the recipe value and increase counter by 1.
+				ingredients[ingredient] -= recipe[ingredient]
+				batches += 1
+			# we check if the number of batches is equal/greater than the length of the recipe, if it is we divide by the length of the recipe
+			if(batches >= len(recipe)):
+				batches //= len(recipe)
+	return batches
+  
 
 
 if __name__ == '__main__':
