@@ -4,6 +4,8 @@ import argparse
 
 
 def find_max_profit(prices):
+    # Initialize current_profit as buying on day 1 and selling
+    # on day 2.
     current_profit = prices[1] - prices[0]
     # For each price, compare the difference of the following
     # prices and the current price to find the max difference
