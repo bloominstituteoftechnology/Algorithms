@@ -1,10 +1,21 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 import math
 
 
 def recipe_batches(recipe, ingredients):
-    pass
+    maxBatches = float("inf")
+    if len(recipe) < 1:
+        return 0
+    for ingredient in recipe:
+        requiredAmount = recipe[ingredient]
+        availableAmount = ingredients.get(ingredient, 0)
+        if availableAmount < requiredAmount:
+            return 0
+        ingredientBatchesAvailable = availableAmount // requiredAmount
+        maxBatches = min(ingredientBatchesAvailable, maxBatches)
+
+    return maxBatches
 
 
 if __name__ == '__main__':
