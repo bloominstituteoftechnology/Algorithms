@@ -3,7 +3,20 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+  outcomes = []
+  plays = ['rock', 'paper', 'scissors']
+  
+  def find_outcome(rounds_left, result):
+    if rounds_left == 0:
+      outcomes.append(result)
+      return 
+
+    for play in plays:
+      find_outcome(rounds_left-1, result + [play])
+
+  find_outcome(n, [])
+
+  return outcomes
 
 
 if __name__ == "__main__":
