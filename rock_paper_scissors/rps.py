@@ -3,7 +3,12 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+  options = ['rock', 'paper', 'scissors']
+
+  for option in options:
+    for count in range(1,n + 1):
+      
+
 
 
 if __name__ == "__main__":
