@@ -25,3 +25,18 @@ if __name__ == "__main__":
             ways=eating_cookies(num_cookies), n=num_cookies))
     else:
         print('Usage: eating_cookies.py [num_cookies]')
+
+
+def eating_cookies2(amount, denominations=[1, 2, 3]):
+    if amount < 0:
+        return 0
+    if amount <= 1:
+        return 1
+    value = 0
+    for denom in denominations:
+        value += eating_cookies2(amount - denom)
+    return value
+
+
+for i in range(11):
+    print(i, eating_cookies2(i))
