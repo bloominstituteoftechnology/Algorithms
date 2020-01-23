@@ -9,6 +9,5 @@ class Test(unittest.TestCase):
     self.assertEqual(recipe_batches({ 'milk': 2, 'sugar': 40, 'butter': 20 }, { 'milk': 5, 'sugar': 120, 'butter': 500 }), 2)
     self.assertEqual(recipe_batches({ 'milk': 2 }, { 'milk': 200}), 100)
 
-
 if __name__ == '__main__':
   unittest.main()
