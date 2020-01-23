@@ -3,7 +3,23 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+  array = []
+  list = ['rock', 'paper', 'scissors']  
+  
+  def recursive_function(n, results):
+    if n == 0:
+      array.append(results)
+    else:
+      for i in range(len(list)):
+        recursive_function( (n-1) , results+[list[i]])
+
+  recursive_function(n,[])
+  return array       
+
+
+
+
+
 
 
 if __name__ == "__main__":
