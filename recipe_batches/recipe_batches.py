@@ -3,7 +3,22 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  batch_count = 0
+  #if all values in ingredients are equal to or greater than corresponding recipe dict, increment batch count
+  make = True
+  if len(recipe) == len(ingredients):
+    while make == True:
+      for x in recipe:
+        if recipe[x] <= ingredients[x]:
+          ingredients[x] -= recipe[x]
+        else:
+          make = False
+      if make == True:
+        batch_count += 1
+
+  return batch_count
+
+
 
 
 if __name__ == '__main__':

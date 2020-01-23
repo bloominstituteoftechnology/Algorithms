@@ -3,7 +3,20 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+  options=['rock','paper','scissors']
+  outcome=[]
+
+  def helper (n, result):
+    if n==0:
+      outcome.append(result)
+    else:
+      for x in options:
+        helper(n-1, result+[x])
+  helper(n,[])
+  return outcome
+
+
+
 
 
 if __name__ == "__main__":
