@@ -6,7 +6,22 @@ import sys
 # a solution that is more efficient than the naive 
 # recursive solution
 def eating_cookies(n, cache=None):
-  pass
+
+  # base cases -> zero cookies/less than zero cookies
+  # if n <= 0:
+  #   return 0 # I say there are zero ways to eat a zero or less than zero cookies. at least in this universe.
+  #but the test writer disagrees. base case -> less than zero cookies
+  if n < 0:
+    return 0
+  #base case -> 0 cookies
+  elif n == 0:
+    return 1
+  else:
+    #recurse
+    return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
+
+
+
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
