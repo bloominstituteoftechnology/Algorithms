@@ -3,7 +3,14 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
+  comb = [0]*(amount+1)
+  comb[0] = 1
+
+  for coin in denominations:
+    for price in range(coin, amount+1):
+      if coin <= price:
+        comb[price] += comb[price-coin]
+  return comb[amount]
 
 
 if __name__ == "__main__":
