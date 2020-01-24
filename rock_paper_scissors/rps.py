@@ -3,26 +3,28 @@
 import sys
 
 
-# Number of lists = len(cache[n-1]) * 3
-
-
 def rock_paper_scissors(n):
-    options = ['rock', 'paper', 'scissors']
-    perms = []
+    valid_plays = [["rock"], ["paper"], ["scissors"]]
+    # Base case: return empty list if n is zero
+    if n == 0:
+        return [[]]
+    # If n is 1 return valid_plays
+    if n == 1:
+        return valid_plays
 
-    def helper_func(rounds_left, result=[]):
-        if rounds_left == 0:
-            perms.append(result)
-            return perms
+    # Create empty list to store results
+    output = []
+    # Recursively call function for rounds n
+    rounds = rock_paper_scissors(n - 1)
+    # For each round
+    for round in rounds:
+        # For each valid play
+        for play in valid_plays:
+            # Add new play to round in output
+            new_play = round + play
+            output.append(new_play)
 
-        else:
-            for i in options:
-                helper_func(rounds_left-1, result + [i])
-        return perms
-
-    helper_func(n, result=[])
-
-    return perms
+    return output
 
 
 if __name__ == "__main__":
