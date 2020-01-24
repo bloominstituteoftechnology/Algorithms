@@ -15,13 +15,8 @@ def recipe_batches(recipe, ingredients):
         for item_r, item_i in zip(recipe, ingredients):
             item_r = (ingredients[item_i] // recipe[item_r])
             l.append(item_r)
-            # print(f'Inside for loop {item_r}')
-        # print(f'Outside for loop {item_r}')
-            # print(item_r)
-            # print(item_i)
-        l.sort()
-        batches = l[0]
-        # print(l)
+        # l.sort()
+        batches = min(l)
     return batches
 
 # # BELOW COMES WITH MANY PRINT STATMENTS
