@@ -3,7 +3,24 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+  if len(prices) < 2:
+    return 0
+  
+  # set intial lowest and maxProfit values from array values
+  lowest =  prices[0]
+  maxProfit = prices[1] - prices[0]
+
+  # for each item in prices
+  for i in range(1, len(prices)):
+    price = prices[i]
+    # each new item, find out the difference from the current item and the lowest prev price 
+    profitFromTrade = price - lowest
+    # track the lowest price
+    lowest = min(lowest, price)
+    # save the max, positive difference
+    maxProfit = max(profitFromTrade, maxProfit)
+  # return max when finished 
+  return maxProfit
 
 
 if __name__ == '__main__':
