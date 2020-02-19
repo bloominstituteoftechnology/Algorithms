@@ -3,7 +3,20 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
+  cache = [0 for i in range(amount+1)]
+  cache[0] = 1
+  print(cache)
+  # check all coins
+  for denom in denominations:
+    # set combinations for all values from value of coin till amount + 1
+    print(f"denom {denom}")
+    print(f"higher amount range {amount + 1}")
+    for higher_amount in range(denom, amount + 1):
+      # add number of combinations to value in cache
+      print(f"higher amount: {higher_amount}")
+      cache[higher_amount] += cache[higher_amount-denom]
+    print(cache)
+  return cache[amount]
 
 
 if __name__ == "__main__":
