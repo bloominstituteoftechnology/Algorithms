@@ -30,12 +30,11 @@ import argparse
 
 def find_max_profit(prices):
   profit = []
-  print(profit)
   for i in range (0, len(prices)):
     for j in range (i + 1, len(prices)):
         price_diff = prices[j] - prices[i]
         profit.append(price_diff)
-    print(profit)
+
   return max(profit) 
 
 
