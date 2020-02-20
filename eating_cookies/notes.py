@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 
 # n = 3
-=======
-n = 3
->>>>>>> 6e2db05b8a3f0c76af988dce75cb44b335883fc7
 
 # def c(n):
 #     for i in range(n):
@@ -12,7 +8,6 @@ n = 3
 #         for j in range(sec):
 #             print(sec - j)
 
-<<<<<<< HEAD
 # def c(n, count = 1):
 #     if n < 1:
 #         return count
@@ -25,20 +20,6 @@ n = 3
 #     c(n-1, count+1)
 #     return c(n-1, count+1)
 #     # return c(n)
-=======
-def c(n, count = 1):
-    if n < 1:
-        return count
-    # print(n)
-    # print(f'count = {count}')
-    # n -= 1
-    # for j in l:
-    #     l.append(n-j)
-    # c(n-1, count+1)
-    c(n-1, count+1)
-    return c(n-1, count+1)
-    # return c(n)
->>>>>>> 6e2db05b8a3f0c76af988dce75cb44b335883fc7
 
 # def c(n, count = 0):
 #     if n < 1:
@@ -68,7 +49,6 @@ def c(n, count = 1):
 # for i in n:
 #     n = n-i
 #     i -= 1
-<<<<<<< HEAD
 # n = 3
 # def eating_cookies(n):
 #     if n < 0:
@@ -137,30 +117,17 @@ def fib(n):
         return 1
     if n in cache:
         return cache[n]
-    else:[p]
+    else:
         value = fib(n-1) + fib(n-2)
         cache[n] = value
         return value
 
 print(fib(6))
 #The lookup time of a value of an array is O^1
-=======
-n = 3
-def eating_cookies(n):
-    if n < 0:
-        return 0
-    elif n == 0 :
-        return 1
-    else:
-        a = eating_cookies(n-1)
-        print(f'a = {a}')
-        b = eating_cookies(n-2)
-        print(f'b = {b}')
-        c = eating_cookies(n-3)
-        print(f'c = {c}')
-        total = a + b + c
-        print(f'a + b + c = {a + b + c}')
-        return total
 
-print(eating_cookies(n))
->>>>>>> 6e2db05b8a3f0c76af988dce75cb44b335883fc7
+
+#eat 0 cookies 1 time
+#eat 1 cookies 1 time, 1 cookies, 1 cookie
+#eat 1 cookie 1 time, 2 cookies 1 time
+# 2, 1
+# different from fib because there is one more 
