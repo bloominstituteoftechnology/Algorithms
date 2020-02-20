@@ -1,9 +1,41 @@
 #!/usr/bin/python
+"""
+bot buys and sells amazon stocks
+function find_max_profit (prices)
+    prices = []
+
+return max_profit from a single buy and sell
+order of trade: buy first before selling
+
+diff btw smallest and largest prices
+max_profit = some price - another price that comes before it
+
+current_min_price_so_far = 
+max_profit_so_far = 
+
+Algorithm
+profit = []
+iterate through stock prices
+keep track of lowest price
+subtract lowest price from current item(i)
+append result of subttaction to profit list
+find the maximum profit using max() method
+
+
+"""
 
 import argparse
 
 def find_max_profit(prices):
-  pass
+  profit = []
+  for i in range (0, len(prices)):
+    for j in range (i + 1, len(prices)):
+        price_diff = prices[j] - prices[i]
+        profit.append(price_diff)
+
+  return max(profit) 
+
+
 
 
 if __name__ == '__main__':
