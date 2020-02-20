@@ -6,12 +6,12 @@ def find_max_profit(prices):
   lowest = prices[0]
   highest = prices[0]
   maximum = None
-  for price in prices:
+  for price in prices[1:]:
+    diff = price - lowest 
+    if maximum == None or diff > maximum:
+      maximum = diff
     if price > highest:
       highest = price
-    potential_profit = highest - lowest
-    if maximum is None or potential_profit > maximum:
-      maximum = potential_profit
     if price < lowest:
       lowest = price
   
