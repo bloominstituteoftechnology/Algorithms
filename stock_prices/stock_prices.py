@@ -1,19 +1,22 @@
 #!/usr/bin/python
+#[10*, 7*, 5, 8, 11, 9]
 
 import argparse
 
 def find_max_profit(prices):
-  highest_price = [0,0]
-  lowest_price = [0,0]
-  for index, price in enumerate(prices):
-    if index == 0:
-      lowest_price[0] = price
-      lowest_price[1] = index
-    if price < lowest_price[0]:
-      lowest_price[0] = price
-    if price > lowest_price[0] and lowest_price[1] <= highest_price[1]:
-      highest_price[0] = price
-  print(highest_price, lowest_price)    
+  profit = prices[1] - prices[0] # -3
+  for buy_price in prices:  #[10,7, 5, 8, 11, 9]
+    for sell_price in prices[2:]:    
+      if (sell_price-buy_price) > profit and (prices.index(sell_price) > prices.index(buy_price)):  #if 11-5 > -3 and 4 > 2 then profit = 6
+        profit = sell_price-buy_price
+        print(buy_price, sell_price)
+        print(f"Profit: {profit}")    
+  return profit  #6
+
+# 7 - 10 = -3
+# profit = -3
+
+
      
     
     
