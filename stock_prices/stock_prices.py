@@ -5,18 +5,20 @@ import argparse
 
 def find_max_profit(prices):
 
-    lowest = prices[0]
-    maxProfit = prices[1] - prices[0]
+    lowest = prices[0]  # base for initial buying, 1st number in array
+    maxProfit = prices[1] - prices[0]  # compare to get base max profit
     index = 2
 
     while True:
-        if index > len(prices):
+        if index > len(prices):  # if index is less than total length of array, exit
             break
         for price in prices[index-1:]:
+            # starting at beginning of array, compares initial ( or current) prices to next day to see profit margin,
+            # if larger than base maxProfit, make new maxProfit.
             if price - lowest > maxProfit:
                 maxProfit = price - lowest
         lowest = prices[index-1]
-        index += 1
+        index += 1  # increment index to advance through array
     return maxProfit
 
 
