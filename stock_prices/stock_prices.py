@@ -7,8 +7,6 @@ function find_max_profit (prices)
 return max_profit from a single buy and sell
 order of trade: buy first before selling
 
-find_max_profit([1050, 270, 1540, 3800, 2]) should return 3530
-
 diff btw smallest and largest prices
 max_profit = some price - another price that comes before it
 
