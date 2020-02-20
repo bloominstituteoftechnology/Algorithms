@@ -7,23 +7,15 @@ def rock_paper_scissors(n):
     plays = ['rock', 'paper', 'scissors']
     result = []
 
-    if n == 0:
-        result.append([])
-        return result
+    def helper(currentPlays, rounds):
+        if rounds == 0:
+            result.append(currentPlays)
+        else:
+            for i in range(len(plays)):
+                helper(currentPlays+[plays[i]], rounds - 1)
 
-    def helper(arr, round):
-        for i in range(len(plays)):
-            arr.append(plays[i])
-            if round == n:
-                result.append(arr[i::1])
-            else:
-                helper(arr, round + 1)
-
-    helper([], 1)
+    helper([], n)
     return result
-
-
-print(rock_paper_scissors(2))
 
 
 if __name__ == "__main__":
