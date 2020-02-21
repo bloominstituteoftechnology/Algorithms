@@ -2,8 +2,24 @@
 
 import sys
 
+cache = {1:1}
+
 def making_change(amount, denominations):
-  pass 
+  
+ if amount in cache: 
+  return cache[amount]
+   totalWays = 0 
+
+  for d in denominations:
+    if d <= amount:
+      totalWays += making_change(amount-d, denominations) + making_change(amount, denominations)
+
+      cache[amount] = totalWays
+      return totalWays
+
+      print(cache)
+      print(making_change(10,[1, 5, 10, 25, 50]))
+      
 
 
 if __name__ == "__main__":
