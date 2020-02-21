@@ -2,8 +2,21 @@
 
 import sys
 
+import pprint
 def rock_paper_scissors(n):
-  pass 
+  throws = ['rock', 'paper', 'scissors']
+
+  allPlays = [[]]
+  for i in range(n):
+    newPlays = []
+    for play in allPlays:
+      # three times  below:
+      for throw in throws:
+        newPlay = play + [throw]
+        newPlays.append(newPlay)
+    allPlays = newPlays
+    
+  return allPlays
 
 
 if __name__ == "__main__":
