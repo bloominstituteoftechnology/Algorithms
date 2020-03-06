@@ -3,8 +3,20 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+  profit = prices[1] - prices[0]
+  cost = prices[0]
 
+  #for each price starting at the second item in the list
+  for price in prices[1:]:
+    # if the price - the cost is greater than profit set profit equal to price minus cost
+    if (price - cost) > profit:
+      profit = price - cost
+    # if the price is less than the cost set cost equal to the new price
+    if price < cost:
+      cost = price
+    
+
+  return profit
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
