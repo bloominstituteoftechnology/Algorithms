@@ -9,10 +9,10 @@ def eating_cookies(n, cache=None):
   # base case, he cannot eat anymore cookies
   
   if cache and n in cache:
-    print(f'Used cache for {n}: {cache[n]}')
+    # print(f'Used cache for {n}: {cache[n]}')
     return cache[n]
   
-  if cache == None or type(cache) != dict: ## type check because large test inputs an array and breaks cache
+  if cache == None or cache[0] == 0: 
     cache = {0: 1}
    
   if n == 0:
