@@ -30,7 +30,7 @@ def find_max_profit(prices):
   for i,buy_price in enumerate(r_prices):     
     # loop through all the elements to the right of where we are in the main loop
     # if the difference between them is larger than the current largest difference, save it
-    for j,sell_price in enumerate(r_prices[i+1:]):
+    for j,sell_price in enumerate(r_prices[i+1:]): # make sure it doesn't subtract against itself
       # get and compare the difference between current numbers in loop to max_profit
       diff = buy_price - sell_price
       if diff > max_profit:
