@@ -3,7 +3,15 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  # start
+  new_ingredients_for_item = [0]*len(recipe)
+  counter = 0 
+  #base
+  for i in recipe:
+    if i in ingredients:
+      new_ingredients_for_item[counter] = int(ingredients[i]/recipe[i])
+      counter += 1
+  return min(new_ingredients_for_item)
 
 
 if __name__ == '__main__':

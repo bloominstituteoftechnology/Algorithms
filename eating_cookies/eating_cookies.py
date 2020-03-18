@@ -20,6 +20,10 @@ def eating_cookies(n, cache=None):
   if cache is not None:
     if cache[n] > 0:
       return cache
+  if n >= 4:
+    combinations = eating_cookies(n-4, cache)
+    if cache is not None:
+      cache[n] = combinations
   if n >= 3:
     combinations = eating_cookies(n-3, cache)
     if cache is not None:
@@ -33,7 +37,7 @@ def eating_cookies(n, cache=None):
     if cache is not None:
       cache[n] = combinations
 
-  return combinations            
+  return eating_cookies(combinations, cache[n])            
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
