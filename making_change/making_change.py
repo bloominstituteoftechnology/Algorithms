@@ -22,7 +22,7 @@ def making_change(amount, denominations, is_sorted = False):
             for i in range(1, int(amount / d) + 1):
                 if amount > d * i:
                     newAmount = amount - d * i
-                    newDenoms = [x for x in denominations if x != d]
+                    newDenoms = [x for x in denominations if x < d]
                     count += making_change(newAmount, newDenoms, True)
                 elif amount == d * i:
                     count += 1
