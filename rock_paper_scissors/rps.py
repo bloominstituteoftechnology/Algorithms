@@ -8,15 +8,15 @@ def rock_paper_scissors(n):
   possible_plays = []
 
   #base 
-  def rps_helper_fun(result, plays):
+  def rps_helper_fun(result, num_plays):
         # this should stop the recursion if there are no plays
-    if plays == 0:
+    if num_plays == 0:
       possible_plays.append(result)
       return
-      for i in range(0, len(choices)):
-        rps_helper_fun(result + [choices[i]], plays -1)
-      rps_helper_fun([], n)
-      return possible_plays
+    for i in range(0, len(choices)):
+      rps_helper_fun(result + [choices[i]], num_plays -1)
+  rps_helper_fun([], n)
+  return possible_plays
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
