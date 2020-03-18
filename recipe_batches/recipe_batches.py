@@ -3,8 +3,16 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
-
+  for key in recipe:
+    if key not in ingredients:
+      return 0
+  max = 9999999
+  r = list(recipe.values())
+  g = list(ingredients.values())
+  for i in range(len(recipe)):
+    if g[i] // r[i] < max:
+      max = g[i] // r[i]
+  return max
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
