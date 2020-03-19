@@ -21,7 +21,7 @@ def eating_cookies(n, cache=None):
             # Check the number of possibilities
             # for the remaining cookies
             if cache[m] == 0:
-                value = eating_cookies(m)
+                value = eating_cookies(m, cache)
                 count += value
                 cache[m] = value
             else:
