@@ -5,57 +5,121 @@ import sys
 from typing import Hashable, Any, Iterable
 
 
-def make_hashable(obj) -> Hashable:
-	try:
-		hash(obj)  # Isinstance Hashable fails on nested objects
-		return obj
-	except TypeError:
-		if isinstance(obj, dict):
-			return tuple(sorted((make_hashable((key, value)) for key, value in obj.items())))
-		elif isinstance(obj, Iterable):
-			return tuple((make_hashable(value) for value in obj))
+class Memoizer:
+	'''
+	Class to facilitate memoization of function returns.
+
+	Attributes:
+		functions (
+			Dict[
+				callable: Dict[
+					Tuple[frozenset, frozenset]: Object
+				]
+			]
+		)
+		A dictionary of functions: dictionary of args: results
+
+	Methods:
+		get_result: Gets the result of a function call, either
+			by returning the stored result or by running the
+			function if no stored results are found.
+	'''
+
+	def __init__(self):
+		'''
+		Inits a new Memoizer.
+		'''
+
+		self.functions = {}
+
+	def get_result(self, function: callable, *args, **kwargs) -> Any:
+		'''
+		Gets the result of a function call with specific arguments.
+		If the function has been called through get_result before with these
+			parameters in this Memoizer, this will return the memoized result.
+		Otherwise, it will run the function and memoize the new result.
+
+		Args:
+			function (callable): The function to run.
+				This should *always* be idempotent or nullipotent.
+			*args: Variable length argument list. Passed to function.
+			**kwargs: Arbitrary keyword arguments. Passed to function.
+
+		Returns:
+			Object: The return value of function.
+		'''
+
+		if function not in self.functions:
+			self.functions[function] = {}
+
+		params = (self.make_hashable(args), self.make_hashable(kwargs))
+
+		if params in self.functions[function]:
+			return self.functions[function][params]
+		else:
+			self.functions[function][params] = function(*args, **kwargs)
+			return self.functions[function][params]
+
+	@staticmethod
+	def make_hashable(obj) -> Hashable:
 		try:
-			return frozenset(obj)
+			hash(obj)  # Isinstance Hashable fails on nested objects
+			return obj
 		except TypeError:
-			result = []
-			for item in obj:
-				result.append(make_hashable(item))
-			return tuple(result)
+			if isinstance(obj, dict):
+				return tuple(sorted((Memoizer.make_hashable((key, value)) for key, value in obj.items())))
+			elif isinstance(obj, Iterable):
+				return tuple((Memoizer.make_hashable(value) for value in obj))
+			try:
+				return frozenset(obj)
+			except TypeError:
+				result = []
+				for item in obj:
+					result.append(make_hashable(item))
+				return tuple(result)
 
 
-# The cache parameter is here for if you want to implement
-# a solution that is more efficient than the naive
-# recursive solution
-def making_change(n, denominations, denomination_counts=None, parent_denominations=None):
-	if n < 0:
+def making_change(amount, denominations, cache=None):
+	if amount < 0:
 		return 0
-	elif n == 0:
+	elif amount == 0:
 		return 1
 
-	if denomination_counts is None:
-		denomination_counts = set()
-	if parent_denominations is None:
-		parent_denominations = {
-			denomination: 0 for denomination in denominations
-		}
+	if not isinstance(denominations, tuple):
+		# This is faster than using make_hashable
+		denominations = tuple(denominations)
 
-	# print(denomination_counts)
+	if cache is None:
+		cache = Memoizer()
+
+		# Fill the cache from simple cases to complex
+		# to avoid recursion limits
+		for i in range(amount):
+			cache.get_result(
+				making_change,
+				i,
+				denominations,
+				cache=cache,
+			)
 
 	combinations = 0
-	for denomination in denominations:
-		new_denominations = parent_denominations.copy()
-		new_denominations[denomination] += 1
-		if make_hashable(new_denominations) not in denomination_counts:
-			if n - denomination >= 0:
-				denomination_counts.add(make_hashable(new_denominations))
-				combinations += making_change(
-					n - denomination,
-					denominations,
-					denomination_counts=denomination_counts,
-					parent_denominations=new_denominations,
-				)
+	inversed_denominations = cache.get_result(
+		inverse_sort,
+		denominations,
+	)
+	for i, denomination in enumerate(inversed_denominations):
+		combinations += cache.get_result(
+			making_change,
+			amount - denomination,
+			inversed_denominations[i:],
+			cache=cache
+		)
 
 	return combinations
+
+
+def inverse_sort(tup):
+	return tuple(sorted(tup, reverse=True))
 
 
 if __name__ == "__main__":
