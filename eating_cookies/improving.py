@@ -16,7 +16,7 @@ def recursion_fibonacci(n):
 
 x=recursion_fibonacci(10)
 print(x)
-
+# this log n which is reverse of exponential:
 nums = [1,2,3,4,5,6,7,8,9]
 def bin_search(arr, val):
     l = 0
