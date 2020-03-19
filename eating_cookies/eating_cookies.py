@@ -6,21 +6,22 @@ import sys
 # a solution that is more efficient than the naive 
 # recursive solution
 
-def __calculatePaths(currPathLength, paths, currSeries):
-    if currPathLength == 0:
+def eating_cookies(n, cache=None):
+    if cache is None:
+        cache = {}
+    if n == 0:
         return 1
-    elif currPathLength < 0:
-        return 0
-    paths = 0
-    for i in range(1, 4):
-        newSeries = list(currSeries)  # make new series to track steps
-        newSeries.append(i)
-        paths += __calculatePaths(currPathLength - i, paths, newSeries)
-    return paths
-
-def eating_cookies(pathLength, cache=None):
-    paths = __calculatePaths(pathLength, 0, [])
-    return paths
+    elif n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    elif n == 3:
+        return 4
+    elif cache and cache[n]:
+        return cache[n]
+    else:
+        cache[n] = eating_cookies(n-1, cache) + eating_cookies(n-2, cache) + eating_cookies(n-3, cache)
+    return cache[n]
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
