@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import unittest
 from making_change import making_change
 
