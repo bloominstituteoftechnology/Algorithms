@@ -17,3 +17,21 @@ def recursion_fibonacci(n):
 x=recursion_fibonacci(10)
 print(x)
 
+nums = [1,2,3,4,5,6,7,8,9]
+def bin_search(arr, val):
+    l = 0
+    m = len(arr)//2
+    r = len(arr) - 1
+    while l < r:
+        if arr[m] == val:
+            return True
+        elif val < arr[m]:
+            # move left
+            return  m -1 
+        else:
+            # move right 
+            return m + 1
+    return False
+
+y = bin_search(nums, 5)
+print(y)  
