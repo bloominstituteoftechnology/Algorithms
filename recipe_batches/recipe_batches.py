@@ -3,7 +3,22 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+    need = []
+    have = []
+    for i in recipe.keys():
+        need.append(i)
+    for i in ingredients.keys():
+        have.append(i)
+    for i in need:
+        if i not in have:
+            return 0
+    ratios = []
+    for i in recipe:
+        ratio = ingredients[i] // recipe[i]
+        if ratio < 1:
+            return 0
+        ratios.append(ratio)
+    return min(ratios)
 
 
 if __name__ == '__main__':

@@ -3,7 +3,16 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+    differentials = []
+    cursor = 1
+    for pricepoint in prices:
+        for next_pricepoint in prices[cursor:]:
+            differentials.append(next_pricepoint - pricepoint)
+        cursor += 1
+    return max(differentials)
+
+
+
 
 
 if __name__ == '__main__':
