@@ -1,9 +1,16 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import argparse
 
+
 def find_max_profit(prices):
-	pass
+	if len(prices) == 2:
+		return prices[1] - prices[0]
+	best = prices[1] - prices[0]
+	for price in prices[1:]:
+		if price - prices[0] > best:
+			best = price - prices[0]
+	return max(best, find_max_profit(prices[1:]))
 
 
 if __name__ == '__main__':

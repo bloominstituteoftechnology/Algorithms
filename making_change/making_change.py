@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import sys
+import json
 
 from typing import Hashable, Any, Iterable
 
@@ -32,7 +33,7 @@ class Memoizer:
 
 		self.functions = {}
 
-	def get_result(self, function: callable, *args, **kwargs) -> Any:
+	def get_result(self, function: callable, *args, assume_hashable_args=True, **kwargs) -> Any:
 		'''
 		Gets the result of a function call with specific arguments.
 		If the function has been called through get_result before with these
@@ -52,7 +53,10 @@ class Memoizer:
 		if function not in self.functions:
 			self.functions[function] = {}
 
-		params = (self.make_hashable(args), self.make_hashable(kwargs))
+		if assume_hashable_args:
+			params = (tuple(args), self.make_hashable(kwargs))
+		else:
+			params = (self.make_hashable(args), self.make_hashable(kwargs))
 
 		if params in self.functions[function]:
 			return self.functions[function][params]
@@ -70,13 +74,7 @@ class Memoizer:
 				return tuple(sorted((Memoizer.make_hashable((key, value)) for key, value in obj.items())))
 			elif isinstance(obj, Iterable):
 				return tuple((Memoizer.make_hashable(value) for value in obj))
-			try:
-				return frozenset(obj)
-			except TypeError:
-				result = []
-				for item in obj:
-					result.append(make_hashable(item))
-				return tuple(result)
+			return json.dumps(obj)
 
 
 def making_change(amount, denominations, cache=None):

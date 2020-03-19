@@ -1,5 +1,8 @@
+#!/usr/bin/env python
+
 import unittest
-from rps import rock_paper_scissors
+from . import rock_paper_scissors
+
 
 class Test(unittest.TestCase):
 

@@ -2,8 +2,9 @@
 
 
 import sys
+import json
 
-from typing import Hashable, Any
+from typing import Hashable, Any, Iterable
 
 
 class Memoizer:
@@ -33,7 +34,7 @@ class Memoizer:
 
 		self.functions = {}
 
-	def get_result(self, function: callable, *args, **kwargs) -> Any:
+	def get_result(self, function: callable, *args, assume_hashable_args=True, **kwargs) -> Any:
 		'''
 		Gets the result of a function call with specific arguments.
 		If the function has been called through get_result before with these
@@ -53,13 +54,28 @@ class Memoizer:
 		if function not in self.functions:
 			self.functions[function] = {}
 
-		params = (frozenset(args), frozenset(kwargs))
+		if assume_hashable_args:
+			params = (tuple(args), self.make_hashable(kwargs))
+		else:
+			params = (self.make_hashable(args), self.make_hashable(kwargs))
 
 		if params in self.functions[function]:
 			return self.functions[function][params]
 		else:
 			self.functions[function][params] = function(*args, **kwargs)
 			return self.functions[function][params]
+
+	@staticmethod
+	def make_hashable(obj) -> Hashable:
+		try:
+			hash(obj)  # Isinstance Hashable fails on nested objects
+			return obj
+		except TypeError:
+			if isinstance(obj, dict):
+				return tuple(sorted((Memoizer.make_hashable((key, value)) for key, value in obj.items())))
+			elif isinstance(obj, Iterable):
+				return tuple((Memoizer.make_hashable(value) for value in obj))
+			return json.dumps(obj)
 
 
 # The cache parameter is here for if you want to implement

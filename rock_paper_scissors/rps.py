@@ -1,9 +1,19 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import sys
 
+
 def rock_paper_scissors(n):
-	pass
+	if n == 0:
+		return[[]]
+	available_plays = ['rock', 'paper', 'scissors']
+	plays = []
+	for play in available_plays:
+		for subplay in rock_paper_scissors(n - 1):
+			plays.append(
+				[play] + subplay
+			)
+	return plays
 
 
 if __name__ == "__main__":

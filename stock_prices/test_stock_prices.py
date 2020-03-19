@@ -1,5 +1,8 @@
+#!/usr/bin/env python
+
 import unittest
 from stock_prices import find_max_profit
+
 
 class Test(unittest.TestCase):
 
