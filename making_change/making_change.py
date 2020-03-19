@@ -2,7 +2,10 @@
 
 import sys
 
-def making_change(amount, denominations, is_sorted = False):
+def making_change(amount, denominations, is_sorted = False, cache = None):
+    if cache is None:
+        cache = {}
+
     # Should be similar to eating_cookies, but using
     # the denominations array instead of range(1, 4)
     # The order things are done in doesn't matter here, though
@@ -23,7 +26,15 @@ def making_change(amount, denominations, is_sorted = False):
                 if amount > d * i:
                     newAmount = amount - d * i
                     newDenoms = [x for x in denominations if x < d]
-                    count += making_change(newAmount, newDenoms, True)
+                    newDenomsTuple = tuple(newDenoms)
+                    if not newDenomsTuple in cache:
+                        cache[newDenomsTuple] = {}
+                    if newAmount in cache[newDenomsTuple]:
+                        count += cache[newDenomsTuple][newAmount]
+                    else:
+                        value = making_change(newAmount, newDenoms, True, cache)
+                        count += value
+                        cache[newDenomsTuple][newAmount] = value
                 elif amount == d * i:
                     count += 1
     return count
