@@ -28,6 +28,8 @@ def knapsack_solver(items, capacity):
             capacity -= item[1]
             ratios.remove(best_value)
 
+    knapsack.sort(key = itemgetter(0))
+
     result = {}
     result['Value'] = sum([item[2] for item in knapsack])
     result['Chosen'] = [item[0] for item in knapsack]
