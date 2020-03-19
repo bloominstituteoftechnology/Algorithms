@@ -9,7 +9,7 @@ def recipe_batches(recipe, ingredients):
             # if you don't have any of one ingredient,
             # then you can't make any
             return 0
-        local_max = math.floor(ingredients[key] / recipe[key])
+        local_max = ingredients[key] // recipe[key]
         if max_batches is None or local_max < max_batches:
             max_batches = local_max
     return max_batches
