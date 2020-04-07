@@ -2,7 +2,7 @@
 
 import math
 
-
+# run time: O(n)
 def recipe_batches(recipe, ingredients):
     batches = []
     for item in recipe:
