@@ -3,7 +3,8 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  return min([ ingredients.get(k, 0) // recipe[k] for k in recipe.keys() ])
+  
 
 
 if __name__ == '__main__':
