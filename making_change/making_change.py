@@ -20,8 +20,6 @@ def making_change(amount, denominations, caches = None):
 
   if caches == None:
     caches = { i: [None] * (amount + 1) for i in denominations }
-  else:
-    caches = cache
 
   if caches[denominations[-1]][amount] == None:
       caches[denominations[-1]][amount] =\
