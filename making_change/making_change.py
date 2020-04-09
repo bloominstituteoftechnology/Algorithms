@@ -2,7 +2,7 @@
 
 def making_change(amount, denominations):
 
-    return get_combinations(amount, denominations)
+    return dynamic_get_combinations(amount, denominations)
     # if you can subtract down to 0, return 1. Because that's one possibility
     # if it's < 0 return 0 because it doesn't match
     # for coin in array of coins, subtract the amount of the coin from the remaining and add the result to possible ways
@@ -22,6 +22,17 @@ def get_combinations(amount, denominations, index=0):
 
     return total_ways
 
+def dynamic_get_combinations(amount, denominations):
+    combinations_array = [0 for number in range(amount + 1)]
+    combinations_array[0] = 1
+    for index in range(len(denominations)):
+        for sub_index in range(len(combinations_array)):
+            denomination = denominations[index]
+            if sub_index >= denomination:
+                combinations_array[sub_index] += combinations_array[sub_index - denomination]
+
+    return combinations_array[amount]
+
 
 import sys
 """
@@ -35,7 +46,7 @@ import sys
 
 
 
-print(making_change(6, [1, 5, 10, 25, 50]))
+print(dynamic_get_combinations(12, [1, 2, 5]))#, 10, 25, 50]))
 
 # if that combo.sort() not in dict, increase count
 
