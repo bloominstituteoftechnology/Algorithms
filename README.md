@@ -2,7 +2,7 @@
 
 Each directory contains a separate problem that you'll be tasked with solving.
 Inside each directory, you'll find instructions for that problem, along with a
-test file as well as an empty skeleton file. 
+test file as well as an empty skeleton file.
 
 There isn't an official prescribed order for tackling the problems, though a
 subjective ranking of the given problems from easiest to hardest might go
@@ -17,7 +17,7 @@ something like this:
 
 For each problem, `cd` into the directory, read the instructions for the
 problem, implement your solution in the skeleton file, then test it using the
-provided test file. 
+provided test file.
 
 The later problems definitely get progressively more difficult, especially when
 it comes to deriving a more performant solution. Don't feel bad if you aren't
@@ -34,4 +34,4 @@ When you're confronted with a problem you haven't encountered before, the
 general strategy (adapted from [George Pólya's Problem Solving
 Principles](https://en.wikipedia.org/wiki/How_to_Solve_It)) is as follows:
 
-https://github.com/LambdaSchool/CS-Wiki/wiki/Lambda-Problem-Solving-Framework
+<https://github.com/LambdaSchool/CS-Wiki/wiki/Lambda-Problem-Solving-Framework>
