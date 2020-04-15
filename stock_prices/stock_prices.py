@@ -3,7 +3,31 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+  #pass
+  # MAX == find max price after a lower price
+  max = 0
+  sell_index = 0
+  for i in range(1, len(prices)):
+      if prices[i] > max:
+          max = prices[i]
+          sell_index = i
+  # MIN == find min price that pre seeds the  MAX
+  min = max
+  for i in range(0, sell_index):
+      if prices[i] < max and prices[i] < min:
+          min = prices[i]
+  # day losses min, not the "rpofit min from above"
+  if max == min:
+      max = prices[sell_index + 1]
+      for i in range(sell_index, len(prices)):
+          if prices[i] > max and prices[i] < min:
+              min = prices[i]
+  # PROFFIT ==  MAX - MIN
+
+  print(f"MAX: {max}, at index {sell_index}")
+  print(f"MIN: {min}")
+  return max - min
+  # O is O(n)? x2 or x3?
 
 
 if __name__ == '__main__':
