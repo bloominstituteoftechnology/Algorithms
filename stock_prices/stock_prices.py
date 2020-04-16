@@ -5,6 +5,9 @@ import argparse
 
 def find_max_profit(prices):
 
+    if len(prices) == 1:
+        return 0
+
     lowest = prices[0]  # base for initial buying, 1st number in array
     maxProfit = prices[1] - prices[0]  # compare to get base max profit
     index = 2
@@ -33,4 +36,4 @@ if __name__ == '__main__':
     print("A profit of ${profit} can be made from the stock prices {prices}.".format(
         profit=find_max_profit(args.integers), prices=args.integers))
 
-        
+
