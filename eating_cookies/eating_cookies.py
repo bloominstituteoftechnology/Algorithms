@@ -31,7 +31,7 @@ def eating_cookies(n, cache=None):
   elif n == 3:
       return 4
   elif cache and cache[n]:
-      return cahe[n]
+      return cache[n]
   else:
       cache[n] = eating_cookies(n-1, cache) + eating_cookies(n-2, cache)  + eating_cookies(n-3, cache)
 
