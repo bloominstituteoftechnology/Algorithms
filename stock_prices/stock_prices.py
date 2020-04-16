@@ -24,7 +24,8 @@ def find_max_profit(prices):
       if max_profit < sell_price - buy_price:
         max_profit = sell_price - buy_price
 
-  if max_profit == 0:
+  # if max_profit's value is still zero or less after looping through the list, that means taking a loss on the buy_price's value is the optimal value
+  if max_profit <= 0:
     max_profit = buy_price * -1
 
   return max_profit
