@@ -3,7 +3,15 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+    batch_qty = []
+    try:
+        for ing_r in recipe:
+            batches = ingredients[ing_r]//recipe[ing_r]
+            batch_qty.append(batches)
+    except KeyError as ke:
+        return 0
+
+    return min(batch_qty)
 
 
 if __name__ == '__main__':
