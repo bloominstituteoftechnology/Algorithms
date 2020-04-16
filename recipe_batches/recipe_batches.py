@@ -3,8 +3,14 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
-
+  max_batch = 1000
+  for key, value in recipe.items():
+    if key not in ingredients.keys() or value > ingredients[key]:
+      return 0
+    pos_batch = math.floor(ingredients[key]/value)
+    if pos_batch < max_batch:
+      max_batch = pos_batch
+  return max_batch
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
