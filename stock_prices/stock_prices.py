@@ -32,3 +32,5 @@ if __name__ == '__main__':
 
     print("A profit of ${profit} can be made from the stock prices {prices}.".format(
         profit=find_max_profit(args.integers), prices=args.integers))
+
+        
