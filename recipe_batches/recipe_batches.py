@@ -3,7 +3,23 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  count = 0
+  first_val = list(ingredients.values())[0] // list(recipe.values())[0]
+  current_min = []
+  for ing in recipe:
+    if ing not in ingredients or ingredients[ing] < recipe[ing]:
+      return 0 
+    val = ingredients[ing] // recipe[ing]
+
+    if count == 0:
+      current_min.append(val)
+    elif val < current_min[len(current_min) - 1]:
+      current_min.append(val)
+
+    count += 1
+
+  batch_size = current_min[len(current_min) - 1]
+  return batch_size
 
 
 if __name__ == '__main__':
