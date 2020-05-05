@@ -35,7 +35,7 @@ When you're confronted with a problem you haven't encountered before, the genera
 
    - Whatever first comes to your mind when looking at the problem in front of you, run with it if you don't have any better ideas. Iteration and improvement of your implementation comes afterwards.
    - If you have multiple ideas, _write them all down_, then decide which one you want to go with initially.
-   - Once you've implemented a solution, think about what your implementation will output given some test inputs. Does it handle all the expected edge cases? Maybe it does and maybe it doesn't. If it doesn't, we'll come back to improve upon it later.
+   - Once you've implemented a solution, think about what your implementation will output given some test inputs. Does it handle all the expected edge cases? Maybe it does and maybe it doesn't. If it doesn't, we'll come back to improve upon it later
 
 4. **Review, extend, improve.**
    - Figure out the runtime and space complexity of your first-pass implementation.
