@@ -47,7 +47,7 @@ making_change.py [amount]`
    recursion to stop executing. What should happen when the amount of cents
    given is 0? What should happen when the amount of cents given is negative?
    What about when we've used up all of the available coin denominations?
- * As far as performance optimizations go, caching/memoization might be one
+ * As far as performance optimizations go, caching/memorization might be one
    avenue we could go down. 
  * Building up values in our cache in an iterative fashion might also be a good
    way to go about improving our implementation. 
