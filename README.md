@@ -28,7 +28,7 @@ There isn't an official prescribed order for tackling the problems, though a sub
 
  1. `single_number`
  2. `moving_zeroes`
- 3. `product_of_array_except_self`
+ 3. `product_of_all_other_numbers`
  4. `sliding_window_max`
  5. `eating_cookies`
 
