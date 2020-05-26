@@ -36,7 +36,11 @@ def run_ring(o, W, above):  # W is both the total weight and the length of each 
 def knapsack_solver(items, capacity):
     above = None
     for item in items:
+        if item.weight > capacity:
+          continue
         above = run_ring(item, capacity, above)
+    if above is None:
+      return 0
     r = above[-1]
     total_value = 0
     total_weight = 0
