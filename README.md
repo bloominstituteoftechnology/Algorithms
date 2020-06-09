@@ -26,7 +26,7 @@ remember that so long as you put in an earnest effort into attempting to solve
 these problems, you're learning and getting better. Getting the 'right answer'
 is just the proverbial cherry on top of the sundae.
 
-This is a two day project so plan your time accordingly!
+This is a two day project, so plan your time accordingly!
 
 ## Problem Solving Principles
 

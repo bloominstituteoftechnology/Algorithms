@@ -13,11 +13,8 @@ def eating_cookies(n, cache=None):
     elif n == 0:
         return 1
     elif n > 2:
-        ancestors = [1, 1, 2]
-        for i in range(n - 2):
-            ancestors.append(sum(ancestors))
-            ancestors.pop(0)
-        return ancestors[2]
+        return eating_cookies(n - 1) + eating_cookies(n - 2) + \
+            eating_cookies(n-3)
     
 if __name__ == "__main__":
     if len(sys.argv) > 1:
