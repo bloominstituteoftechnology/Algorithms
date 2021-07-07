@@ -1,0 +1,141 @@
+**Video Runtime Complexity***
+
+Objective:
+To define what runtime complexity is as well as enumerate some of the BIG O Runtime
+classifications and start to understand what each one means
+
+What is the point of runtime complexity?
+
+Big O Classifications: Common ones             Good
+O(c) - Constant time 
+O(logn) - Logarithmic time
+O(n) - Linear time
+O(nlogn) - Log-linear time
+O(n^c)- Quadratic time
+O(c^n) - Exponential Time                      Really Bad 
+
+Constant Time: the algorithim in question executes the same number of operations
+    regardless of the size of the input
+    So for any input size n, a constant time algoritim performs the same numberof operations
+    everytime, not matter what n is. Could be 1 or a trillion = same time to process
+ 
+    on a graph this is a STRAIGHT LINE
+    example: drawing a lottery. All you do is pull a number that's it. doesnt matter if the number drawn is 1 or 420887.
+    code example:
+    def loop_50_times(array):
+        for i in range(50):
+            print(array[i])
+
+Logarithmic Time: the algorithm in question increases the number of operations it
+    performs as a logrithmic function of the input size n. Or the function log n grows slowly
+    so as n get larger the number of operations the algorithm needs to perform doesnt
+    not increase very much
+
+    example: looking for a word in a dictionary, b/c we know how it's organized we can bypass certain things
+    we wouldn't look for dog in the 'a' section
+    Really good for sorting through data that is already in some sort of order
+    code example:
+    Binary Search
+
+Linear Time: the algorithim in question increases the number of operations it needs as a linear function
+    of the input size n. OR, the number of additional operations the algorithim needs to perform grows in
+    in direct proportion to the increase in input size n.
+    On a graph this is a diaginal line
+    example: counting coins, you have to look at every single coin to know it's value. The more coins there are, the more you have 
+    perform the operations
+    code example:
+    def search(array, target):
+        for el in array:
+        if target == el:
+            return True
+        return False
+
+Log-linear Time: The algorithim in question increases the number ofnoperations it performs
+    as a log-linear function of the input size n. OR, intuitively you can think of this runtime
+    classification as "looking over every single elemnet and doing some additional work on each one
+    This is usually only applied to one sort of problem, Sorting.
+    example: sorting numbered balls
+    on a graph it is a slightly sloping up line
+
+ Quadratic Time: the alogrithm in question increases the number of operations it performs as a quadratic function of the input size needs
+    example:
+    n = 10 -> n^2 = 100
+    n = 100 -> n2 = 1,000,000
+    on a graph this slopes up, steep hill
+    Recursion Tree, Bubble Sorting
+
+ Expoential Time: the algorithm in question increases the number of operations it performs as an expoential function of the input size n.
+    OR, for expoential problems, the number of nested loops increases as a function of the input size n.
+    On a graph this is praticly a straight line up..slopes extremely quickly
+    example: Cracking an unkown password, knapsack problem, longest common subsequence of string problem...
+
+
+
+
+
+
+ RECURSION VIDEO NOTES************************************
+
+Objective: Learn to identify when a problem can be solved with recursion and how to use recursion
+to solve it.
+
+Examples of Recursion in Life: in Art- hand painting ahand painting a hand painting a hand. Or standing between 
+two facing mirrors. Inception lol. Fractals - Triangles made of triangles, made of triangles, mde of triangles
+In Math- fibonacci sequence, the sum of the two previous values, 
+Fn = Fn-1 + Fn-2
+Fo = O, F1 = 1
+
+For coding....
+Recursion: 
+1. You need a base case (or cases) that specify when the recursion terminates. Super important, we don't want infinite loops
+2. If no base case, you need a rule that reduce all other cases towards a base case
+
+def recurse_factorial(n):
+    if n == 0:                               This line and the next = our base case
+        return 1                             if n == 0 stop and return 1
+    return n * recurse_factorial(n - 1)     This line is "rule" moving toward our base case
+
+Recusion vs Iteration
+ 
+ iteration example:
+ def iter_factorial(n):
+    answer = 1
+    for i in range(n, 0, -1):
+        answer *= i 
+    return answer
+
+How to know when to use recursion???????
+--"...compute the nth term of...." use recursion
+--"...list the first n terms of..." use recursion
+--"...generate all possible permutations..." use recursion
+
+Pros and Cons of Recursion_____
+Pros:
+    Intuitive (once you get past the mind bend)
+    Clean/Elegant
+    Good Starting Point in problem solving: 
+        gives us a tangible starting point, All you have to do is figure out base cases and how to get to base case
+
+Cons:
+    Mind Bender
+        takes a second to understand
+    Not Performant
+        makes a good starting point, but not a lot of "control"?
+
+
+
+
+Coming Up With a First-Pass Solution Video Notes---------------------------------------
+
+Objective: Learn to approach a novel problem and come up with a workable first-pass Solution
+
+Oh My Gosh! Where Do I Start!???
+    1. come up with SOMETHING! Just get started, you can't be wrong or right, if you have nothing
+    2. from mistakes come answers..and more questions XD
+    3. Lose you first 50 games so you may succeed at 1.
+
+
+
+
+
+
