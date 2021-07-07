@@ -3,7 +3,15 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  max = -1
+  for item in recipe:
+    if(item in ingredients):
+      tempMax = math.floor(ingredients[item]/recipe[item])
+      if (tempMax < max or max == -1):
+        max = tempMax
+    else:
+      return 0
+  return max
 
 
 if __name__ == '__main__':
